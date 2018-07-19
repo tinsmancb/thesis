@@ -62,3 +62,44 @@ measurments of DC voltages in the microvolt range, and their sensitivy is
 reduced at low temperature. In any case, both of these methods allow us to
 measure temperature without considering the microscopic details of the system,
 only how accurately it has been calibrated.
+
+There are some experimental details which must be considered when using a
+resistance thermometer. Many important experimental techniques in condensed
+matter physics involve applying an intense magnetic field (up to 45T for the
+current state-of-the-art DC magnets) to a sample of interest. Resistance
+thermometers generally exhibit magnetoresistance, the changing of their
+resistivity in a magnetic field. The most commonly used resistance thermometers
+are selected to have as small a magnetoresistnace as possible, but even Cernox
+thermometers display a change of resistance of a few percent in magnetic fields
+up to 14T. If one is not measuring any direct thermal property of a sample and
+can safely assume that the sample is well thermalized with the cold finger, one
+can simply mount a thermometer outside the region of intense magnetic field.
+However, if you are measuring some thermal propety of a material (such as heat
+capacity or thermal conductivity), there is no getting around calibrating the
+thermometer as a function of temperature and magnetic field (see figure 
+\ref{cernox_fieldcal}). For semiconductor thermometers such as Cernox, the
+magnetoresistance can vary quite a bit from thermometer to thermometer, as they
+can have slightly different doping levels. Additionally, the magnetoresistance
+depends in general on the orientation of the thermometer with respect to the
+applied magnetic field. Thus, the thermometer must either be calibrated in situ,
+or great care must be taken to ensure that the thermometer's orientation is
+preserved from experiment to experiment.
+
+![Example Cernox Field Calibration. Top: Magnetoresistance of a Cernox
+thermometer. Bottom: Field calibration curves for the same thermometer.
+$(T_{\mathrm{apparent}} - T_{\mathrm{actual}})/T_{\mathrm{actual}}$
+is plotted versus the actual temperature.
+\label{cernox_fieldcal}](figures/cal_cernox_1.pdf)
+
+Regardless, there is a great deal of scientific value in thermal measurments
+performed in strong magnetic fields. Heat capacity provides a generic method for
+identifying phase transitions, and thermal transport is sensitive to excitations
+in a solid which do not carry charge and thus can't be studied with electrical
+transport methods. Thus, it is our goal to develop new methods for accurately
+and precisely measuring temperature in the presence of intense magnetic fields.
+The scientific potential of these methods and the experimental techniques they
+make possible will be underscored in the next section. For more information
+about thermometry and its application in experimental condensed matter physics,
+chapter 5 of [@Ekin2006] is an invaluable reference.
+
+## The Thermal Hall Effect

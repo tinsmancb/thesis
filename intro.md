@@ -190,3 +190,10 @@ suitable mesh, the problem reduces to solving a linear system. There are many
 references which go into detail on finite element analysis, but I used
 [@LangtangenLogg2017] which covered the specific Python library I used to run
 the following simulations.
+
+![Thermal Hall Isotherms. The left side of each simulation is held to
+$T=0$, the right has a heater with unit power, and the upper and lower
+edges are insulating.\label{thall_iso}](figures/thall_isotherm.pdf)
+
+![Thermal Hall Temperature
+Profiles.\label{thall_prof}](figures/thall_profile.pdf)

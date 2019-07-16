@@ -1,78 +1,20 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[12pt,]{article}
-\usepackage{lmodern}
-\usepackage{setspace}
-\setstretch{2.0}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
-\hypersetup{
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage[margin=1in]{geometry}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
+\documentclass{thesis-umich}
 
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
+\author{Colin Tinsman}
+\committee{
+Dr. Lu Li, \\
+Dr. Cagliyan Kurdak \\
+Dr. Kai Sun}
+\department{Applied Physics}
+\title{Thermal Hall Effect Measurements using Stontium Titanate Microthermometers}
+\year=2019
 
-
-\date{}
 
 \begin{document}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}
 
-\hypertarget{thermometry}{%
-\subsection{Thermometry}\label{thermometry}}
+\subsection{Thermometry}
 
 Temperature is generally understood to be a measure of the average
 kinetic energy contained in the atoms, electrons, and phonons (or other
@@ -97,7 +39,7 @@ an ideal gas with a known number of molecules \(N\) in a known volume
 \(P\). Other examples of primary thermometers include measurements of
 the speed of sound in a gas, measurements of the Johnson-Nyquist noise
 in an electrical circuit, or measurements of blackbody radiation
-{[}@Ekin2006{]}. These methods of measuring temperature are very useful
+\cite{Ekin2006}. These methods of measuring temperature are very useful
 for accurately setting a temperature scale, but they have some serious
 drawbacks as thermometers for use in other experiments. Most of them
 require sensitive measurements of multiple physical observables, as well
@@ -160,7 +102,7 @@ preserved from experiment to experiment.
 
 \begin{figure}
 \centering
-\includegraphics{figures/cal_cernox_1.pdf}
+\includegraphics[width=\textwidth]{figures/cal_cernox_1.pdf}
 \caption{Example Cernox Field Calibration. Top: Magnetoresistance of a
 Cernox thermometer. Bottom: Field calibration curves for the same
 thermometer.
@@ -178,11 +120,10 @@ measuring temperature in the presence of intense magnetic fields. The
 scientific potential of these methods and the experimental techniques
 they make possible will be underscored in the next section. For more
 information about thermometry and its application in experimental
-condensed matter physics, chapter 5 of {[}@Ekin2006{]} is an invaluable
+condensed matter physics, chapter 5 of \cite{Ekin2006} is an invaluable
 reference.
 
-\hypertarget{the-thermal-hall-effect}{%
-\subsection{The Thermal Hall Effect}\label{the-thermal-hall-effect}}
+\subsection{The Thermal Hall Effect}
 
 The thermal Hall effect is the thermal analogue of the much more well
 known (electrical) Hall effect. As the Hall effect can be understood as
@@ -271,12 +212,12 @@ linear form \[ L(v) = -\int_{\partial \Omega} g v ds \] as
 \(a(u, v) = L(v)\). By discretizing the problem using standard methods
 over a suitable mesh, the problem reduces to solving a linear system.
 There are many references which go into detail on finite element
-analysis, but I used {[}@LangtangenLogg2017{]} which covered the
+analysis, but I used \cite{LangtangenLogg2017} which covered the
 specific Python library I used to run the following simulations.
 
 \begin{figure}
 \centering
-\includegraphics{figures/thall_isotherm.pdf}
+\includegraphics[width=\textwidth]{figures/thall_isotherm.pdf}
 \caption{Thermal Hall Isotherms. The left side of each simulation is
 held to \(T=0\), the right has a heater with unit power, and the upper
 and lower edges are insulating.\label{thall_iso}}
@@ -284,8 +225,11 @@ and lower edges are insulating.\label{thall_iso}}
 
 \begin{figure}
 \centering
-\includegraphics{figures/thall_profile.pdf}
+\includegraphics[width=\textwidth]{figures/thall_profile.pdf}
 \caption{Thermal Hall Temperature Profiles.\label{thall_prof}}
 \end{figure}
+
+\bibliography{./refs.bib}
+\bibliographystyle{plain}
 
 \end{document}

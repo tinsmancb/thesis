@@ -9,3 +9,9 @@ intro: intro.md
 
 thesis: thesis.tex
 	pdflatex $(LATEX_FLAGS) thesis.tex
+
+biblio: build/thesis.aux
+	bibtex build/thesis
+
+clean:
+	rm -rf build/*

@@ -4,7 +4,10 @@
 \committee{
 Dr. Lu Li, \\
 Dr. Cagliyan Kurdak \\
-Dr. Kai Sun}
+Dr. Kai Sun \\
+Dr. James Allen \\
+Dr. Zhaohui Zhong
+}
 \department{Applied Physics}
 \title{Thermal Hall Effect Measurements using Stontium Titanate Microthermometers}
 \year=2019
@@ -228,6 +231,249 @@ and lower edges are insulating.\label{thall_iso}}
 \includegraphics[width=\textwidth]{figures/thall_profile.pdf}
 \caption{Thermal Hall Temperature Profiles.\label{thall_prof}}
 \end{figure}
+
+%% ----- TEXT OF APL PAPER ----- %%
+
+Thermal transport measurements provide a versatile set of methods for probing
+the physical properties of matter. Among thermal transport properties, the
+thermal Hall effect shows promise for probing the ground state of many materials
+of physical interest.  The thermal Hall effect, also known as the Righi-Leduc
+effect,  is a thermal analogue of the standard Hall effect in which a thermal
+gradient is applied across a sample in a magnetic field resulting a secondary
+orthogonal thermal gradient. In this sense, a thermal Hall conductivity
+$\kappa_{xy}$ is analogous to the Hall conductivity $\sigma_{xy}$.  While
+$\sigma_{xy}$ in general contains information about the charged excitations
+(electrons or holes) in a material, $\kappa_{xy}$ in principle contains
+information about all the low-energy excitations. As a result the thermal Hall
+effect has been of great theoretical interest for several years. In particular,
+there has been some work that indicates that this technique may prove useful for
+the study of strongly-correlated topological insulators (TIs) and
+high-temperature superconductors. The thermal Hall effect is proposed to reveal
+the experimental signature of different kinds of surface states\cite{Wang14}:
+free fermion TIs with a single Dirac cone, and two types of topological
+paramagnet with spin-liquid behavior. Traditional Hall effect measurements can
+distinguish some of these phases, but specific classification requires
+measurement of the thermal Hall conductivity. Further theoretical studies
+suggest that the thermal Hall effect could be used to study the quantum phase
+transition from an Ising-like state with bosonic excitations to Majorana
+fermions in the topological superconductors with supersymmetry~\cite{Grover14}.
+
+However, despite the intense theoretical interest in the thermal Hall effect,
+the technique remains difficult to implement experimentally. A few interesting
+measurements have been made in ferromagnets\cite{Onose10}, frustrated quantum
+magnets\cite{Hirschberger15}, and cuprate superconductors\cite{Cvetkovic15}, but
+the experimental complications of accurately measuring temperature in an intense
+magnetic field has prevented the technique from being applied more generally.
+Because of the potential value of this technique for studying strongly
+correlated materials and other materials of interest, we have sought to devise a
+simple method for making these measurements. In particular, we wish to develop a
+method which can be used on a wide variety of materials and throughout a large
+temperature range, while being independent of the magnetic field.
+
+In order to accomplish this, we have developed thermometers which measure
+temperature by measuring the dielectric constant $\epsilon$ of strontium
+titanate (SrTiO$_3$). High quality wafers of SrTiO$_3$ are generally available
+for purchase, and the material is durable and relatively easy to work with. Its
+value as a thermometer comes from the fact that its dielectric constant
+increases by up to a few orders of magnitude at low temperature. This comes from
+the fact that SrTiO$_3$ is very close to a quantum critical
+point\cite{Rowley14}. Materials similar to SrTiO$_3$, such as Barium Titanate
+(BaTiO$_3$), undergo a ferroelectric transition at sufficiently low temperature.
+On the other hand, SrTiO$_3$ is classical paraelectric at room temperature, but
+is prevented from undergoing a ferroelectric transition due to long-range
+interactions suppressing the ferroelectric state, causing it to remain a
+(quantum) paraelectric instead. As a result, the dielectric constant does not
+diverge a finite temperature, but instead saturates at about 4 K, depending on
+the particular sample.
+
+\begin{figure} \caption{A pair of STO thermometers, used to make thermal
+  measurements. The background is a piece of graph paper with 1mm divisions, the
+thermometers themselves are approximately 0.5 mm long, 0.5 mm wide, and 0.3 mm
+thick.} \centering
+\includegraphics[width=\columnwidth,natwidth=1413,natheight=1060]{thermometers.jpg}\label{thermo_pic}
+\end{figure}
+
+\begin{figure} \caption{An example calibration curve for an STO thermometer,
+  showing both the capacitance (solid) and sensitivity (dashed) as a function of
+temperature. The capacitance begins to saturate at low temperature, with the
+sensitivity peaking around 25K. } \centering
+\includegraphics[width=\columnwidth]{cvt.eps}\label{cal_curve}
+\end{figure}
+
+In order to make a thermometer out of SrTiO$_3$, we take a small, thin (0.1 mm)
+sample of the material (purchased from the MTI corporation)\cite{MTICorp} and
+evaporate gold contacts on to either face.  These contacts form a parallel-plate
+capacitor, and by measuring the change in the capacitance we measure the
+dielectric constant and by proxy the temperature.  Figure~\ref{thermo_pic} shows
+a pair of assembled thermometers.  The thermometers are approximately 0.5 mm
+long, 0.5 mm wide, and 0.3mm thick, and the electrical leads are a pair of 25
+$\mu$m diameter phosphor bronze wires.  Figure~\ref{cal_curve} shows an example
+calibration curve for an SrTiO$_3$ thermometer. Both the capacitance and
+sensitivity of the thermometer are shown from 4 K up to room temperature. The
+magnitude of the sensitivity increases (note the sign, increasing dielectric
+constant corresponds to decreasing temperature) up to about 25 K before
+decreasing and reaching a maximum value below 4 K. The particulars depend
+somewhat on the individual thermometer, notably, some do not reach a maximum
+value at all above 1.5 K, the lowest temperature at which we calibrated the
+thermometers used in this experiment. We believe this to be due to variance in
+our process for making the thermometers, in particular the amount of heat they
+are exposed to when the leads are attached and the resin surrounding the wafer
+is cured. Because of this, they must be calibrated \textit{in situ} for each
+experiment.  However, the general trend is the same, with the sensitivity being
+greatest around 20 to 40 K. Using our capacitance bridges (an Andeen-Hagerling
+2700A digital bridge and a General Radio 1615-A analog bridge), we can reliably
+measure a change in capacitance of about 1$\times$10$^{-5}$ pF. This corresponds
+to change in temperature of 0.1 mK. Other measurements~\cite{Hirschberger15}
+using resistive thermometers quote a resolution of 0.2 - 0.4 mK. This is after
+extensive field calibration of the thermometers, a time-consuming process which
+these thermometers eliminate.
+
+\begin{figure} \caption{A test of the response of an STO thermometer to an
+    applied magnetic field, taken at 4.2K.  The field starts at zero, scans to
+    10T (blue), then to -10T (green), and then back to zero (red).  The relative
+    change in the capacitance $(C - C_0)/C_0$ remains less than
+  3$\times$10$^{-4}$, corresponding to change of about 20 femtofarads. This
+change in capacitance is possibly due to the shifting of the leads to the
+capacitor plates due to the field, rather than anything intrinsic to STO.}
+\centering \includegraphics[width=\columnwidth]{cvb.eps}\label{b_test}
+\end{figure}
+
+Of course, in order to perform well for making thermal Hall effect measurements,
+these thermometers must not be sensitive to an applied magnetic field.
+Figure~\ref{b_test} shows the relative change in capacitance $(C-C_0)/C_0$ of a
+sample thermometer measured under a magnetic field from -10 T to 10 T.  The
+magnitude of the change in capacitance remains less than 3$\times$10$^{-4}$, a
+few parts in ten thousand, below 10 T at 2 K. Compare this to resistive
+thermometers, which may have magnetoresistance of a few percent or greater in
+this temperature range\cite{Heine98,Goodrich98}. We are not sure what the nature
+of this small field dependence is, as the dielectric constant should be
+independent of applied magnetic field. However, at least some of the change may
+be related to the slight shifting of the thermometer leads as the field is
+swept.
+
+Another issue concerning the suitability of these thermometers for measuring the
+thermal Hall effect, particularly relevant at low temperature, is the heating
+caused by the thermometers themselves. As the temperature decreases and the
+dielectric constant increases, the dissipative losses from the capacitor
+increase as well. These increase to about 60 nW at low temperature. For our
+current experiment, which applies 1 mW of power across the sample, this is not a
+concern. In general, however, this is not insignificant. 60 nW corresponds to an
+excitation of 1 V. Decreasing the excitation will quadratically decrease the
+heating power, however this comes at the cost of the sensitivity of the device.
+This at least gives us some room to adjust the parameters to fit the particular
+experiment. As our process for assembling the thermometers improves, we should
+be able to mitigate this source of heat by reducing resistive loss across the
+capacitor.  Despite the difficulty with the thermometer heating, the fact that
+the thermometers are insensitive to magnetic field at low temperature makes them
+good candidates for making a variety of thermal measurements.
+
+Furthermore, the heat loss through the thermometer leads are negligible compared
+with the sample's thermal conductance. Each thermometer has a pair of 25 $\mu$m
+diameter phosphor bronze leads, with a thermal conductivity of 69.9 $\mathrm{W/m
+  \cdot K}$ at room temperature given by the manufacturer (California Fine Wire
+  Co)~\cite{CFW}. On the other hand, bismuth has a thermal conductivity of 7.87
+  $\mathrm{W/m\cdot K}$ at room temperature~\cite{Ekin07}.  Given the dimensions
+  of our sample and the fact that there are two thermometers with four leads
+  total, this results in a thermal conductance of 1.6 $\mathrm{mW/K}$ through
+  the sample compared to 0.027 $\mathrm{mW/K}$ through the leads, almost 60
+  times smaller. Since the thermal conductivity of bismuth goes up below room
+  temperature~\cite{White58}, while that of phosphor bronze goes
+  down~\cite{Ekin07}, the quality will only improve at the measurement
+  temperatures.
+
+  \begin{figure} \caption{(Panel a): Transverse temperature difference as a
+    function of applied magnetic field from -10 T to 10 T, taken at 130 K and
+    measured using a pair of STO thermometers. The signal is composed of an
+    symmetric part and an antisymmetric part.  (Panel b): Antisymmetric (solid)
+  and symmetric (dashed) parts of the transverse temperature difference. The
+antisymmetric part is the thermal Hall signal. Notice the difference in scales
+for the two curves.} \centering\label{t_grad}
+\includegraphics[width=\columnwidth]{rawCurve.eps} \end{figure}
+
+As a test of these thermometers' suitability for thermal Hall measurements, we
+have measured the thermal Hall coefficient of Bismuth metal. Bismuth is one of
+the most studied condensed matter systems, being the material in which a host of
+physical phenomena were first discovered. Examples include quantum oscillations
+and the de Haas van Alphen effect\cite{deHaas30}, and perhaps more directly
+related to the field of thermal transport measurements, the Seebeck
+effect\cite{Seebeck22}. It has a unique electronic structure, being a semimetal
+with Dirac-like dispersion\cite{Lui95, Li08}, strong spin-orbit
+coupling\cite{Yafet63}, and pronounced diamagnetism\cite{Shoenberg36}. More
+recently, it has been studied\cite{Emoto16} for its ability to convert spin
+current to charge current along with the ferromagnetic insulator
+yttrium-iron-garnet through the inverse spin Hall effect and inverse
+Rashba-Edelstein effect. This interplay of electronic, magnetic and thermal
+phenomena make bismuth a promising candidate for observing the thermal Hall
+effect using our capacitive thermometry technique.
+
+The thermal Hall effect on crystalline bismuth has been carried out by W.
+Kobayashi \textit{et al.}\cite{Kobayashi12} down to 75 K and magnetic fields up
+to $\pm$3 T. Using our thermometers, we sought to extend this measurement to
+lower temperatures and higher fields. A resistive heater was mounted on a single
+crystal of bismuth metal, in order to generate a temperature gradient. A pair of
+SrTiO$_3$ thermometers were mounted in order to measure the transverse
+temperature gradient. The thermometers were glued to the surface of the sample
+and then coated in Type 120 silicone thermal joint compound to ensure good
+thermal contact with the sample. An example set of temperature gradient data is
+shown in Figure~\ref{t_grad}. Two pairs of thermocouples were mounted as well,
+one longitudinal and one transverse, in order to independently measure the
+temperature gradients \textit{in situ}. An additional resistive thermometer was
+mounted nearby to calibrate the SrTiO$_3$ thermometers in zero field.  The
+heater was repeatedly turned on and off, and the gradients in each direction
+measured. Simultaneously, the applied magnetic field was swept between -10 T and
+10 T. This allowed us to measure the field dependence of the thermal Hall
+coefficient.
+
+\begin{figure} \caption{Thermal Hall conductivity, computed from the
+    transverse temperature difference measured using the STO thermometers from
+    -10 T to 10 T. Curves for a few temperatures between 90K and 175K (Panel a)
+    and between 40K and 80K (Panel 6). The signal appears to get smaller at
+lower temperature, disappearing at 60K.} \centering\label{kappaxy}
+\includegraphics[width=\columnwidth]{kappaxy.eps} \end{figure}
+
+Similar to what was measured before\cite{Kobayashi12}, the thermal Hall
+conductivity is strongly nonlinear, reaching a maximum below 2 Tesla and
+decaying down to zero at high field, as shown in Figure~\ref{kappaxy}.  It is
+also largest at high temperature, becoming imperceptible below 50 K, where our
+thermometers are most sensitive.  As a result, we are confident that this is not
+an artifact of the capacitive thermometers. Thus we can see that the STO
+thermometers are able to make sensitive measurements, detecting changes in
+temperature below 1 mK in magnetic fields up to 10 T. Additionally, the fact
+that they are relatively simple to produce makes them applicable to a wide
+variety of measurements and samples. One remaining challenge is our ability to
+push these measurements to lower temperature, suitable for use at helium-3 or
+dilution refrigerator temperatures, where traditional methods of thermometry are
+even more fraught\cite{Heine98, Goodrich98}. One promising line of study
+involved isotopically substituting $^{18}$O into the strontium titanate wafers,
+which has been shown\cite{Rowley14} to drive them closer to the ferroelectric
+quantum phase transition and thus continue the divergence of their dielectric
+constant to lower and lower temperature. In any event, as this measurement has
+shown, this method of thermometry holds great promise for enabling the thermal
+properties of materials in intense magnetic fields.
+
+In conclusion, miniature capacitive thermometers based on the paraelectric
+material SrTiO$_3$ have been applied to measure the thermal Hall effect in
+crystalline bismuth. A strong nonlinear thermal Hall effect is observed in the
+intermediate temperature range. The miniature SrTiO$_3$ thermometers show very
+little magnetic field dependence -- less than a factor of 3$\times$10$^{-4}$ up
+to magnetic field 10 T. They are also quite sensitive, resolving the temperature
+difference as little as 0.1 mK.
+
+{\it Acknowledgments.} \/We thank Ctirad Uher for providing the single crystal
+samples of bismuth. We also thank the Michigan Center for Materials
+Characterization for use of the instruments and staff assistance. This work is
+mainly supported by the Office of Naval Research through the Young Investigator
+Prize under Award No. N00014-15-1-2382 (thermal transport property
+measurements). Supporting measurements were made possible with the support by
+the Department of Energy under Award No.  DE-SC0008110 (magnetization
+measurement), by the National Science Foundation under Award No. ECCS-1307744
+(electrical transport characterization), and the National Science Foundation
+Major Research Instrumentation award under No.  DMR-1428226 (supporting the
+equipment for the magnetization and electrical transport characterizations).
+T.A. thanks the Nakajima Foundation for support.  B.J.L. acknowledges support by
+the National Science Foundation Graduate Research Fellowship under Grant No.
+F031543. 
+
 
 \bibliography{./refs.bib}
 \bibliographystyle{plain}

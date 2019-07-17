@@ -1,5 +1,5 @@
 PANDOC_FLAGS = --bibliography refs.bib
-LATEX_FLAGS = -output-directory build 
+LATEX_FLAGS = -shell-excape -output-directory build 
 
 outline: outline.md
 	pandoc -o build/outline.pdf outline.md

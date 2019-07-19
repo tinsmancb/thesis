@@ -9,15 +9,132 @@ Dr. James Allen \\
 Dr. Zhaohui Zhong
 }
 \department{Applied Physics}
-\title{Thermal Hall Effect Measurements using Stontium Titanate Microthermometers}
+\title{Thermal Hall Effect Measurements using Strontium Titanate Microthermometers}
 \year=2019
 
 
 \begin{document}
 
-\section{Introduction}
+\doublespacing
 
-\subsection{Thermometry}
+\chapter{The Thermal Hall Effect}
+
+
+\section{Thermal Hall Conductivity in General}
+
+The thermal Hall effect is the thermal analogue of the much more well
+known (electrical) Hall effect. As the Hall effect can be understood as
+generalizing the electrical conductivity \(\sigma\) to a tensor in Ohm's
+law:
+\[\mathbf{j} = \sigma \mathbf{E} \Rightarrow \begin{pmatrix} j_x \\ j_y
+\end{pmatrix} = \begin{pmatrix} \sigma_{xx} & \sigma_{xy} \\ -\sigma_{xy} &
+\sigma_{yy} \end{pmatrix} \begin{pmatrix} E_x \\ E_y \end{pmatrix} \]
+The thermal Hall effect generalizes the thermal conductivity \(\kappa\)
+to a tensor in Fourier's law:
+\[\mathbf{q} = -\kappa \nabla u \Rightarrow \begin{pmatrix} q_x \\ q_y
+\end{pmatrix} = -\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} &
+\kappa_{yy} \end{pmatrix} \begin{pmatrix} \partial_x u \\ \partial_y u
+\end{pmatrix} \] where \(u\) is the temperature field. Before discussing
+the origin of of the thermal Hall conductivity \(\kappa_{xy}\), we
+should establish how heat flows through such a material. Let's assume we
+have an isotropic material (i.e. \(\kappa_{xx} = \kappa_{xy}\)). The
+conductivity tensor can be rewritten as
+\[\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} & \kappa_{xx}
+\end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 & \kappa_{xy}/\kappa_{xx} \\
+-\kappa_{xy}/\kappa_{xx} & 1 \end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 &
+\tan \theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \] where
+\(\theta_H = \arctan \kappa_{xy}/\kappa_{xx}\) is the definition of the
+thermal Hall angle. Writing down the Heat equation, and splitting the
+conductivity into its symmetric and antisymmetric parts:
+\begin{align*} -\nabla \cdot \mathbf{q} = c \rho \partial_t u = \nabla \cdot (\kappa \nabla u) &=
+\nabla \cdot (\kappa_{xx}(\mathbb{I} + \kappa_{\mathrm{antisym}}) \nabla u) \\
+&= \kappa_{xx}\nabla^2 u + \kappa_{xx}\nabla \cdot (\kappa_{\mathrm{antisym}}
+\nabla u) \end{align*} where c is the heat capacity and \(\rho\) is the
+mass density. Writing out the \(\kappa_\mathrm{antisym}\) term
+explicitly:
+\begin{align*}\begin{pmatrix} \partial_x & \partial_y \end{pmatrix} \begin{pmatrix} 0 & \tan
+\theta_H \\ -\tan \theta_H & 0 \end{pmatrix} \begin{pmatrix} \partial_x u \\
+\partial_y u \end{pmatrix} &= \begin{pmatrix} \partial_x & \partial_y
+\end{pmatrix} \begin{pmatrix} \tan \theta_H \partial_x u \\ -\tan \theta_H
+\partial_y u \end{pmatrix} \\ &= \tan \theta_H \partial_{xy} u - \tan \theta_H
+\partial_{xy} u = 0\end{align*} Thus the equation reduces to the
+isotropic heat equation,
+\(c\rho \partial_t u = \kappa_{xx} \nabla^2 u\)! Thus, it might seem
+like the thermal Hall conductivity would have no effect on the flow of
+heat through the material. Indeed, when studying the heat equation, the
+conductivity tensor \(\kappa\) is usually assumed to be symmetric.
+However, if we impose the Neumann boundary condition
+\(g = -\hat{n} \cdot \mathbf{q}\) for some known function \(g\), the
+effect of the thermal Hall conductivity can be seen:
+\begin{align*}-\hat{n} \cdot \mathbf{q} &= \hat{n} \cdot \kappa \nabla u \\
+&= \kappa_{xx} \begin{pmatrix} n_x & n_y \end{pmatrix} \begin{pmatrix} 1 & \tan
+\theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \begin{pmatrix} \partial_x u \\
+\partial_y u \end{pmatrix} \\ &= \kappa_{xx} \begin{pmatrix} n_x & n_y
+\end{pmatrix} \begin{pmatrix} \partial_x u + \tan \theta_H \partial_y u \\
+-\tan \theta_H \partial_x u + \partial_y u \end{pmatrix} \\ &= \kappa_{xx} n_x
+(\partial_x u + \tan \theta_H \partial_y u) + \kappa_{xx} n_y (-\tan \theta_H
+\partial_x u + \partial_y u)  \end{align*} Taking for example
+\(\hat{n} = (1, 0)\) and \(g = 0\) (perfectly insulating boundary
+conditions):
+\[ 0 = - \hat{n} \cdot \mathbf{q} = \kappa_{xx} (\partial_x u + \tan \theta_H
+\partial_y u) \Rightarrow \partial_x u = -\tan \theta_H \partial_y u\]
+In general, the derivative normal to the boundary is specified in terms
+of the transverse derivative and the thermal Hall angle.
+
+In order to see what this kind of boundary condition does in practice,
+we can simulate a material with a thermal Hall coefficent using the
+finite element method. For simplicity, we will look first at steady
+state solutions (i.e.~those with \(\partial_t u = 0\)). Thus we will
+need to solve the elliptic partial differential equation
+\(-\nabla \cdot (\kappa \nabla u) = 0\). We start by expressing this
+equation in weak form by multiplying it by a test function \(v\) and
+integrating over the function's domain \(\Omega\):
+\[ -\nabla \cdot (\kappa \nabla u) = 0 \Rightarrow -\int_\Omega \nabla \cdot
+(\kappa \nabla u) v dx = 0 \] The function \(u(x,y)\) is said to solve
+the weak problem if this equation holds for all functions \(v(x,y)\),
+where \(v(x, y) = 0\) anywhere we have specified \(u\) on the boundary
+(i.e.~imposed Dirichlet boundary conditions). By integrating by parts,
+this becomes:
+\[ - \int_\Omega \nabla \cdot (\kappa \nabla u) v dx = \int_\Omega \kappa \nabla
+u \cdot \nabla v dx - \int_{\partial \Omega} (\hat{n} \cdot \kappa\nabla u) v ds\]
+where the second integral on the right hand side is over the boundary of
+\(\Omega\). The second integral can be rewritten in terms of the Neumann
+boundary condition:
+\[ - \int_{\partial\Omega} (\hat{n} \cdot \kappa \nabla u) v ds =
+\int_{\partial\Omega} g v ds\] and so we have cast the problem in a form
+suitable for solving with the finite element method, in terms of the
+bilinear form
+\[ a(u, v) = \int_\Omega \kappa \nabla u \cdot \nabla v dx \] and the
+linear form \[ L(v) = -\int_{\partial \Omega} g v ds \] as
+\(a(u, v) = L(v)\). By discretizing the problem using standard methods
+over a suitable mesh, the problem reduces to solving a linear system.
+There are many references which go into detail on finite element
+analysis, but I used \cite{LangtangenLogg2017} which covered the
+specific Python library I used to run the following simulations.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/thall_isotherm.pdf}
+\caption{Thermal Hall Isotherms. The left side of each simulation is
+held to \(T=0\), the right has a heater with unit power, and the upper
+and lower edges are insulating.\label{thall_iso}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/thall_profile.pdf}
+\caption{Thermal Hall Temperature Profiles.\label{thall_prof}}
+\end{figure}
+
+\section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
+
+\section{The Thermal Hall Effect and Topology}
+
+%% ----- TEXT OF APL PAPER ----- %%
+
+\chapter{Strontium Titanate Microthermometers}
+
+\section{Thermometry}
 
 Temperature is generally understood to be a measure of the average
 kinetic energy contained in the atoms, electrons, and phonons (or other
@@ -126,115 +243,9 @@ information about thermometry and its application in experimental
 condensed matter physics, chapter 5 of \cite{Ekin2006} is an invaluable
 reference.
 
-\subsection{The Thermal Hall Effect}
+\section{Quantum Criticality in Strontium Titanate}
 
-The thermal Hall effect is the thermal analogue of the much more well
-known (electrical) Hall effect. As the Hall effect can be understood as
-generalizing the electrical conductivity \(\sigma\) to a tensor in Ohm's
-law:
-\[\mathbf{j} = \sigma \mathbf{E} \Rightarrow \begin{pmatrix} j_x \\ j_y
-\end{pmatrix} = \begin{pmatrix} \sigma_{xx} & \sigma_{xy} \\ -\sigma_{xy} &
-\sigma_{yy} \end{pmatrix} \begin{pmatrix} E_x \\ E_y \end{pmatrix} \]
-The thermal Hall effect generalizes the thermal conductivity \(\kappa\)
-to a tensor in Fourier's law:
-\[\mathbf{q} = -\kappa \nabla u \Rightarrow \begin{pmatrix} q_x \\ q_y
-\end{pmatrix} = -\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} &
-\kappa_{yy} \end{pmatrix} \begin{pmatrix} \partial_x u \\ \partial_y u
-\end{pmatrix} \] where \(u\) is the temperature field. Before discussing
-the origin of of the thermal Hall conductivity \(\kappa_{xy}\), we
-should establish how heat flows through such a material. Let's assume we
-have an isotropic material (i.e. \(\kappa_{xx} = \kappa_{xy}\)). The
-conductivity tensor can be rewritten as
-\[\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} & \kappa_{xx}
-\end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 & \kappa_{xy}/\kappa_{xx} \\
--\kappa_{xy}/\kappa_{xx} & 1 \end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 &
-\tan \theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \] where
-\(\theta_H = \arctan \kappa_{xy}/\kappa_{xx}\) is the definition of the
-thermal Hall angle. Writing down the Heat equation, and splitting the
-conductivity into its symmetric and antisymmetric parts:
-\begin{align*} -\nabla \cdot \mathbf{q} = c \rho \partial_t u = \nabla \cdot (\kappa \nabla u) &=
-\nabla \cdot (\kappa_{xx}(\mathbb{I} + \kappa_{\mathrm{antisym}}) \nabla u) \\
-&= \kappa_{xx}\nabla^2 u + \kappa_{xx}\nabla \cdot (\kappa_{\mathrm{antisym}}
-\nabla u) \end{align*} where c is the heat capacity and \(\rho\) is the
-mass density. Writing out the \(\kappa_\mathrm{antisym}\) term
-explicitly:
-\begin{align*}\begin{pmatrix} \partial_x & \partial_y \end{pmatrix} \begin{pmatrix} 0 & \tan
-\theta_H \\ -\tan \theta_H & 0 \end{pmatrix} \begin{pmatrix} \partial_x u \\
-\partial_y u \end{pmatrix} &= \begin{pmatrix} \partial_x & \partial_y
-\end{pmatrix} \begin{pmatrix} \tan \theta_H \partial_x u \\ -\tan \theta_H
-\partial_y u \end{pmatrix} \\ &= \tan \theta_H \partial_{xy} u - \tan \theta_H
-\partial_{xy} u = 0\end{align*} Thus the equation reduces to the
-isotropic heat equation,
-\(c\rho \partial_t u = \kappa_{xx} \nabla^2 u\)! Thus, it might seem
-like the thermal Hall conductivity would have no effect on the flow of
-heat through the material. Indeed, when studying the heat equation, the
-conductivity tensor \(\kappa\) is usually assumed to be symmetric.
-However, if we impose the Neumann boundary condition
-\(g = -\hat{n} \cdot \mathbf{q}\) for some known function \(g\), the
-effect of the thermal Hall conductivity can be seen:
-\begin{align*}-\hat{n} \cdot \mathbf{q} &= \hat{n} \cdot \kappa \nabla u \\
-&= \kappa_{xx} \begin{pmatrix} n_x & n_y \end{pmatrix} \begin{pmatrix} 1 & \tan
-\theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \begin{pmatrix} \partial_x u \\
-\partial_y u \end{pmatrix} \\ &= \kappa_{xx} \begin{pmatrix} n_x & n_y
-\end{pmatrix} \begin{pmatrix} \partial_x u + \tan \theta_H \partial_y u \\
--\tan \theta_H \partial_x u + \partial_y u \end{pmatrix} \\ &= \kappa_{xx} n_x
-(\partial_x u + \tan \theta_H \partial_y u) + \kappa_{xx} n_y (-\tan \theta_H
-\partial_x u + \partial_y u)  \end{align*} Taking for example
-\(\hat{n} = (1, 0)\) and \(g = 0\) (perfectly insulating boundary
-conditions):
-\[ 0 = - \hat{n} \cdot \mathbf{q} = \kappa_{xx} (\partial_x u + \tan \theta_H
-\partial_y u) \Rightarrow \partial_x u = -\tan \theta_H \partial_y u\]
-In general, the derivative normal to the boundary is specified in terms
-of the transverse derivative and the thermal Hall angle.
-
-In order to see what this kind of boundary condition does in practice,
-we can simulate a material with a thermal Hall coefficent using the
-finite element method. For simplicity, we will look first at steady
-state solutions (i.e.~those with \(\partial_t u = 0\)). Thus we will
-need to solve the elliptic partial differential equation
-\(-\nabla \cdot (\kappa \nabla u) = 0\). We start by expressing this
-equation in weak form by multiplying it by a test function \(v\) and
-integrating over the function's domain \(\Omega\):
-\[ -\nabla \cdot (\kappa \nabla u) = 0 \Rightarrow -\int_\Omega \nabla \cdot
-(\kappa \nabla u) v dx = 0 \] The function \(u(x,y)\) is said to solve
-the weak problem if this equation holds for all functions \(v(x,y)\),
-where \(v(x, y) = 0\) anywhere we have specified \(u\) on the boundary
-(i.e.~imposed Dirichlet boundary conditions). By integrating by parts,
-this becomes:
-\[ - \int_\Omega \nabla \cdot (\kappa \nabla u) v dx = \int_\Omega \kappa \nabla
-u \cdot \nabla v dx - \int_{\partial \Omega} (\hat{n} \cdot \kappa\nabla u) v ds\]
-where the second integral on the right hand side is over the boundary of
-\(\Omega\). The second integral can be rewritten in terms of the Neumann
-boundary condition:
-\[ - \int_{\partial\Omega} (\hat{n} \cdot \kappa \nabla u) v ds =
-\int_{\partial\Omega} g v ds\] and so we have cast the problem in a form
-suitable for solving with the finite element method, in terms of the
-bilinear form
-\[ a(u, v) = \int_\Omega \kappa \nabla u \cdot \nabla v dx \] and the
-linear form \[ L(v) = -\int_{\partial \Omega} g v ds \] as
-\(a(u, v) = L(v)\). By discretizing the problem using standard methods
-over a suitable mesh, the problem reduces to solving a linear system.
-There are many references which go into detail on finite element
-analysis, but I used \cite{LangtangenLogg2017} which covered the
-specific Python library I used to run the following simulations.
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figures/thall_isotherm.pdf}
-\caption{Thermal Hall Isotherms. The left side of each simulation is
-held to \(T=0\), the right has a heater with unit power, and the upper
-and lower edges are insulating.\label{thall_iso}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figures/thall_profile.pdf}
-\caption{Thermal Hall Temperature Profiles.\label{thall_prof}}
-\end{figure}
-
-%% ----- TEXT OF APL PAPER ----- %%
-
-\section{Strontium Titanate Microthermometers}
+\section{Strontium Titanate Thermometers}
 
 Thermal transport measurements provide a versatile set of methods for probing
 the physical properties of matter. Among thermal transport properties, the
@@ -392,6 +403,8 @@ antisymmetric part is the thermal Hall signal. Notice the difference in scales
 for the two curves.} \centering\label{t_grad}
 \includegraphics[width=\columnwidth]{figures/rawCurve_apl.eps} \end{figure}
 
+\section{Measuring the Thermal Hall Effect in Bismuth}
+
 As a test of these thermometers' suitability for thermal Hall measurements, we
 have measured the thermal Hall coefficient of Bismuth metal. Bismuth is one of
 the most studied condensed matter systems, being the material in which a host of
@@ -476,6 +489,15 @@ T.A. thanks the Nakajima Foundation for support.  B.J.L. acknowledges support by
 the National Science Foundation Graduate Research Fellowship under Grant No.
 F031543. V
 
+\section{Annealing Strontium Titanate in Oxygen-18}
+
+\chapter{Thermal Measurements of Strontium Copper Borate}
+
+\section{The Shastry-Sutherland Model}
+
+\section{Strontium Copper Borate as a Bosonic Topological Insulator}
+
+\section{Low Temperature Thermal Conductivity}
 
 \bibliography{./refs.bib}
 \bibliographystyle{plain}

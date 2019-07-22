@@ -12,6 +12,8 @@ Dr. Zhaohui Zhong
 \title{Thermal Hall Effect Measurements using Strontium Titanate Microthermometers}
 \year=2019
 
+\acknowledgments[2]{I would like to thank Ctirad Uher for providing the bismuth crystals, as well as Sara Haravifard for providing the strontium copper borate samples.}
+
 
 \begin{document}
 
@@ -22,36 +24,36 @@ Dr. Zhaohui Zhong
 
 \section{Thermal Hall Conductivity in General}
 
-The thermal Hall effect is the thermal analogue of the much more well
-known (electrical) Hall effect. As the Hall effect can be understood as
-generalizing the electrical conductivity \(\sigma\) to a tensor in Ohm's
-law:
-\[\mathbf{j} = \sigma \mathbf{E} \Rightarrow \begin{pmatrix} j_x \\ j_y
-\end{pmatrix} = \begin{pmatrix} \sigma_{xx} & \sigma_{xy} \\ -\sigma_{xy} &
-\sigma_{yy} \end{pmatrix} \begin{pmatrix} E_x \\ E_y \end{pmatrix} \]
-The thermal Hall effect generalizes the thermal conductivity \(\kappa\)
-to a tensor in Fourier's law:
-\[\mathbf{q} = -\kappa \nabla u \Rightarrow \begin{pmatrix} q_x \\ q_y
-\end{pmatrix} = -\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} &
-\kappa_{yy} \end{pmatrix} \begin{pmatrix} \partial_x u \\ \partial_y u
-\end{pmatrix} \] where \(u\) is the temperature field. Before discussing
-the origin of of the thermal Hall conductivity \(\kappa_{xy}\), we
-should establish how heat flows through such a material. Let's assume we
-have an isotropic material (i.e. \(\kappa_{xx} = \kappa_{xy}\)). The
-conductivity tensor can be rewritten as
-\[\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\ -\kappa_{xy} & \kappa_{xx}
-\end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 & \kappa_{xy}/\kappa_{xx} \\
--\kappa_{xy}/\kappa_{xx} & 1 \end{pmatrix} = \kappa_{xx} \begin{pmatrix} 1 &
-\tan \theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \] where
-\(\theta_H = \arctan \kappa_{xy}/\kappa_{xx}\) is the definition of the
-thermal Hall angle. Writing down the Heat equation, and splitting the
-conductivity into its symmetric and antisymmetric parts:
-\begin{align*} -\nabla \cdot \mathbf{q} = c \rho \partial_t u = \nabla \cdot (\kappa \nabla u) &=
-\nabla \cdot (\kappa_{xx}(\mathbb{I} + \kappa_{\mathrm{antisym}}) \nabla u) \\
-&= \kappa_{xx}\nabla^2 u + \kappa_{xx}\nabla \cdot (\kappa_{\mathrm{antisym}}
-\nabla u) \end{align*} where c is the heat capacity and \(\rho\) is the
-mass density. Writing out the \(\kappa_\mathrm{antisym}\) term
-explicitly:
+The thermal Hall effect is the thermal analogue of the much more well known
+(electrical) Hall effect. As the Hall effect can be understood as generalizing
+the electrical conductivity \(\sigma\) to a tensor in Ohm's law: \[\mathbf{j} =
+	\sigma \mathbf{E} \Rightarrow \begin{pmatrix} j_x \\ j_y \end{pmatrix}
+= \begin{pmatrix} \sigma_{xx} & \sigma_{xy} \\ -\sigma_{xy} & \sigma_{yy}
+\end{pmatrix} \begin{pmatrix} E_x \\ E_y \end{pmatrix} \] The thermal Hall
+effect generalizes the thermal conductivity \(\kappa\) to a tensor in Fourier's
+law: \[\mathbf{q} = -\kappa \nabla u \Rightarrow \begin{pmatrix} q_x \\ q_y
+	\end{pmatrix} = -\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\
+		-\kappa_{xy} & \kappa_{yy} \end{pmatrix} \begin{pmatrix}
+		\partial_x u \\ \partial_y u \end{pmatrix} \] where \(u\) is
+	the temperature field and \(\mathbf{q}\) is the heat current. Before
+	discussing the origin of of the thermal Hall conductivity
+	\(\kappa_{xy}\), we should establish how heat flows through such a
+	material. Let's assume we have an isotropic material (i.e.
+	\(\kappa_{xx} = \kappa_{yy}\)). The conductivity tensor can be
+	rewritten as \[\begin{pmatrix} \kappa_{xx} & \kappa_{xy} \\
+			-\kappa_{xy} & \kappa_{xx} \end{pmatrix} = \kappa_{xx}
+		\begin{pmatrix} 1 & \kappa_{xy}/\kappa_{xx} \\
+		-\kappa_{xy}/\kappa_{xx} & 1 \end{pmatrix} = \kappa_{xx}
+\begin{pmatrix} 1 & \tan \theta_H \\ -\tan \theta_H & 1 \end{pmatrix} \] where
+\(\theta_H = \arctan \kappa_{xy}/\kappa_{xx}\) is the definition of the thermal
+Hall angle. Writing down the Heat equation, and splitting the conductivity into
+its symmetric and antisymmetric parts: \begin{align*} -\nabla \cdot \mathbf{q}
+	= c \rho \partial_t u = \nabla \cdot (\kappa \nabla u) &= \nabla \cdot
+	(\kappa_{xx}(\mathbb{I} + \kappa_{\mathrm{antisym}}) \nabla u) \\ &=
+	\kappa_{xx}\nabla^2 u + \kappa_{xx}\nabla \cdot
+	(\kappa_{\mathrm{antisym}} \nabla u) \end{align*} where c is the heat
+capacity and \(\rho\) is the mass density. Writing out the
+\(\kappa_\mathrm{antisym}\) term explicitly:
 \begin{align*}\begin{pmatrix} \partial_x & \partial_y \end{pmatrix} \begin{pmatrix} 0 & \tan
 \theta_H \\ -\tan \theta_H & 0 \end{pmatrix} \begin{pmatrix} \partial_x u \\
 \partial_y u \end{pmatrix} &= \begin{pmatrix} \partial_x & \partial_y
@@ -122,8 +124,14 @@ and lower edges are insulating.\label{thall_iso}}
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{figures/thall_profile.pdf}
-\caption{Thermal Hall Temperature Profiles.\label{thall_prof}}
+\includegraphics[width=0.9\textwidth]{figures/thall_profile.pdf}
+\caption{Thermal Hall Temperature Profiles. Top: Temperature difference across
+	the sample transverse to the applied heat (y axis in figure
+	\ref{thall_iso}) at different points along the sample for different
+	thermal Hall angles. Note that for each angle, the temperature
+	difference approaches a constant value far from the cold finger.
+	Bottom: The same temperature difference at a fixed position as a
+function of the thermal Hall angle. Note that for experimentally relevant values of the thermal Hall angle (\(\theta_H \approx 1^\circ\)), \(\Delta T\) is proportional to \(\theta_H\).   \label{thall_prof}}
 \end{figure}
 
 \section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
@@ -136,18 +144,26 @@ and lower edges are insulating.\label{thall_iso}}
 
 \section{Thermometry}
 
-Temperature is generally understood to be a measure of the average
-kinetic energy contained in the atoms, electrons, and phonons (or other
-quasiparticle excitations) which make up matter. Within the formalism of
-statistical mechanics, we can compute compute the temperature within the
-microcanonical ensemble as function of the total energy \(E\) and
-information about the states of the system:
-\[\frac{1}{T} = \frac{dS}{dE} = \frac{d}{dE} k \log W\] where \(W(E)dE\)
-is the number of states with energy between \(E\) and \(E+dE\) and \(k\)
-is Boltzmann's constant. This function, however, can only be computed
-explicity for the simplest physical systems. In practice, if we want to
-study the flow of heat through a system by measuring temperature, we
-must find some other observable we can measure as a proxy.
+Temperature, in its most general form, is a consequence of the ``zeroth'' law
+of thermodynamics: If two bodies A and B are in thermodynamic equalibrium, and
+B is in thermodynamic equalibrium with a third body C, then A and C are in
+thermodynamic equalibrium with each other as well. Thus, the quality of being
+in thermodynamic equalibrium is an equivalance relation, and we can define a
+temperature scale by assigning a numerical value to each of its equivalence
+classes. If we take care to assign this quantity such that one with a higher
+temperature will transfer heat to one with a lower temperature when they are
+brought in contact (a corollary of the second law of thermodynamics) as well as
+the existence of an absolute lowest temperature (the third law), we will arrive
+at the standard Kelvin temperature scale (up to multiplication by a constant
+factor). Within the formalism of statistical mechanics, we can compute compute
+the temperature within the microcanonical ensemble as function of the total
+energy \(E\) and information about the states of the system: \[\frac{1}{T} =
+\frac{dS}{dE} = \frac{d}{dE} k \log W\] where \(W(E)dE\) is the number of
+states with energy between \(E\) and \(E+dE\) and \(k\) is Boltzmann's
+constant. This function, however, can only be computed explicity for the
+simplest physical systems. In practice, if we want to study the flow of heat
+through a system by measuring temperature, we must find some other observable
+we can measure as a proxy.
 
 In principle, we might want to find some system whose thermodynamic
 equation of state depends on temperature and other quantities which are
@@ -211,7 +227,7 @@ one can simply mount a thermometer outside the region of intense
 magnetic field. However, if you are measuring some thermal propety of a
 material (such as heat capacity or thermal conductivity), there is no
 getting around calibrating the thermometer as a function of temperature
-and magnetic field (see figure \ref{cernox_fieldcal}). For semiconductor
+and magnetic field (see figure \ref{cernox_fieldcal}). For resistive
 thermometers such as Cernox, the magnetoresistance can vary quite a bit
 from thermometer to thermometer, as they can have slightly different
 doping levels. Additionally, the magnetoresistance depends in general on
@@ -474,21 +490,6 @@ little magnetic field dependence -- less than a factor of 3$\times$10$^{-4}$ up
 to magnetic field 10 T. They are also quite sensitive, resolving the temperature
 difference as little as 0.1 mK.
 
-{\it Acknowledgments.} \/We thank Ctirad Uher for providing the single crystal
-samples of bismuth. We also thank the Michigan Center for Materials
-Characterization for use of the instruments and staff assistance. This work is
-mainly supported by the Office of Naval Research through the Young Investigator
-Prize under Award No. N00014-15-1-2382 (thermal transport property
-measurements). Supporting measurements were made possible with the support by
-the Department of Energy under Award No.  DE-SC0008110 (magnetization
-measurement), by the National Science Foundation under Award No. ECCS-1307744
-(electrical transport characterization), and the National Science Foundation
-Major Research Instrumentation award under No.  DMR-1428226 (supporting the
-equipment for the magnetization and electrical transport characterizations).
-T.A. thanks the Nakajima Foundation for support.  B.J.L. acknowledges support by
-the National Science Foundation Graduate Research Fellowship under Grant No.
-F031543. V
-
 \section{Annealing Strontium Titanate in Oxygen-18}
 
 \chapter{Thermal Measurements of Strontium Copper Borate}
@@ -499,7 +500,8 @@ F031543. V
 
 \section{Low Temperature Thermal Conductivity}
 
+
 \bibliography{./refs.bib}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 
 \end{document}

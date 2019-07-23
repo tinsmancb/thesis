@@ -134,6 +134,8 @@ and lower edges are insulating.\label{thall_iso}}
 function of the thermal Hall angle. Note that for experimentally relevant values of the thermal Hall angle (\(\theta_H \approx 1^\circ\)), \(\Delta T\) is proportional to \(\theta_H\).   \label{thall_prof}}
 \end{figure}
 
+
+
 \section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
 
 \section{The Thermal Hall Effect and Topology}
@@ -154,16 +156,15 @@ classes. If we take care to assign this quantity such that one with a higher
 temperature will transfer heat to one with a lower temperature when they are
 brought in contact (a corollary of the second law of thermodynamics) as well as
 the existence of an absolute lowest temperature (the third law), we will arrive
-at the standard Kelvin temperature scale (up to multiplication by a constant
-factor). Within the formalism of statistical mechanics, we can compute compute
-the temperature within the microcanonical ensemble as function of the total
-energy \(E\) and information about the states of the system: \[\frac{1}{T} =
-\frac{dS}{dE} = \frac{d}{dE} k \log W\] where \(W(E)dE\) is the number of
-states with energy between \(E\) and \(E+dE\) and \(k\) is Boltzmann's
-constant. This function, however, can only be computed explicity for the
-simplest physical systems. In practice, if we want to study the flow of heat
-through a system by measuring temperature, we must find some other observable
-we can measure as a proxy.
+at an experimentally useful temperature scale. Within the formalism of
+statistical mechanics, we can construct  such a temperature scale within the
+microcanonical ensemble as function of the total energy \(E\) and information
+about the states of the system: \[\frac{1}{T} = \frac{dS}{dE} = \frac{d}{dE} k
+\log W\] where \(W(E)dE\) is the number of states with energy between \(E\) and
+\(E+dE\) and \(k\) is Boltzmann's constant. This function, however, can only be
+computed explicity for the simplest physical systems. In practice, if we want
+to study the flow of heat through a system by measuring temperature, we must
+find some other observable we can measure as a proxy.
 
 In principle, we might want to find some system whose thermodynamic
 equation of state depends on temperature and other quantities which are
@@ -212,29 +213,35 @@ any case, both of these methods allow us to measure temperature without
 considering the microscopic details of the system, only how accurately
 it has been calibrated.
 
-There are some experimental details which must be considered when using
-a resistance thermometer. Many important experimental techniques in
-condensed matter physics involve applying an intense magnetic field (up
-to 45T for the current state-of-the-art DC magnets) to a sample of
-interest. Resistance thermometers generally exhibit magnetoresistance,
-the changing of their resistivity in a magnetic field. The most commonly
-used resistance thermometers are selected to have as small a
-magnetoresistnace as possible, but even Cernox thermometers display a
-change of resistance of a few percent in magnetic fields up to 14T. If
-one is not measuring any direct thermal property of a sample and can
-safely assume that the sample is well thermalized with the cold finger,
-one can simply mount a thermometer outside the region of intense
-magnetic field. However, if you are measuring some thermal propety of a
-material (such as heat capacity or thermal conductivity), there is no
-getting around calibrating the thermometer as a function of temperature
-and magnetic field (see figure \ref{cernox_fieldcal}). For resistive
-thermometers such as Cernox, the magnetoresistance can vary quite a bit
-from thermometer to thermometer, as they can have slightly different
-doping levels. Additionally, the magnetoresistance depends in general on
-the orientation of the thermometer with respect to the applied magnetic
-field. Thus, the thermometer must either be calibrated in situ, or great
-care must be taken to ensure that the thermometer's orientation is
-preserved from experiment to experiment.
+There are some experimental details which must be considered when using a
+resistance thermometer. Many important experimental techniques in condensed
+matter physics involve applying an intense magnetic field (up to 45T for the
+current state-of-the-art DC magnets) to a sample of interest. Resistance
+thermometers generally exhibit magnetoresistance, the changing of their
+resistivity in a magnetic field. The most commonly used resistance thermometers
+are selected to have as small a magnetoresistnace as possible, but even Cernox
+thermometers display a change of resistance of a few percent in magnetic fields
+up to 14T. If one is not measuring any direct thermal property of a sample and
+can safely assume that the sample is well thermalized with the cold finger, one
+can simply mount a thermometer outside the region of intense magnetic field.
+However, if you are measuring some thermal propety of a material (such as heat
+capacity or thermal conductivity), there is no getting around calibrating the
+thermometer as a function of temperature and magnetic field (see figure
+\ref{cernox_fieldcal}). For resistive thermometers such as Cernox or Ruthenium
+Oxide, the magnetoresistance can vary quite a bit from thermometer to
+thermometer, as they can have slightly different doping levels. Additionally,
+Cernox thermometers can have orientation dependent resistance changes on the
+order of 0.05\% to 0.7\% depending on the field at 4.2K~\cite{Brandt1999}. For
+many experiments this is more than sufficent, but the thermal Hall measurments
+discussed in this thesis require precision to the level of millikelvin. Thus,
+when using such thermometers for thermal Hall measurements, the best practice
+is to calibrate them in situ. Even still, it has been reported that spurious
+temperature gradients antisymmetric with the magnetic field (and thus easily
+conflated with a thermal Hall signal) can occur even with pairs of Cernox
+thermometers cut from the same wafer at temperatures below 1K, for reasons
+which are not completely understood~\cite{HirschbergerThesis}. Thus, it is
+imperative to be extremely careful when making sensitive thermal measurements
+with resistive thermometers in this regime.
 
 \begin{figure}
 \centering

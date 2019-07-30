@@ -134,8 +134,67 @@ and lower edges are insulating.\label{thall_iso}}
 function of the thermal Hall angle. Note that for experimentally relevant values of the thermal Hall angle (\(\theta_H \approx 1^\circ\)), \(\Delta T\) is proportional to \(\theta_H\).   \label{thall_prof}}
 \end{figure}
 
+This dependence of the Hall signal on the particular boundary condition should
+not be suprising to anyone who is experienced making electrical transport
+measurements. Indeed, DC electrical transport can be modeled using an analogous
+partial differential equation \[ \nabla \cdot (\sigma \nabla V) = 0 \] where
+$V$ is the electric potential and $\sigma$ is the conductivity tensor. The
+typical geometry for a (non-thermal) Hall effect measurement involves measuring
+the voltage at four points on the sample, with the edges of the sample
+electically insulating. This gives us the same Neumann boundary condition as
+before, via Ohm's law rather than Fourier's law: \[ \hat{n} \cdot \mathbf{j} =
+\hat{n} \cdot \sigma \nabla V = 0\] where $\mathbf{i}$ is the current density.
+If instead we wish to eliminate the effect of the Hall conductivity, a
+different geometry known as a Corbino disk is used~\cite{Eo2018}. This geometry consists of
+two large electrodes in the shape of concentric rings, leaving an annular
+region where current flows through the sample of interest. In effect, this
+clamps the voltage at each point on the two rings (to values which depend on
+the applied current and the conductivity of the sample), effectively giving us
+a Dirichlet boundary condition at every point on the boundary. This supresses
+the effect of the Hall conductivity, and thus this type of of measurement is
+good for isolating the magnetoresistance of a sample.
 
+\begin{figure} \centering
+	\includegraphics[width=\textwidth]{figures/ehall_geometry.pdf}
+	\caption[Electrical Transport Geometries]{Electrical Transport
+	Geometries. Left: Hall bar geometry. Current is fed in through the gold
+contacts on the left and right, and the voltage measured at the black points.
+The upper and lower boundaries are insulating. Right: Corbino disk. The voltage
+is measured between the inner and outer contacts (gold). Since there is no
+insulating boundary, the Hall conductivity is suppressed.} \end{figure}
 
+This analogy between thermal and electrical transport begs the question: Could
+one measure thermal conductivity with a ``thermal Corbino disk''? Maybe, but in
+practice it would never be necessary for a very simple reason: in real
+materials, the thermal Hall angle is rarely more than a few degrees. Table
+\ref{hallAngleTable} lists a few selected thermal Hall angles reported in the
+literature. In all of these materials, the thermal Hall conductivity is the
+result of some kind of (quasi-)particle excitation. In the next section, we
+will discuss the thermal Hall conductivity of electrons in metals. However, the
+last two entries in the table list thermal Hall conductivities which are the
+result of excitations which carry spin but not charge. It is this kind of
+experiment where measurements of the thermal Hall effect have particular
+scientific value, since such quasiparticles cannot be directly observed using
+electrical transport methods. Such a measurement will be the subject of chapter
+3.
+
+\begin{table}
+\centering
+\label{hallAngleTable}
+\begin{tabular}{l|r|c}
+\hline
+Material & $\tan \theta_H$ & Reference \\
+\hline
+Bi & 0.2 & \cite{Kobayashi2012}  \\
+InSb & 0.02 & \cite{Mette1963} \\
+HgSe & 0.03 & \cite{Whitsett1961} \\
+YBa$_2$Cu$_3$O$_{6.63}$ & 0.12 & \cite{Krishana1999} \\
+Lu$_2$V$_2$O$_7$ & $2 \times 10^{-3}$ & \cite{Onose2010} \\
+Tb$_2$Ti$_2$O$_7$ & $~5 \times 10^{-3}$ & \cite{Hirschberger2015} \\
+\hline
+\end{tabular}
+\caption[Example thermal Hall angles]{Thermal Hall angles, reported as $\tan \theta_H$, for various materals. Naturally, the specific value is a function of applied field and overall temperature, only the largest reported angle is reproduced here.}
+\end{table}
 \section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
 
 \section{The Thermal Hall Effect and Topology}

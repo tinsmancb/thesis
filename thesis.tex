@@ -197,6 +197,91 @@ Tb$_2$Ti$_2$O$_7$ & $~5 \times 10^{-3}$ & \cite{Hirschberger2015} \\
 \end{table}
 \section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
 
+The thermal Hall effect in metals has been observed experimental fact for more
+than a century. In historical literature, it is known as the Righi-Leduc effect,
+named after the Italian and French (respectively) physicists who discovered
+it~\cite{Bridgman1924}. In elementary terms, it can be understood as the
+correlary of two basic phenomena in solid state physics: the Wiedemann-Franz
+law, and the (electronic) Hall effect. The Wiedemann-Franz law refers to the
+experimental observation, reproducable in theoretical models such as the
+classical Drude model, that the ratio between the thermal and electrical
+conductivities of a metal is more or less proportional to the temperature:
+\[ \frac{\kappa}{\sigma} = LT, L \approx 2.22 \times 10^{-8}
+\textrm{ W}\Omega/\mathrm{K}^2\]
+where $L$ is sometimes called the Lorenz constant. Typically $\kappa$ and
+$\sigma$ are assumed to be scalars, but within the semiclassical theory of
+conduction in metals, we can rigourously derive a relation in terms of the
+conductivity tensors while also producing a reasonably accurate value for
+$L$. I will summarize the derivation given in chapter 13 of Ashcroft and Mermin
+here~\cite{AshcroftMermin}. 
+
+Take for example a region of a solid small enough that we can assume it has
+uniform temperature. Assuming that the only thing carrying heat and entropy into
+or out of this region is the electrons, we can use the basic thermodynamic
+identity in the grand canoncial ensemble ($T dS = dU - \mu dN$, where $U$ is the
+total energy, $N$ is the number of electrons, and $\mu$ is the chemical
+potential) to express the heat current $\mathbf{j}^q$ in terms of the energy and
+number currents ($\mathbf{j}^\mathcal{E}$ and $\mathbf{j}^n$, respectively):
+\[ \mathbf{j}^q = T \mathbf{j}^s = \mathbf{j}^\mathcal{E} - \mu \mathbf{j}^n\]
+The currents on the right hand side can be expressed in terms of an integral
+over the Brillouin zone:
+\[ \binom{\mathbf{j}^\mathcal{E}}{\mathbf{j}^n} = \sum_n \int
+	\frac{d\mathbf{k}}{4\pi^3}\binom{\mathcal{E}_n(\mathbf{k})}{1}
+	\mathbf{v}_n(\mathbf{k})g_n(\mathbf{k}) \]
+Where $n$ indexs the bands, $\mathcal{E}_n$ is the band structure,
+$\mathbf{v}_n$ is the electron velocity, and $g_n$ is the electron distribution
+function. The heat current can be derived in a straightforward way from these
+two expressions:
+\[ \mathbf{j}^q = \sum_n \int
+	\frac{d\mathbf{k}}{4\pi^3}[\mathcal{E}_n(\mathbf{k})-\mu]
+	\mathbf{v}_n(\mathbf{k})g_n(\mathbf{k}) \]
+Now we consider the modification of $g$ in the case where the a uniform electric
+field $\mathbf{E}$, uniform magnetic field $H$, and temperature gradient $-\nabla
+T$:
+\[ g(\mathbf{k}) = g^0(\mathbf{k}) -
+	\tau(\mathcal{E}(\mathbf{k}))\left(-\frac{\partial f}{\partial
+		\mathcal{E}}\right)\overline{\mathbf{v}}(\mathbf{k})\left[-e\mathbf{\mathcal{E}}
+		+ \frac{\mathcal{E}(\mathbf{k}) - \mu}{T}(-\nabla T)\right] \]
+where $f$ is the Fermi-Dirac distribution, $\tau$ is the relaxation time,
+\[\mathbf{\mathcal{E}} = \mathbf{E} + \frac{\nabla\mu}{e}\]
+and 
+\[\overline{\mathbf{v}}_n(\mathbf{k}) = \int_{-\infty}^0
+\frac{dt}{\tau_n(\mathbf{k})}e^{t/\tau_n(\mathbf{k}}\mathbf{v}_n(\mathbf{k}(t))\]
+is the velocity of the electron averaged over its entire history weighted
+exponentially by the relaxation time. This is necessary due to the presence of a
+magnetic field, required in order to observe the thermal Hall effect. We will
+now use this new distribution function to construct the heat and electrical
+currents. The electrical conductivity is given by
+\[ \mathbf{\sigma}^{(n)}(\mathcal{E}) = e^2 \int \frac{d\mathbf{k}}{4\pi^3}
+\tau_n(\mathcal{E}_n(\mathbf{k}))
+\mathbf{v}_n(\mathbf{k})\overline{\mathbf{v}}_n(\mathbf{k})\left(-\frac{\partial
+f}{\partial \mathcal{E}}\right)_{\mathcal{E}=\mathcal{E}_n(\mathbf{k})}\]
+Define the quantities
+\begin{align*} \mathcal{L}^{(\alpha)} &= \int d\mathcal{E} (\mathcal{E} - \mu)^\alpha
+\mathbf{\sigma}(\mathcal{E}) \\
+	\mathbf{L}^{11} &= \mathcal{L}^{(0)} \\
+	\mathbf{L}^{21} &= T \mathbf{L}^{12} = -\frac{1}{e}\mathcal{L}^{(1)} \\
+	\mathbf{L}^{22} &= \frac{1}{e^2T} \mathcal{L}^{(2)}
+\end{align*}
+the current densities can be written straightforwardly as
+\begin{align*}
+	\mathbf{j} &= \mathbf{L}^{11}\mathbf{\mathcal{E}} +
+	\mathbf{L}^{12}(-\nabla T) \\
+	\mathbf{j}^q &= \mathbf{L}^{21}\mathbf{\mathcal{E}} +
+	\mathbf{L}^{22}(-\nabla T)
+\end{align*}
+Now, we will use some assumptions valid for metals to make these integrals more
+tractable. The derivative of the Fermi distribution $\partial f / \partial
+\mathcal{E}$ is only has significant weight in a region centered on the Fermi energy
+$\mathcal{E}_F$ with width $k_BT$. Thus, we can use the Sommerfeld expansion to
+see that
+\begin{align*}
+	\mathbf{L}^{11} &= \mathbf{\sigma}(\mathcal{E}_F) = \mathbf{\sigma} \\
+	\mathbf{L}^{21} &= T\mathbf{L}^{12} = -\frac{\pi^2}{3e}(k_BT)^2
+	\left.\frac{\partial \mathbf{\sigma}}{\partial
+		\mathcal{E}}\right|_{\mathcal{E} = \mathcal{E}_F} \\
+	\mathbf{L}^{22} &= \frac{\pi^2}{3} \frac{k_B^2T}{e^2}\mathbf{\sigma}
+\end{align*}
 \section{The Thermal Hall Effect and Topology}
 \section{Performing Thermal Hall Effect Measurements}
 \begin{figure}

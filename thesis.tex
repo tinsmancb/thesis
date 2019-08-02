@@ -1,11 +1,11 @@
 \documentclass{thesis-umich}
+\usepackage[section]{placeins}
 
 \author{Colin Tinsman}
 \committee{
 Dr. Lu Li, \\
 Dr. Cagliyan Kurdak \\
 Dr. Kai Sun \\
-Dr. James Allen \\
 Dr. Zhaohui Zhong
 }
 \department{Applied Physics}
@@ -282,6 +282,42 @@ see that
 		\mathcal{E}}\right|_{\mathcal{E} = \mathcal{E}_F} \\
 	\mathbf{L}^{22} &= \frac{\pi^2}{3} \frac{k_B^2T}{e^2}\mathbf{\sigma}
 \end{align*}
+We can now use these relations to get the thermal conductivity in terms of the
+electrical conductivity. First, we impose the condition that the no electic
+current is flowing, which implies that \[ \mathbf{\mathcal{E}} = -
+(\mathbf{L}^{11})^{-1} \mathbf{L}^{12}(-\nabla T)\]
+Plugging this into the equation for the heat current, we get that
+\[ \mathbf{j}^q = \mathbf{\kappa}(-\nabla T) \;\mathrm{ where }\; \mathbf{\kappa} = \mathbf{L}^{22} - \mathbf{L}^{21}(\mathbf{L}^{11})^{-1}\mathbf{L}^{12} \]
+Using the fact that $\partial \mathbf{\sigma}/\partial \mathcal{E}$ taken at $\mathcal{E} = \mathcal{E}_F$ is of order $\mathbf{\sigma}/\mathcal{E}_F$, we can see that the second term in the above expession is dominated by the first by a factor of $(\mathcal{E}_F/k_B T)^2$, and so to leading order only the first term matters. Thus, from the expression for $\mathbf{L}^{22}$, we can see that 
+\[ \mathbf{\kappa} = \frac{\pi^2}{3} \left(\frac{k_B}{e}\right)^2 T \mathbf{\sigma} \]
+which is the Wiedemann-Franz law, now cast as a relation between the tensors $\mathbf{\kappa}$ and $\mathbf{\sigma}$, in the presence of a magnetic field. 
+
+This should make some intuitive sense. After all, if the electrons can transmit
+heat, they should still do so when their orbits have been modified by the
+presense of a magnetic field. It is worth reiterating some of the assumptions
+present in this analysis. First of all, we have assumed that we are working
+with a metal, where thermal conductivity will be dominated by the electrons. We
+should not necessarily expect this behavior to hold for a semiconductor, for
+example. One might still expect that even if the Wiedemann-Franz law does not
+hold in general for a non-metal, the thermal Hall conductivity should not be
+affected by the phonon contribution to the thermal conductivity, as phonons
+don't carry spin and so should not couple to a magnetic field. However, there
+have been a few observations lately of the thermal Hall effect of phonons,
+which has been explained in terms of different materials as an effect of the
+Berry curvature of the phonon bands~\cite{Zhang2011} or skew scattering of
+phonons off of magnetic impurities~\cite{Mori2014}. Even if we restict to
+non-magnetic metals there are examples of deviations from the Wiedemann-Franz
+behavior. Potassium, an alkali metal which should in principle have simple
+metallic behavior has been observed to have a thermal Hall conductivity which deviates from the Wiedemann-Franz law by
+up to 50\% in magnetic fields up to
+9T~\cite{Tausch1977}~\cite{Fletcher1978}~\cite{Tausch1979}. While the
+Wiedemann-Franz law captures relationship between the Hall effect and the
+thermal Hall effect to lowest order, it is important to view it more as a
+general empricial guide rather than an iron-clad law. Other effects can become
+important in specific materials, even metals.
+
+There is, however, one assumption we did not have to make in the analysis above: the sign of the charge of the carrier involved. The analysis works just as well for holes as it does for electrons.
+
 \section{The Thermal Hall Effect and Topology}
 \section{Performing Thermal Hall Effect Measurements}
 \begin{figure}

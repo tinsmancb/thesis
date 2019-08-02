@@ -195,7 +195,7 @@ Tb$_2$Ti$_2$O$_7$ & $~5 \times 10^{-3}$ & \cite{Hirschberger2015} \\
 \end{tabular}
 \caption[Example thermal Hall angles]{Thermal Hall angles, reported as $\tan \theta_H$, for various materals. Naturally, the specific value is a function of applied field and overall temperature, only the largest reported angle is reproduced here.}
 \end{table}
-\section{Origin of the Thermal Hall Conductivity in Bismuth (and metals more generally)}
+\section{Origin of the Thermal Hall Conductivity in Metals}
 
 The thermal Hall effect in metals has been observed experimental fact for more
 than a century. In historical literature, it is known as the Righi-Leduc effect,
@@ -316,15 +316,34 @@ thermal Hall effect to lowest order, it is important to view it more as a
 general empricial guide rather than an iron-clad law. Other effects can become
 important in specific materials, even metals.
 
-There is, however, one assumption we did not have to make in the analysis above: the sign of the charge of the carrier involved. The analysis works just as well for holes as it does for electrons.
+Measurements of the thermal Hall effect in metals are often not reported as the
+thermal Hall angle $\theta_H$, but instead as the thermal Hall coefficent
+$R_{\mathrm{TH}}$, defined as \[ R_{\mathrm{TH}} = \frac{1}{B_z}
+\frac{dT_y/dy}{dT_x/dx} = \frac{1}{B_z} \frac{\kappa_{xy}}{\kappa_{xx}} =
+\frac{\tan \theta_H}{B_z}\] This quantity has units of inverse Teslas, which
+suggests that it should be related somehow to mobility. Using the
+Wiedemann-Franz law derived above, we can show that it is exactly the Hall
+mobility: \[ R_{TH} = \frac{1}{B_z}\frac{\kappa_{xy}}{\kappa_{xx}} =
+\frac{1}{B_z}\frac{\sigma_{xy}}{\sigma_{xx}} = \sigma_{xx}R_H = \mu_H\] where
+$R_H$ is the standard Hall coefficent. (Parenthetically, it is this relation
+which generalizes to the thermal Hall effect in semiconductors:\[R_{TH} \approx
+\frac{\kappa_{\mathrm{el}}}{\kappa_{\mathrm{tot}}} \mu_H\] where
+$\kappa_{\mathrm{el}}$ and $\kappa_{\mathrm{tot}}$ are the electron/hole and
+total thermal conductivities, respectively~\cite{Putley}.) While the caveats involving the applicability of the Wiedemann-Franz law above still apply, we should expect that materials which with high mobilities should also have large thermal Hall coefficents. 
 
-\section{The Thermal Hall Effect and Topology}
+This brings us finally to the specific case of Bismuth. Bismuth is a semi-metal (maybe?) 
+
 \section{Performing Thermal Hall Effect Measurements}
+Now that we have discussed the origin of the thermal Hall effect in metals, we
+must now discuss how one makes the measurement. Figure~\ref{fig:thall_geometry}
+shows a schematic of the measurement. The sample is attached to a cold finger,
+typically by way of a thermally conductive sample holder (made of oxygen-free
+copper, in our case). This controls the overall temperature of the sample. On the other end of the sample, a small resistive heater is attached using thermally conductive paste.
 \begin{figure}
+	\label{fig:thall_geometry}
 	\caption[Schematic of a thermal Hall effect measurement]{Schematic of a thermal Hall effect measurement. The magnetic field is applied out of the plane of the page. Both the longitudinal ($\Delta T_x$) and transverse ($\Delta T_y$) temperature gradients are measured. If nessicary, the measurement can be carried out with two thermometers, and the gradients disentangled by (anti-)symmetrizing the measured gradient with respect to the applied field.}
 	\includegraphics[width=\columnwidth]{figures/thall_geometry.pdf}
 \end{figure}
-\section{Analysis of Thermal Hall Effect Data}
 
 \chapter{Strontium Titanate Microthermometers}
 

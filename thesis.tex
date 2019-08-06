@@ -331,7 +331,53 @@ which generalizes to the thermal Hall effect in semiconductors:\[R_{TH} \approx
 $\kappa_{\mathrm{el}}$ and $\kappa_{\mathrm{tot}}$ are the electron/hole and
 total thermal conductivities, respectively~\cite{Putley}.) While the caveats involving the applicability of the Wiedemann-Franz law above still apply, we should expect that materials which with high mobilities should also have large thermal Hall coefficents. 
 
-This brings us finally to the specific case of Bismuth. Bismuth is a semi-metal, by which we mean a material which has both negatively charged (electrons) and positively charged (holes) carriers. It should be noted that the above analysis of the Wiedemann-Franz law did not make any assumptions about the charge of the carriers involved, and so it can be applied to the case of Bismuth. Bismuth is characteristic of semi-metals in that it has a low carrier density ($4.1 \times 10^{17} /$cm$^3$ for electrons, $3.4 \times 10^{17} /$cm$^3$ for holes~\cite{Jain1962}) and a high mobility.
+This brings us finally to the specific case of Bismuth. Bismuth is a semi-metal, by which we mean a material which has both negatively charged (electrons) and positively charged (holes) carriers. It should be noted that the above analysis of the Wiedemann-Franz law did not make any assumptions about the charge of the carriers involved, and so it can be applied to the case of Bismuth. Bismuth is characteristic of semi-metals in that it has a low carrier density ($4.1 \times 10^{17} /$cm$^3$ for electrons, $3.4 \times 10^{17} /$cm$^3$ for holes~\cite{Jain1962}) and a high mobility (4300 cm$^2$/Vs for electrons, 1500 cm$^2$/Vs for holes, measured in a thin film~\cite{Rosenbaum2004}). We should thus expect that Bismuth should display a large thermal Hall coefficent.
+
+\begin{figure}
+	\centering
+	\caption[Crystal Strucure of Bismuth]{Crystal Structure of bismuth. One unit cell is displayed along the $c$ axis, and two along the $a$ and $b$ axes. The $c$ axis is denoted the trigonal axis, and the $a$ axis is denoted as the bisectrix. The direction perpendicular to both of these is called the binary axis (this is not the $b$ axis, which forms a 120$^\circ$ angle with the $a$ axis). Image generated with Jmol~\cite{jmol}.} 
+	\includegraphics[trim={2in 3in 2in 3in},clip]{figures/bismuth_crystal.pdf}
+\end{figure}
+
+It is worth thinking about how the presence of two carriers will affect the Hall coefficent, as it will have direct consequences for the thermal Hall coefficent. In a simple model, we can imagine that the two carriers act as two seperate conductive channels in parallel with each other. The channels each have resistivity tensors of the form
+\[ \mathbf{\rho_e} = \begin{pmatrix}
+		\rho_e & -R_eH \\
+	R_eH & \rho_e \end{pmatrix} \quad
+   \mathbf{\rho_h} = \begin{pmatrix}
+   		\rho_h & -R_hH \\
+	R_hH & \rho_h \end{pmatrix}\]
+where $\rho$ is the longitudinal resistivity of the channel, $R$ is it's Hall coefficent, and $H$ is the applied magnetic field. Note that since the electrons and holes have differing sign, so do $R_e$ and $R_h$. Since these channels are in parallel with each other, the total resistivity is given by 
+\[ \mathbf{\rho} = \left(\mathbf{\rho_e}^{-1} + \mathbf{\rho_h}^{-1}\right)^{-1} \]
+This results in a total resistivity tensor given by
+\[ \mathbf{\rho} = \begin{pmatrix}
+		\rho & -RH \\
+		RH & \rho \end{pmatrix} \]
+where
+\[ \rho = \frac{\rho_e \rho_h(\rho_e + \rho_h) + (\rho_e R_h^2 + \rho_h R_e^2)H^2}{(\rho_e + \rho_h)^2 + (R_e + R_h)^2H^2}\]
+\[ R = \frac{R_e \rho_h^2 + R_h \rho_e^2 + R_e R_h (R_e + R_h)H^2}{(\rho_e + \rho_h)^2 + (R_e + R_h)^2 H^2} \]
+Both the longitudinal resistivity and Hall coefficent depend explicitly on the applied field $H$, unless $R_e = -R_h$. Since the Hall coefficent is inversely proportional to the carrier density, and and bismuth has different densities for electrons and holes (see above), we can see that this is not the case for bismuth. In practice, this means the resistivity and Hall coefficent basically have two regimes, a low field regime where
+\[ \rho = \frac{\rho_e \rho_h}{(\rho_e + \rho_h)} \quad R = \frac{R_e \rho_h^2 + R_h \rho_e^2}{(\rho_e + \rho_h)^2} \]
+and a high field regime where
+\[ \rho = \frac{\rho_e R_h^2 + \rho_h R_e^2}{(R_e + R_h)^2} \quad R = \frac{R_e R_h}{R_e + R_h} \]
+
+What does this imply for the thermal Hall conductivity? Well, from the Wiedemann-Franz law, we can see that the thermal Hall coefficent is given by
+\[ R_{\mathrm{TH}} = \sigma R_{\mathrm{H}} = \frac{R}{\rho}\]
+as shown above. Rearranging terms and appling the Wiedemann-Franz law again, we get:
+\[ R_{\mathrm{TH}} = \frac{1}{H}\frac{\kappa_{xy}}{\kappa_{xx}} = \frac{1}{H}\frac{\kappa_{xy}}{LT\sigma}\]
+\[ \Rightarrow \kappa_{xy} = \frac{R}{\rho^2}HLT \]
+where $L$ is the Wiedemann-Franz constant and $T$ is the temperature. Thus $\kappa_{xy}$ will be a function of the applied magnetic field $H$ just as $R$ and $\rho$ are. If we take the low and high field regimes, however, $\kappa_{xy}$ should be more or less linear with field. Taking the low field expression for $R$ and $\rho$ gives us
+\[ \kappa_{xy,\mathrm{LOW}} = \frac{R_e\rho_h^2 + R_h \rho_e^2}{\rho_e^2 \rho_h^2} HLT \]
+So for small fields, $\kappa_{xy}$ should be linear in the applied field. In the high-field limit, the expression becomes
+\[ \kappa_{xy,\mathrm{HIGH}} = \frac{R_e R_h (R_e + R_h)^3}{(\rho_e R_h^2 + \rho_h R_e^2)^2} HLT \]
+At first glance, this looks qualitatively similar to the low field expression, linearly proportional to the applied field. However, remember that $R_e$ and $R_h$ have different signs, but are of the same order of magnitude. This implies that their sum should be small. In this expression, we take that small sum and cube it, making it even smaller. In the denominator, we take a linear combination of the squares of $R_e$ and $R_h$ (which are both positive now) and square them again. This indicates, at least qualitatively, that the high field coefficent should be much smaller than the low field coefficent. This result is borne out in the experiments discussed in the next chapter of this work, in which $\kappa_{xy}$ appears to decay to zero at high field. Before we continue to that, we should discuss the details of performing thermal Hall measurements in practice.
+
+\begin{figure}
+	\centering
+	\caption[Fermi Pockets in Bismuth]{Fermi Pockets in Bismuth. The hole pocket is in ellipsoid with the long axis aligned with the trigonal axis. The three electron pockets are three ellipsoids, one with it's long axis aligned with the bisectrix axis, and the other two distributed 120$^\circ$ either way around the trigonal axis. The electron pockets are canted by 6$^\circ$ degrees out of the bisectrix-binary plane. Image taken from~\cite{Yang2001}.}
+	\includegraphics[width=0.5\columnwidth]{figures/bismuth_pockets.png}
+\end{figure}
+
+
 
 \section{Performing Thermal Hall Effect Measurements}
 Now that we have discussed the origin of the thermal Hall effect in metals, we

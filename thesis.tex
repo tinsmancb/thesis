@@ -404,13 +404,47 @@ Now that we have discussed the origin of the thermal Hall effect in metals, we
 must now discuss how one makes the measurement. Figure~\ref{fig:thall_geometry}
 shows a schematic of the measurement. The sample is attached to a cold finger,
 typically by way of a thermally conductive sample holder (made of oxygen-free
-copper, in our case). This controls the overall temperature of the sample. On the other end of the sample, a small resistive heater is attached using thermally conductive paste. 
+copper, in our case). This controls the overall temperature of the sample. On the other end of the sample, a small resistive heater is attached using thermally conductive paste. This setup mirrors the boundary conditions of the finite element calculations presented above: one side (the cold finger) is held at a fixed temperature, the opposite (the heater) has a prescribed amount of heat energy applied, and the two perpendicular boundaries are (ideally) assumed to be insulating. Experimentally, this means performing the measurment in vacuum.
+
 \begin{figure}
-	\label{fig:thall_geometry}
 	\caption[Schematic of a thermal Hall effect measurement]{Schematic of a thermal Hall effect measurement. The magnetic field is applied out of the plane of the page. Both the longitudinal ($\Delta T_x$) and transverse ($\Delta T_y$) temperature gradients are measured. If nessicary, the measurement can be carried out with two thermometers, and the gradients disentangled by (anti-)symmetrizing the measured gradient with respect to the applied field.}
+	\label{fig:thall_geometry}
 	\includegraphics[width=\columnwidth]{figures/thall_geometry.pdf}
 \end{figure}
+In order to measure the thermal Hall conductivity, we should ideally place three thermometers on the edge of the sample. This allows us to measure two temperature gradients: the longitudinal (along the direction pointing from the heater to the cold finger, denoted $\Delta T_x$) and the transverse (perpindicular to the longitudinal gradient, denoted $\Delta T_y$). We can use this information along with the applied power $P$ to determine the terms of the thermal conductivity tensor by writing Fourier's law as
+\[ \begin{pmatrix}
+		j_x \\
+		j_y \\
+\end{pmatrix}
+= \begin{pmatrix}
+	-P/(t\cdot w) \\
+	0
+\end{pmatrix}
+= \begin{pmatrix}
+	\kappa_{xx} & \kappa_{xy} \\
+	-\kappa_{xy} & \kappa_{yy} 
+\end{pmatrix}
+\begin{pmatrix}
+	-\Delta T_x/l \\
+	-\Delta T_y/w
+\end{pmatrix} \]
+where $l$ is the length between the two longitudinal thermometers, $t$ is the thickness of the sample, and $w$ is the width of the sample (i.e. $t\cdot w$ is the cross sectional area of the sample perpindicular to its length). The assumption that $\kappa_{yx} = - \kappa_{xy}$ is taken from a relation due to Onsager (note that these are not the Onsager reciprocal relations of statistical mechanics, for details on where this relation comes from see problem 6f of chapter 13 of Ascroft and Mermin~\cite{AshcroftMermin}). If we further assume that the heat conduction is isotropic, that is $\kappa_{xx} = \kappa_{yy}$, we are left with two equations in two unknowns, $\kappa_{xx}$ and $\kappa{xy}$:
+\begin{align*}
+		P / (t \cdot w) &=  \kappa_{xx} \Delta T_x / l + \kappa_{xy} \Delta T_y / w \\
+		0 &= \kappa_{xy} \Delta T_x / l - \kappa_{xx} \Delta T_y /w 
+	\end{align*}
+The second line gives the relation
+\[ \kappa_{xy} \Delta T_x w = \kappa_{xy} \Delta T_y l \Rightarrow \kappa_{xy} = \kappa_{xx} \frac{\Delta T_y l}{\Delta T_x w} \]
+substituting this result into the first equation gives
+\[ P \cdot l = \kappa_{xx} \left( \Delta T_x w t - \frac{\Delta T_y^2 l^2 t}{\Delta T_x w} \right) \approx \kappa_{xx} \Delta T_x w t\]
+For the last step, we are making use of the fact that the thermal Hall angle is generally small, so $\Delta T_x$ is much larger than $\Delta T_y$. Now we can use these relations to get the terms of the conductivity tensor in terms of known variables:
+\[\kappa_{xx} = \frac{P l}{\Delta T_x wt} \quad \kappa_{xy} = \frac{P \Delta T_y l^2}{\Delta T_x^2 w^2t} \]
+These are the relations use to determine the thermal Hall conductivities in the experiments described in the coming chapters.
 
+\begin{figure}
+	\caption[Raw temperature gradient data]{Raw temperature gradient data, in this case a longitudinal temperature gradient measured using a pair of thermocouples on a bismuth sample. The raw data is in blue, and the extracted enveloples are in red and green.}
+	\includegraphics[width=\columnwidth]{figures/25K_TC1_Raw.png}
+\end{figure}
 \chapter{Strontium Titanate Microthermometers}
 
 \section{Thermometry}

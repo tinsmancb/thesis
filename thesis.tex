@@ -331,6 +331,8 @@ which generalizes to the thermal Hall effect in semiconductors:\[R_{TH} \approx
 $\kappa_{\mathrm{el}}$ and $\kappa_{\mathrm{tot}}$ are the electron/hole and
 total thermal conductivities, respectively~\cite{Putley}.) While the caveats involving the applicability of the Wiedemann-Franz law above still apply, we should expect that materials which with high mobilities should also have large thermal Hall coefficents. 
 
+\section{The Thermal Hall Conductivity in Bismuth}
+
 This brings us finally to the specific case of Bismuth. Bismuth is a semi-metal, by which we mean a material which has both negatively charged (electrons) and positively charged (holes) carriers. It should be noted that the above analysis of the Wiedemann-Franz law did not make any assumptions about the charge of the carriers involved, and so it can be applied to the case of Bismuth. Bismuth is characteristic of semi-metals in that it has a low carrier density ($4.1 \times 10^{17} /$cm$^3$ for electrons, $3.4 \times 10^{17} /$cm$^3$ for holes~\cite{Jain1962}) and a high mobility (4300 cm$^2$/Vs for electrons, 1500 cm$^2$/Vs for holes, measured in a thin film~\cite{Rosenbaum2004}). We should thus expect that Bismuth should display a large thermal Hall coefficent.
 
 \begin{figure}
@@ -369,7 +371,7 @@ where $L$ is the Wiedemann-Franz constant and $T$ is the temperature. Thus $\kap
 \[ \kappa_{xy,\mathrm{LOW}} = \frac{R_e\rho_h^2 + R_h \rho_e^2}{\rho_e^2 \rho_h^2} HLT \]
 So for small fields, $\kappa_{xy}$ should be linear in the applied field. In the high-field limit, the expression becomes
 \[ \kappa_{xy,\mathrm{HIGH}} = \frac{R_e R_h (R_e + R_h)^3}{(\rho_e R_h^2 + \rho_h R_e^2)^2} HLT \]
-At first glance, this looks qualitatively similar to the low field expression, linearly proportional to the applied field. However, remember that $R_e$ and $R_h$ have different signs, but are of the same order of magnitude. This implies that their sum should be small. In this expression, we take that small sum and cube it, making it even smaller. In the denominator, we take a linear combination of the squares of $R_e$ and $R_h$ (which are both positive now) and square them again. This indicates, at least qualitatively, that the high field coefficent should be much smaller than the low field coefficent. This result is borne out in the experiments discussed in the next chapter of this work, in which $\kappa_{xy}$ appears to decay to zero at high field. Before we continue to that, we should discuss the details of performing thermal Hall measurements in practice.
+At first glance, this looks qualitatively similar to the low field expression, linearly proportional to the applied field. However, remember that $R_e$ and $R_h$ have different signs, but are of the same order of magnitude. This implies that their sum should be small. In this expression, we take that small sum and cube it, making it even smaller. In the denominator, we take a linear combination of the squares of $R_e$ and $R_h$ (which are both positive now) and square them again. This indicates, at least qualitatively, that the high field coefficent should be much smaller than the low field coefficent.
 
 \begin{figure}
 	\centering
@@ -377,6 +379,24 @@ At first glance, this looks qualitatively similar to the low field expression, l
 	\includegraphics[width=0.5\columnwidth]{figures/bismuth_pockets.png}
 \end{figure}
 
+\begin{figure}
+	\centering
+	\begin{minipage}{.45\linewidth}
+	\caption[Thermal Hall conductivity in Bismuth up to 3 T]{Thermal Hall conductivity in Bismuth, measured up to 3 T measured by \cite{Kobayashi2012}. Note that in all the traces down to 75K, the low field dependence is linear, and in the lower temperature curves we can see the high field thermal Hall conductivity go to zero.}
+	\label{fig:kobayashi1}
+	\includegraphics[width=\linewidth]{figures/kobayashi12_fig1.pdf}
+	\end{minipage}
+	\hspace{.05\linewidth}
+	\begin{minipage}{.45\linewidth}
+		\caption[Temperature dependence of $R_{TH}$ in bismuth up to 3 T]{Temperature dependence of the thermal Hall coefficent in bismuth up to 3 T and 300K, taken from \cite{Kobayashi2012}. The dependence is not strictly linear with temperature, and follows more or less the temperature dependence of the Hall mobility $\mu_H$.}
+	\label{fig:kobayashi2}
+	\includegraphics[width=\linewidth]{figures/kobayashi12_fig2.pdf}
+	\end{minipage}
+\end{figure}
+
+How well do these predictions bear out in practice? Suprisingly, measurements of the thermal Hall effect in bismuth have only been carried out in high magnetic fields relatively recently, by Kobayashi et al. in 2012~\cite{Kobayashi2012}. In that work, measurements of the thermal Hall coefficent were performed in fields up to 3T and temperatures from room temperature down to 75K. Figure \ref{fig:kobayashi1} reproduces their results in measuring the transverse temperature gradient. We can see that for all the traces, the low field dependence is linear, with the slope decreasing at higher field. In some of the lower temperature traces, we can also see the thermal Hall conductivity tend towards zero at higher field. This would seem to reproduce the qualitative features discussed above. Additionally, figure \ref{fig:kobayashi2} from the same paper show the temperature dependence of the thermal Hall coefficent $R_{\mathrm{TH}}$. Although I did not remark on it above, the basic analysis would indicate that the thermal Hall coefficient should increase linear in temperature. The experimental data shows this is clearly not the case. Instead, the data shows that the thermal Hall coefficent generally follows the temperature dependence of the Hall mobility $\mu_H$. This is not suprising, as they should be directly related.
+
+One possible objection to the prediction that the thermal Hall coefficient should be effectively zero at high field might be that since it is not exactly zero, with a sufficently large field one should be able to see a non-zero thermal Hall conductivity once again. This presupposes that the simple two-carrier model described above is applicable for arbitrarily large applied fields. The validity of this assumption is contradicted by the physics of Landau quantization in metals, i.e. the quantization of the circular path of a charged particle in a magnetic field. This effect is responsible for the oscillations seen in many observables (such as resistivity and magnetic susceptibility) in strong magnetic fields~\cite{Shoenberg}. As the field gets stronger, the Landau levels get farther apart in energy and more degenerate, until all the carriers are collected in the lowest level. This is known as the quantum limit. This has the effect of gapping out the carriers, and so we would expect that they would no longer participate in the thermal Hall effect. The field at which this happens is proportional to the cross-sectional area of the Fermi surface perpendicular to the applied field~\cite{Shoenberg}, and since bismuth has small Fermi pockets we should expect this to happen at relatively low fields. The field at which this happens depends strongly on the angle due to the elongated fermi pockets, but is less than 8T for all angles~\cite{Li2008}. This will ultimately supress the thermal Hall coefficent at these fields. Making measurements of the thermal Hall effect at these fields presents some experiemental challenges, however. Before we can discuss those difficulties, we must discuss the experimental setup for making any thermal Hall effect measurement.  
 
 
 \section{Performing Thermal Hall Effect Measurements}
@@ -384,7 +404,7 @@ Now that we have discussed the origin of the thermal Hall effect in metals, we
 must now discuss how one makes the measurement. Figure~\ref{fig:thall_geometry}
 shows a schematic of the measurement. The sample is attached to a cold finger,
 typically by way of a thermally conductive sample holder (made of oxygen-free
-copper, in our case). This controls the overall temperature of the sample. On the other end of the sample, a small resistive heater is attached using thermally conductive paste.
+copper, in our case). This controls the overall temperature of the sample. On the other end of the sample, a small resistive heater is attached using thermally conductive paste. 
 \begin{figure}
 	\label{fig:thall_geometry}
 	\caption[Schematic of a thermal Hall effect measurement]{Schematic of a thermal Hall effect measurement. The magnetic field is applied out of the plane of the page. Both the longitudinal ($\Delta T_x$) and transverse ($\Delta T_y$) temperature gradients are measured. If nessicary, the measurement can be carried out with two thermometers, and the gradients disentangled by (anti-)symmetrizing the measured gradient with respect to the applied field.}

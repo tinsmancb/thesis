@@ -362,6 +362,11 @@ Both the longitudinal resistivity and Hall coefficent depend explicitly on the a
 and a high field regime where
 \[ \rho = \frac{\rho_e R_h^2 + \rho_h R_e^2}{(R_e + R_h)^2} \quad R = \frac{R_e R_h}{R_e + R_h} \]
 
+\begin{figure}
+	\caption[Hall conductivity in bismuth]{Hall conductivity in bismuth, measured at 10K in our Janis cryostat. Notice the two linear regimes, one at low field and one at high field, consistent with the two carrier model.}
+	\includegraphics[width=\columnwidth]{figures/BiHallEffect.pdf}
+\end{figure}
+
 What does this imply for the thermal Hall conductivity? Well, from the Wiedemann-Franz law, we can see that the thermal Hall coefficent is given by
 \[ R_{\mathrm{TH}} = \sigma R_{\mathrm{H}} = \frac{R}{\rho}\]
 as shown above. Rearranging terms and appling the Wiedemann-Franz law again, we get:
@@ -411,7 +416,7 @@ copper, in our case). This controls the overall temperature of the sample. On th
 	\label{fig:thall_geometry}
 	\includegraphics[width=\columnwidth]{figures/thall_geometry.pdf}
 \end{figure}
-In order to measure the thermal Hall conductivity, we should ideally place three thermometers on the edge of the sample. This allows us to measure two temperature gradients: the longitudinal (along the direction pointing from the heater to the cold finger, denoted $\Delta T_x$) and the transverse (perpindicular to the longitudinal gradient, denoted $\Delta T_y$). We can use this information along with the applied power $P$ to determine the terms of the thermal conductivity tensor by writing Fourier's law as
+In order to measure the thermal Hall conductivity, we should ideally place three thermometers on the edge of the sample. This allows us to measure two temperature gradients: the longitudinal (along the direction pointing from the heater to the cold finger, denoted $\Delta T_x$) and the transverse (perpindicular to the longitudinal gradient, denoted $\Delta T_y$). If the thermometers are small enough relative to the sample, they can be mounted directly to the sample with a thermally conductive paste, similar to the heater. Alternatively, the thermometers can be mounted seperately and thermally linked to the sample with gold wire. We can use this information along with the applied power $P$ to determine the terms of the thermal conductivity tensor by writing Fourier's law as
 \[ \begin{pmatrix}
 		j_x \\
 		j_y \\
@@ -428,7 +433,7 @@ In order to measure the thermal Hall conductivity, we should ideally place three
 	-\Delta T_x/l \\
 	-\Delta T_y/w
 \end{pmatrix} \]
-where $l$ is the length between the two longitudinal thermometers, $t$ is the thickness of the sample, and $w$ is the width of the sample (i.e. $t\cdot w$ is the cross sectional area of the sample perpindicular to its length). The assumption that $\kappa_{yx} = - \kappa_{xy}$ is taken from a relation due to Onsager (note that these are not the Onsager reciprocal relations of statistical mechanics, for details on where this relation comes from see problem 6f of chapter 13 of Ascroft and Mermin~\cite{AshcroftMermin}). If we further assume that the heat conduction is isotropic, that is $\kappa_{xx} = \kappa_{yy}$, we are left with two equations in two unknowns, $\kappa_{xx}$ and $\kappa{xy}$:
+where $l$ is the length between the two longitudinal thermometers, $t$ is the thickness of the sample, and $w$ is the width of the sample (i.e. $t\cdot w$ is the cross sectional area of the sample perpindicular to its length). The assumption that $\kappa_{yx} = - \kappa_{xy}$ is taken from a relation due to Onsager (note that these are not the Onsager reciprocal relations of statistical mechanics, for details on where this relation comes from see problem 6f of chapter 13 of Ascroft and Mermin~\cite{AshcroftMermin}). If we further assume that the heat conduction is isotropic, that is $\kappa_{xx} = \kappa_{yy}$, we are left with two equations in two unknowns, $\kappa_{xx}$ and $\kappa_{xy}$:
 \begin{align*}
 		P / (t \cdot w) &=  \kappa_{xx} \Delta T_x / l + \kappa_{xy} \Delta T_y / w \\
 		0 &= \kappa_{xy} \Delta T_x / l - \kappa_{xx} \Delta T_y /w 
@@ -441,11 +446,38 @@ For the last step, we are making use of the fact that the thermal Hall angle is 
 \[\kappa_{xx} = \frac{P l}{\Delta T_x wt} \quad \kappa_{xy} = \frac{P \Delta T_y l^2}{\Delta T_x^2 w^2t} \]
 These are the relations use to determine the thermal Hall conductivities in the experiments described in the coming chapters.
 
+As stated above, ideally one would use at least three thermometers to measure the transverse and longitudinal thermal gradients. However, each thermometer allows a small amount of heat to escape the sample, which contradicts the ideal case where the boundary is perfectly insulating. We can minimize the amount of heat lost this way by only using two thermometers, with an offset in both the $x$ and $y$ directions. This poses the problem of how the $\Delta T_x$ and $\Delta T_y$ can be disambiguated. In the case of a thermal Hall effect measurement taken at a constant temperature in a sweeping magnetic field, the Onsager transport relation mentioned above implies that the $\kappa_{xx}$ and $\kappa_{xy}$ have different symmetry with respect to the field:
+\[ \kappa_{xx}(H) = \kappa_{xx}(-H) \quad \kappa_{xy}(H) = -\kappa_{xy}(-H) \]
+By inspection we can see that this implies that $\Delta T_x(H)$ is even in $H$, and $\Delta T_y(H)$ is odd. Thus, the two temperature gradients can be disambiguated by taking the measurment by performing the measurement in both positive and negative field, and extracting the proper gradients by (anti-)symmetrizing the gradient measured between the two thermometers.
+
 \begin{figure}
 	\caption[Raw temperature gradient data]{Raw temperature gradient data, in this case a longitudinal temperature gradient measured using a pair of thermocouples on a bismuth sample. The raw data is in blue, and the extracted enveloples are in red and green.}
+	\label{fig:raw_data}
 	\includegraphics[width=\columnwidth]{figures/25K_TC1_Raw.png}
 \end{figure}
+
+Based on the previous discussion, one might think that the best way to conduct a thermal conductivity measurement would be to simply run the heater with a constant power and measure the thermal gradients as a function of the relevant experiemental variable (e.g. magnetic field for a thermal Hall effect measurement). However, if the overall temperature of the sample were to drift, or if there is any temperature gradient in the smaple when there is no heat applied, this will appear as a suprious signal in the thermal conductivities. This can be corrected by pulsing the heater on and off over the course of the measurement rather than keeping it constant. In many cases, a square wave is used: the heater is turned on for some time, and then turned off for some time. The period must be long enough that the sample reaches equalibrium during each on-cycle and off-cycle. This allows the overall background drift to be subtracted away from the measurement. This method is certianly viable, but my preference is to use a sine wave excitation on the heater instead. This has the advantage of never bringing the sample out of equalibrium as long as a low enough frequency is chosen. If we denote the current through the heater as $i(t) = i_0 \sin \omega t$, the power coming out of the heater will be
+\[P(t) = I^2R = i_0^2R \sin^2 \omega t = i_0^2 R \frac{1 - cos(2\omega t)}{2} \]
+i. e. it will have twice the frequency of the excitation current. The temperature of each thermometer, or alternatively the difference in temperature between any pair of thermometers, will have the general form
+\[ T_n(t) = A(t)\sin^2 \omega t + D(t) \]
+where $A(t)$ is the difference between the temperature with the heater on and with the heater off, and $D(t)$ is the overall drift. There are two conditions to ensure that $\omega$ is sufficiently small: $A$ should not change with $\omega$, and $P(t)$ should have the same phase as $T_n(t)$. The problem of finding the temperature gradients thus rests on extracting $A(t)$. This amounts to the problem of demodulating an AM signal.
+
+One simple method for accomplishing this is by simply using a peak detection function. Figure \ref{fig:raw_data} shows some raw temperature gradient data from the experiements on bismuth which will be described later in this work. The blue curve shows the raw data, still mixed with the ``carrier''. One attactive feature of the sine wave exicitation is it produces well defined peaks suited for automatic peak detection. Taking the maxima and minima, we can interpolate between them to get the upper and lower envelopes $E_{\mathrm{upper}}(t)$ and $E_{\mathrm{lower}}$. The amplitude and drift can be expressed straightforwardly as
+\[ A(t) = E_{\mathrm{upper}}(t) - E_{\mathrm{lower}}(t) \quad D(t) = \frac{E_{\mathrm{upper}}(t) - E_{\mathrm{lower}}(t)}{2} \]
+This method is simple to implement, and has the advantage that we do not need any phase information from the heater excitation to determine the gradients. It does however require that we are able to unambiguously detect the peaks.
+
+There is another method which exploits the similarity of this problem to that of demodulating an AM radio signal, known as a ``product detector''. First, we expand the raw signal using the double angle identity:
+\[T_n(t) = A(t) \sin^2 \omega t + D(t) = A(t) \frac{1 - \cos 2 \omega t}{2} + D(t)\]
+As long as $A(t)$ and $D(t)$ are varing slowly compared to the ``carrier frequency'' $2\omega$, we can use a high pass filter to isolate the $\cos 2\omega t$ term, leaving us with
+\[T_n(t) = \frac{A(t)}{2}\cos 2\omega t\]
+Next, we multiply this by $\cos 2 \omega t$. This requires us to have proper phase information about the excitation current. Doing this gives
+\[ \frac{A(t)}{2} \cos 2 \omega t \cos 2 \omega t = \frac{A(t)}{2}\left(\frac{1}{2} + \frac{1}{2} \cos 4 \omega t \right) \]
+Now, once we low pass filter this signal, we end up with $A(t)/4$. There are variations of this method which involve multipling by a higher order power of the ``carrier'' which result in a higher frequency signal which needs to be filtered away. This method does need us to preserve phase information about the excitation current, but does not require any peak detection.
+
+There is one significant experimental detail which has been elided over in this analysis: What kind of thermometers can be used, and what advantages and disadvantages these have. This is not a trivial detail: to make thermal Hall effect measurements, we require thermometers which are both sensitive to millikelvin temperature gradients while not being affected by a magnetic field. We have found that commercially available thermometers have not been able to keep up with our requirements in this respect. In the next chapter, I will describe the research project I undertook to develop thermometers which better satisfied these requirements, as well as the thermal Hall effect measurements on bismuth I made to benchmark these new thermometers.
+
 \chapter{Strontium Titanate Microthermometers}
+
 
 \section{Thermometry}
 

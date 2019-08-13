@@ -333,12 +333,32 @@ total thermal conductivities, respectively~\cite{Putley}.) While the caveats inv
 
 \section{The Thermal Hall Conductivity in Bismuth}
 
-This brings us finally to the specific case of Bismuth. Bismuth is a semi-metal, by which we mean a material which has both negatively charged (electrons) and positively charged (holes) carriers. It should be noted that the above analysis of the Wiedemann-Franz law did not make any assumptions about the charge of the carriers involved, and so it can be applied to the case of Bismuth. Bismuth is characteristic of semi-metals in that it has a low carrier density ($4.1 \times 10^{17} /$cm$^3$ for electrons, $3.4 \times 10^{17} /$cm$^3$ for holes~\cite{Jain1962}) and a high mobility (4300 cm$^2$/Vs for electrons, 1500 cm$^2$/Vs for holes, measured in a thin film~\cite{Rosenbaum2004}). We should thus expect that Bismuth should display a large thermal Hall coefficent.
+This brings us finally to the specific case of Bismuth. Figure
+\ref{fig:bismuth_crystal} shows it's crystal structure. Bismuth is a
+semi-metal, by which we mean a material which has both negatively charged
+(electrons) and positively charged (holes) carriers. Figure \ref{fig:bismuth_pockets} show how these Fermi pockets are arranged in $k$-space, with one large hole pockets and three smaller electron pockets. It should be noted that
+the above analysis of the Wiedemann-Franz law did not make any assumptions
+about the charge of the carriers involved, and so it can be applied to the case
+of Bismuth. Bismuth is characteristic of semi-metals in that it has a low
+carrier density ($4.1 \times 10^{17} /$cm$^3$ for electrons, $3.4 \times
+10^{17} /$cm$^3$ for holes~\cite{Jain1962}) and a high mobility (4300 cm$^2$/Vs
+for electrons, 1500 cm$^2$/Vs for holes, measured in a thin
+film~\cite{Rosenbaum2004}, and as high as 85,600,000 cm$^2$/Vs for electrons
+and 37,000,000 cm$^2$/Vs for holes in pure crystals~\cite{Gallo1963}). We
+should thus expect that Bismuth should display a large thermal Hall coefficent.
 
 \begin{figure}
 	\centering
-	\caption[Crystal Strucure of Bismuth]{Crystal Structure of bismuth. One unit cell is displayed along the $c$ axis, and two along the $a$ and $b$ axes. The $c$ axis is denoted the trigonal axis, and the $a$ axis is denoted as the bisectrix. The direction perpendicular to both of these is called the binary axis (this is not the $b$ axis, which forms a 120$^\circ$ angle with the $a$ axis). Image generated with Jmol~\cite{jmol}.} 
+	\caption[Crystal Strucure of Bismuth]{Crystal Structure of bismuth. One unit cell is displayed along the $c$ axis, and two along the $a$ and $b$ axes. The $c$ axis is denoted the trigonal axis, and the $a$ axis is denoted as the bisectrix. The direction perpendicular to both of these is called the binary axis (this is not the $b$ axis, which forms a 120$^\circ$ angle with the $a$ axis). Image generated with Jmol~\cite{jmol}.}
+	\label{fig:bismuth_crystal}
 	\includegraphics[trim={2in 3in 2in 3in},clip]{figures/bismuth_crystal.pdf}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\caption[Fermi Pockets in Bismuth]{Fermi Pockets in Bismuth. The hole pocket is in ellipsoid with the long axis aligned with the trigonal axis. The three electron pockets are three ellipsoids, one with it's long axis aligned with the bisectrix axis, and the other two distributed 120$^\circ$ either way around the trigonal axis. The electron pockets are canted by 6$^\circ$ degrees out of the bisectrix-binary plane. Image taken from~\cite{Yang2001}.}
+	\label{fig:bismuth_pockets}
+	\includegraphics[width=0.5\columnwidth]{figures/bismuth_pockets.png}
 \end{figure}
 
 It is worth thinking about how the presence of two carriers will affect the Hall coefficent, as it will have direct consequences for the thermal Hall coefficent. In a simple model, we can imagine that the two carriers act as two seperate conductive channels in parallel with each other. The channels each have resistivity tensors of the form
@@ -361,9 +381,11 @@ Both the longitudinal resistivity and Hall coefficent depend explicitly on the a
 \[ \rho = \frac{\rho_e \rho_h}{(\rho_e + \rho_h)} \quad R = \frac{R_e \rho_h^2 + R_h \rho_e^2}{(\rho_e + \rho_h)^2} \]
 and a high field regime where
 \[ \rho = \frac{\rho_e R_h^2 + \rho_h R_e^2}{(R_e + R_h)^2} \quad R = \frac{R_e R_h}{R_e + R_h} \]
+Figure \ref{fig:bismuth_hall} is a plot of experimental datat which shows this behavior: two linear regimes, one at high field, and one at low field.
 
 \begin{figure}
 	\caption[Hall conductivity in bismuth]{Hall conductivity in bismuth, measured at 10K in our Janis cryostat. Notice the two linear regimes, one at low field and one at high field, consistent with the two carrier model.}
+	\label{fig:bismuth_hall}
 	\includegraphics[width=\columnwidth]{figures/BiHallEffect.pdf}
 \end{figure}
 
@@ -378,11 +400,6 @@ So for small fields, $\kappa_{xy}$ should be linear in the applied field. In the
 \[ \kappa_{xy,\mathrm{HIGH}} = \frac{R_e R_h (R_e + R_h)^3}{(\rho_e R_h^2 + \rho_h R_e^2)^2} HLT \]
 At first glance, this looks qualitatively similar to the low field expression, linearly proportional to the applied field. However, remember that $R_e$ and $R_h$ have different signs, but are of the same order of magnitude. This implies that their sum should be small. In this expression, we take that small sum and cube it, making it even smaller. In the denominator, we take a linear combination of the squares of $R_e$ and $R_h$ (which are both positive now) and square them again. This indicates, at least qualitatively, that the high field coefficent should be much smaller than the low field coefficent.
 
-\begin{figure}
-	\centering
-	\caption[Fermi Pockets in Bismuth]{Fermi Pockets in Bismuth. The hole pocket is in ellipsoid with the long axis aligned with the trigonal axis. The three electron pockets are three ellipsoids, one with it's long axis aligned with the bisectrix axis, and the other two distributed 120$^\circ$ either way around the trigonal axis. The electron pockets are canted by 6$^\circ$ degrees out of the bisectrix-binary plane. Image taken from~\cite{Yang2001}.}
-	\includegraphics[width=0.5\columnwidth]{figures/bismuth_pockets.png}
-\end{figure}
 
 \begin{figure}
 	\centering

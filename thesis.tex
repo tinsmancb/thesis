@@ -940,12 +940,37 @@ There has been a great deal of theoretical and experimental research conducted o
 
 The above discussion might lead one to believe that frustration can only occur in materials with lattices based on triangles or tetrahedra. Certianly most of the compounds of experimental interest are, but one can introduce frustration to a square lattice by adding interactions across the diagonals. There are potentially many different ways of doing this, but the one we will be interested in is depected in figure \ref{fig:shastry-sutherland}. This model is known as the Shastry-Sutherland model~\cite{Kageyama2005}. In it, each spin is paired across a diagonal with exactly one other spin. The spin Hamiltonian is given by
 \[H = J \sum_{\mathrm{n.n.}}s_i \cdot s_j + J_D\sum_{\mathrm{diag}}s_i \cdot s_j\]
-where the coupling $J$ is between nearest neighbors on the square lattice (solid in the figure) and $J_D$ is between the diagonals (dashed in the figure). 
+where the coupling $J$ is between nearest neighbors on the square lattice (solid in the figure) and $J_D$ is between the diagonals (dashed in the figure). The ground state of this Hamiltonian of course depends on the relative values of $J$ and $J_D$, but there are two cases we can consider intuitively. If $J$ is much stronger than $J_D$, we effectively have the square lattice antiferromagnet again. The more interesting case is when $J_D$ dominates over $J$: each pair of spins connected by a diagonal hybridizes to form a singlet state give by
+\[ | s \rangle = \frac{1}{\sqrt{2}}(|\uparrow \downarrow \rangle - | \downarrow \uparrow \rangle) \]
+with the full ground state being a direct product of these singlets. The odd pairity of the singlet state with respect to exchange of the spins in each dimer actually ensures that the $J$ term does not contribute to the energy at all~\cite{Miyahara1999}. 
+
+Each individual dimer also has excited states given by the three triplets:
+\begin{align*}
+	| t_1 \rangle &= | \uparrow \uparrow \rangle \\ 
+	| t_0 \rangle &= \frac{1}{\sqrt{2}} (| \uparrow \downarrow \rangle + | \downarrow \uparrow \rangle) \\
+	| t_{-1} \rangle &= | \downarrow \downarrow \rangle
+\end{align*}
+These triplets all have even parity with respect to exchange of the spins within the dimers, so one might expect that they would have strong dispersion. Actually, the triplets are highly localized, and this is a result of the frustration in the lattice~\cite{Kageyama2005}. Specifically, each spin in a dimer is connected to each of its neighboring spins in a triangle formed with two $J$ couplings and one $J_D$ coupling. Thus despite the strong interactions between the dimers, the triplet states are completely dispersionless in this model.
 
 \begin{figure}
-	\caption[Crystal structure of strontium copper borate]{Crystal structure of Strontium Copper Borate, with the $c$ axis out of the page. The copper atoms (copper colored) make up the Shastry-Sutherland lattice. The strontium atoms (green) are set back into the page by half a unit cell. Image generated using Jmol~\cite{jmol}.}
+	\caption[Crystal structure of strontium copper borate]{Top: Crystal structure of Strontium Copper Borate, with the $c$ axis out of the page. The copper atoms (copper colored) make up the Shastry-Sutherland lattice. The strontium atoms (green) are set back into the page by half a unit cell. Image generated using Jmol~\cite{jmol}. Bottom: Diagram demonstrating the equivalence of the crystal structure of SCBO to the Shastry-Sutherland lattice. Reproduced from~\cite{Kageyama2005}.}
+	\label{fig:scbo_crystal}
 	\includegraphics[width=\columnwidth,trim={0 2.5in 0 2.5in},clip]{figures/scbo.pdf}
+	\includegraphics[width=\columnwidth]{figures/scbo_to_ss_kageyama.pdf}
 \end{figure}
+
+Facinating as this model is, it is not of much experiemental interest unless it can be realized as an actual material. There are some clear difficulties with this in principle, particularly if we are interesting in the dimer ground state. Monte carlo simulations have shown that in order to get this phase, we must have $J/J_D < 0.7$, i.e. the intradimer coupling must be stronger than the interdimer coupling by a few tens of percent~\cite{Miyahara1999}. If the lattice looked like that depicted in figure \ref{fig:shastry-sutherland}, each atom would need to be more strongly coupled to an atom diagonal from it than from it's nearest neighbor! There is, it turns out, one material which can be modeled by the Shastry-Sutherland Hamiltonian, and that is SrCu$_2$(BO$_3$)$_2$ (Strontium Copper Borate, commonly abreviated SCBO). Figure \ref{fig:scbo_crystal} shows it's crystal structure, which at first glance bares little resemblence to the Shastry-Sutherland lattice. It is, however topologically equivalent: the squares in the Shastry-Sutherland lattice have been turned into diamond shapes, with the short axis corresponding to the dimer pair. Thus, the intradimer coupling $J_D$ can plausibly be stronger than the interdimer coupling $J$. 
+
+\begin{figure}
+	\caption[Magnetic moment of a SCBO sample]{Magnetic moment of a Strontium Copper Borate sample, taken at 1 T. The behavior is indicative of the triplon spin gap.}
+	\label{fig:scbo_magmom}
+	\includegraphics[width=\columnwidth]{figures/SCBO_m_vs_t.pdf}
+\end{figure}
+
+What experimental evidence exists that the ground state of SCBO looks like the direct product of singlets described above? One simple way of checking is by measuring the magnetic susceptibility. Figure \ref{fig:scbo_magmom} shows the magnetic moment of a sample of SCBO as a function of temperature with an applied field of 1 T, measured using the Vibrating Sample Magnetometer in our Dynacool PPMS system. At high temperatures, the dependence looks qualitatively like Curie-Weiss $1/T$ behavior. However, the magnetic moment drops precipitously at low temperature, indicating the opening of a spin gap. This is consistent with what was described above: The singlet states contribute no net magnetic moment, but the $|t_1\rangle$ and $|t_{-1}\rangle$ triplet excited states do. At low temperatures, these excitations are frozen out. Work by others has used this data to fit for the coupling constants, finding $J/J_D = 0.635$ and $J = 85$K \cite{Miyahara2000}. This puts SCBO barely into the dimer phase, and corresponds to a spin gap of 35 K. Additionally, by measuring the sample in both field-cooled and zero-field-cooled configuration, we can see there is no hysteresis indicating the formation of some other magnetic ordering. Thus we are confident the samples of SCBO actually have a ground state similar to that describe above.
+
+In the discussion of the Shastry-Sutherland model above, it was noted that the frustration of the lattice resulted in the triplet states being totally dispersionless. Perhaps this makes sense for a toy model, but in an actual material one would expect some second order effect to introduce some dispersion. This is indeed the case in SCBO, and these mobile triplet states are termed ``triplons''. The next section will discuss these lower order effects, and the significant implications they have for thermal measurements in SCBO.
+
 \section{Strontium Copper Borate as a Bosonic Topological Insulator}
 
 \begin{figure}

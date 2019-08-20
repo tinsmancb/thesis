@@ -975,20 +975,27 @@ In the discussion of the Shastry-Sutherland model above, it was noted that the f
 
 In order to induce dispersion in the triplon modes in SCBO, we must have an interaction which is not supressed by the lattice frustration. The simplest way of doing this is by introducing a so-called Dzyaloshinsky-Moriya (abbreviated DM) interaction:
 \[ H_{\mathrm{DM}} = \sum_{\mathrm{n.n.}} \mathbf{D} \cdot (s_i \times s_j) \]
-The strength of this interaction is characterized by the vector $\mathbf{D}$. This interaction can act both between pairs of spins in a dimer and between the dimers themselves.  
-
+The strength of this interaction is characterized by the vector $\mathbf{D}$. This interaction can act both between pairs of spins in a dimer and between the dimers themselves. This results in a full Hamiltonian (including an applied magnetic field $h_z$):
+\[ H = J_D \sum_{\mathrm{n.n.}} s_i \cdot s_j + J \sum_{\mathrm{n.n.n}} s_i \cdot s_j + \sum_{\mathrm{n.n.}} \mathbf{D}_D \cdot (s_i \times s_j) + \sum_{\mathrm{n.n.n.}} \mathbf{D} \cdot (s_i \times s_j) - g_z h_z \sum_i s_i^z\]
+In this Hamiltonian, ``nearest neighbor'' refers to the coupling between two spins in the same dimer, and ``next nearest neighbor'' referst to the coupling between dimers. This is correct when refering to the lattice structure of SCBO, but is the opposite for the Shastry-Sutherland model (see figure \ref{fig:scbo_crystal}). The symmetry of the lattice under exchange within the dimers $\mathbf{D}_D$ means that only one component can be nonzero, whereas the interdimer coupling $\mathbf{D}$ can have all three components~\cite{McClarty2017}. Figure \ref{fig:scbo_triplon_bands} shows these bands imaged using neutron scattering. The top row shows the experimental data, and the bottom row shows theoretical computations of the bands with the coupling strengths determined using the data. Contrary to the prediction from the Shastry-Sutherland model without the DM interaction, the triplons do not have a totally flat dispersion, and show some spliting without any applied field. The antisymmetry of the DM terms in the Hamiltonian make it compatable with the frustration in the lattice, and so allow the triplons to disperse. The this is despite the fact that the DM interaction is small compared to the higher-order effects, the above work found the largest component of $\mathrm{D}$ was about 3\% as large as $J_D$~\cite{McClarty2017}.
 \begin{figure}
 	\centering
 	\caption[Triplon Bands in SCBO]{Triplon band structure, imaged by neutron scattering by~\cite{McClarty2017}, showing dispersion induced by the DM interaction. Experiemental data in top row, theoretical calculatons in the bottom row.}
+	\label{fig:scbo_triplon_bands}
 	\includegraphics[width=\columnwidth]{figures/SCBO_triplon_bands_McClarty.pdf}
 \end{figure}
 
+The signature of the DM interaction in SCBO can be observed without doing neutron scattering by performing heat capacity measurements. Figure \ref{fig:scbo_hc} shows measurements performed on our SCBO samples in our Dynacool PPMS, as well as a comparison to the work done by Jorge et. al.~\cite{Jorge2005}. At zero field, there is an anomaly in the heat capacity at around 7.5K. This anomaly has been attributed to resonant scattering of phonons by triplet excitations with $s^z = 0$~\cite{Hofmann2001}. Once a magnetic field is applied perpendicular to the Shastry-Sutherland plane, this anomaly shifts lower in temperature as the phonons scatter off triplon states with $s^z \neq 0$. However, once the field is increased to about 10T to 14 T, a new anomaly begins to grow around 3K. This second anomaly is due to mixing between the states with $s^z = 0$ and those with $s^z \neq 0$. This mixing is acheived through the DM terms in the Hamiltonian. Plots from the paper show reproduced in figure \ref{fig:scbo_hc} show calculations of the heat capacity for data taken in fields above 22 T where the difference is more apparent. This mixing becomes most apparent when the difference in energy between the states with $s^z = \pm 1$ is comparable to $|\mathbf{D}|$, which is why such strong fields are required to generate it. Thus, the effect of the DM interaction can be observed directly in our samples via heat capacity measurements.
+
 \begin{figure}
 	\centering
-	\caption[Low Temperature Heat Capacity of SCBO]{Top: Field-dependent low temperature heat capacity measurement of Strontium Copper Borate, measured in our Dynacool PPMS system. Bottom: Heat Capacity plotted as C/T versus temperature, taken from~\cite{Jorge2005}. The symbols are actual data, and the lines are data computed using a fit for the DM interaction.}
-	\includegraphics[width=\columnwidth]{figures/SCBO_total_HC.pdf}
+	\caption[Low Temperature Heat Capacity of SCBO]{Top: Field-dependent low temperature heat capacity measurement of Strontium Copper Borate, measured in our Dynacool PPMS system, Plotted as $C/T$ to make the presence of two anomalies more clear. Bottom: Heat Capacity plotted as C/T versus temperature, taken from~\cite{Jorge2005}. The symbols are actual data, and the lines are data computed using a fit for the DM interaction. The dashed line in the lower panel is a calculation where the DM term is ignored.}
+	\label{fig:scbo_hc}
+	\includegraphics[width=\columnwidth]{figures/SCBO_total_HC_over_T.pdf}
 	\includegraphics[width=0.5\columnwidth]{figures/SCBO_HC_Jorge_2005.pdf}
 \end{figure}
+
+There has been some theoretical work which indicates that the DM interaction has the potential to introduce a new type of physics to this system: triplon bands with nontrivial topology.
 
 \begin{figure}
 	\centering

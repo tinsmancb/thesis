@@ -1014,6 +1014,7 @@ With this background in mind, we can now consider what it would mean for the tri
 \begin{figure}
 	\centering
 	\caption[SCBO Thermal Hall: Negative Result]{SCBO thermal Hall conductivity at 6K, measured in the Dynacool PPMS. There is no well defined thermal Hall effect observed. Other temperatures measured in the PPMS, as well as our Oxford dilution refridgerator, have borne the same result.}
+	\label{fig:scbo_thall_neg}
 	\includegraphics[width=\columnwidth]{figures/SCBO_Thermal_Hall_Negative.pdf}
 \end{figure}
 
@@ -1024,10 +1025,23 @@ With this in mind, we set out to perform thermal Hall effect measurements on SCB
 One might get the impression that the months spent trying to resolve the thermal Hall conductivity were a waste. This is far from the truth. As discussed in previous chapters, measurements of the thermal Hall conductivity necissarily require measuring the longitudinal thermal conductivity as well. As it turns out, the thermal Conducitivity of SCBO has a rich structure below 1K. We will discuss these measurements in the next chapter.
 
 \section{Low Temperature Thermal Conductivity}
+
+Although our original intention in making thermal measurements was to find the signature of the Chern bands using the thermal Hall effect, the 
 \begin{figure}
-	\caption[Low Temperature Thermal Conductivity of SCBO]{Low Temperature thermal conductivity of Strontium Copper Borate. Each curve is taken at a constant temperature.}
-	\label{fig:scbo_thall_neg}
+	\caption[Low Temperature Thermal Conductivity of SCBO]{Low Temperature thermal conductivity of Strontium Copper Borate. Each curve is taken at a constant temperature. Top: Data taken in the Dynacool PPMS, from 6 K to 2 K. The applied field enhances the thermal conductivity. Bottom: Data taken in the Oxford dilution refidgerator, from 1 K down to 100 mK. Field supresses the thermal conductivity down to about 450 mK, at which point the dependence flips around again.}
+	\label{fig:SCBO_kappa_xx}
+	\includegraphics[width=\columnwidth]{figures/SCBO_tcond_high.pdf}
 	\includegraphics[width=\columnwidth]{figures/SCBO_kappa_xx_vs_B_1.pdf}
+\end{figure}
+
+\begin{figure}
+	\caption[Temperature Dependence of SCBO Thermal Conductivity]{The same data set as \ref{fig:SCBO_kappa_xx}, now plotted with temperature on the x axis instead of magnetic field. Each trace is a particular cut through the data at a constant field. The crossover between supression and enhancment of the thermal conductivity is evident at around 450 mK.}
+	\includegraphics[width=\columnwidth]{figures/SCBO_kappa_vs_T.pdf}
+\end{figure}
+
+\begin{figure}
+	\caption[Small thermal Hall signal]{A small thermal Hall signal, barely above the noise level, at around 500 mK. This is just above the crossover in the thermal conductivity.}
+	\includegraphics[width=\columnwidth]{figures/SCBO_kappa_xy_vs_B}
 \end{figure}
 
 \begin{figure}
@@ -1039,6 +1053,9 @@ One might get the impression that the months spent trying to resolve the thermal
 	\caption[Extracted Field Scale vs. Temperature]{Extracted field scale vs. temperature. Note that the field scale is more or less constant where the fit is valid.}
 	\includegraphics[width=\columnwidth]{figures/SCBO_field_scale.pdf}
 \end{figure}
+
+\chapter{Conclusion}
+In conclusion, thermal Hall effect measurements are a land of contrasts.
 
 \bibliography{./refs.bib}
 \bibliographystyle{unsrt}

@@ -10,6 +10,9 @@ intro: intro.md
 thesis: thesis.tex
 	pdflatex $(LATEX_FLAGS) thesis.tex
 
+summary: summary.tex
+	pdflatex ${LATEX_FLAGS} summary.tex
+
 biblio: build/thesis.aux
 	bibtex build/thesis
 

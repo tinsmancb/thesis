@@ -112,7 +112,7 @@ linear form \[ L(v) = -\int_{\partial \Omega} g v ds \] as
 over a suitable mesh, the problem reduces to solving a linear system.
 There are many references which go into detail on finite element
 analysis, but I used \cite{LangtangenLogg2017} which covered the
-specific Python library I used to run the following simulations.
+specific Python library I used to run the following simulations. The python code to generate these figures is reproduced in appendix \ref{app:fem_src}.
 
 \begin{figure}
 \centering
@@ -620,6 +620,13 @@ reference.
 
 \section{Quantum Criticality in Strontium Titanate}
 
+With the goal of identifying a system with some observable quantity which is sensitive to temperature but not magnetic field in mind, we turn to the theory of quantum critical ferroelectricity in strontium titanate (SrTiO$_3$). Strontium titanate is well known as a paraelectric, a material where an applied electric field $\mathbf{E}$ gernates a polarization density, or electric dipole moment per unit volume $\mathbf{P}$:
+\[ \mathbf{P} = \epsilon_0 \chi_e \mathbf{E} \]
+where $\epsilon_0$ is the permittivity of free space and $\chi_e$ is the electric susceptiblity. Note that the electric susceptibility is a unitless quantity, the fundimental constant $\epsilon_0$ converts the units between $\mathbf{E}$ and $\mathbf{P}$. Strontium titanate (abrieviated STO) has been known to have a large electric susceptibility of 330 at room temperature that rapidly increases as the temperature is lowered~\cite{Neville1972}. This indicates that it might be useful for making a capactive thermometer, as for a parallel plate capacitor, the capactitance is given by
+\[ C = \frac{\epsilon A}{d} = \frac{\epsilon_0(1+\chi_e)A}{d}\]
+where $A$ is the area of the plates, $d$ is the distance between them, and $\epsilon = \epsilon_0 (1 + \chi_e)$ is the permittivity of the medium between the plates. However, it is worth discussing what the origin of this large electric susceptiblity in STO. The electric susceptibility is intimately connected with the optical phonons of a crystal, since it is these phonons which decribe displacements of the ions in the unit cell relative to each other and can thus produce a net electric dipole in an ionic crystal~\cite{AshcroftMermin}. It is not immediately obvious why these should depend so strongly on temperature, however.
+
+One significant hint comes from the fact that some crystals with the same perovskite structure as strontium titanate, such as barium titanate and lead titanate, are ferroelectrics, i. e. materials which maintain a spontaneous polarization density without the application of an electric field~\cite{Jona1962}. This is analogous to the spontaneous magnetic dipole moment present in ferromagnets such as iron. These materials are so called displacive ferroelectrics, where the net dipole moment is the result of a displacement in the lattice. This corresponds to having an optical phonon with zero frequency. Above the Curie temperature $T_c$, these materials are paraelectrics similar to strontium titanate, with dielectric susceptiblities that are proportional to $(T - T_c)^{-1}$. In qualitative terms, this results from a temperature dependent gap opening up in the optical phonon spectrum, from an optical phonon with zero frequency below $T_c$ to a ``soft'' optical phonon above $T_c$~\cite{RowleyThesis}. This would result in a material which has a strongly varying dielectric susceptibitily with temperature, but in any event strontium titanate does not have a spontaneous electric dipole moment. Additionally, as will be seen in measurements described below, the temperature dependence of strontium titanate does not go as $\chi_e \sim 1/T$, but $\chi_e \sim 1/T^2$!  
 \begin{figure}
 	\centering
 	\caption[Quantum Critical Ferroelectric Phase Diagram]{Phase diagram of quantum critical ferroelectricity, reproduced from~\cite{Rowley2014}. On the x axis, the tuning parameter is derived from the Debye wavevector $\Lambda$ and parameters from the electric polarization equation of state $a$ and $c$. Note the position of Strontium Titanate outside the ferroelectric regime.}
@@ -638,7 +645,7 @@ reference.
 		\label{sto_eps_vs_T} \end{figure}
 
 \begin{figure}
-	\caption[Sensitivity of STO test device]{Sensitivity of the Strontium Titanate device under test, plotted as the ``dimensionless'' quantity \(1/C dC/dT\).}
+\caption[Sensitivity of STO test device]{Sensitivity of the Strontium Titanate device under test, plotted as the ``dimensionless'' quantity \(\frac{1}{C} \frac{dC}{dT}\).}
 	\includegraphics[width=\columnwidth]{figures/STO_dCdT_vs_T.pdf}
 \end{figure}
 
@@ -755,7 +762,7 @@ using resistive thermometers quote a resolution of 0.2 - 0.4 mK. This is after
 extensive field calibration of the thermometers, a time-consuming process which
 these thermometers eliminate.
 
-\begin{figure} \caption[Field response of an STO thermometer]{A test of the response of an STO thermometer to an
+\begin{figure} \caption[Field response of an STO thermometer]{A test of the response of an STO thermometer with a capacitance of 65 pf to an
     applied magnetic field, taken at 4.2K.  The field starts at zero, scans to
     10T (blue), then to -10T (green), and then back to zero (red).  The relative
     change in the capacitance $(C - C_0)/C_0$ remains less than
@@ -852,6 +859,12 @@ heater was repeatedly turned on and off, and the gradients in each direction
 measured. Simultaneously, the applied magnetic field was swept between -10 T and
 10 T. This allowed us to measure the field dependence of the thermal Hall
 coefficient.
+
+\begin{figure} \centering \caption[Comparison between thermocouples and STO thermometers]{Transverse temperature differences across a bismuth crystal measured with both STO thermometers (orange) and thermocouples (blue), up to 10T and antisymmetried to isolate the thermal Hall signal. Top: Temperature difference at 110K. At this temperature, the signal is large enough that the thermocouples have no trouble detecting it. The STO thermometers are not so sensitive in this range, and so they have more noise. Bottom: Temperature difference at 30 K. While the thermocouples are not able to detect anything, the STO thermometers are still able to detect a temperature difference of about 0.5 mK.}
+	\includegraphics[width=0.9\columnwidth]{figures/110K_HighEx_AntiSym.pdf}
+	\includegraphics[width=0.9\columnwidth]{figures/30K_HighEx_AntiSym.pdf}
+\end{figure}
+
 
 \begin{figure} \caption[Thermal Hall conductivity of bismuth]{Thermal Hall conductivity, computed from the
     transverse temperature difference measured using the STO thermometers from
@@ -1098,6 +1111,121 @@ One potentially interesting question to consider is how this thermal conductivit
 \end{figure}
 
 \chapter{Conclusion}
+
+Thermal measurements are an important tool for studying new materials and identifying novel physics in condensed matter systems. In a sense, they are the most general experimental methods available to a condensed matter experimentalist: any excitation in a solid will carry energy, and thus heat. This makes them particularly applicable to studying systems with novel excitations that do not carry charge. Such measurements can be quite challenging to make, however. They require accurate and precise readings of the temperature at multiple points on a crystal, which are often quite small, only a few millimeters in any direction. These thermometers must be compatible with the cryogenic environment where the measurement takes place, and may also need to be compatible with intense magnetic fields.
+
+This is especially important when making thermal Hall effect measurements, the thermal analogue of the Hall effect. This effect is often minute, rarely more than 1\% of the total thermal conductivity. It also often requires making measurements in magnetic fields of a few Tesla or more. These fields can interfere with standard methods of thermometry relying on resistive thermometers by way of their magnetoresistance. In order to eliminate the systematic issues with these devices, we have exploited the strongly temperature dependent dialectic permittivty of strontium titanate. This material is not itself a ferroelectric, but sits close to a quantum phase transition to a ferroelectric state. This causes its permittivity to increase rapidly until reaching a maximum a few Kelvin above absolute zero. By making small capacitors using this material as a dielectric, we can use this fact to measure temperature with great precision in a way that is not systematically affected by a magnetic field. This observation on its own opens up new possibilities for making thermal Hall effect measurements in strong magnetic fields, but since the permittivity saturates below a few Kelvin, the sensitivity of these devices rapidly degrades in this range. However, it has been noted that annealing strontium titanate in an oxygen-18 atmosphere can tune the properties of this material close to this quantum critical point, even making it ferroelectric if enough is incorporated. By moving strontium titanate close to this quantum phase transition without going over, the permittivity can be made to keep increasing down to temperatures below 1 Kelvin, where the mangetoresistance issues of conventional thermometers are most severe. 
+
+In order to test these capacitive thermometers, thermal Hall effect measurements were carried out on single crystalline bismuth. Bismuth is one of the best known semimetals, a material which hosts both electrons and holes, with a relatively low carrier density but high mobility. It is also well known for having ``Dirac-like'' bands, with carriers that have linear dispersion similar to a relativistic particle. These properties make it an important system for benchmarking new experimental techniques in condensed matter physics. Despite being an ``old material'', one which has been studied experimentally for over a century, thermal Hall effect measurements had only recently been performed on it up to 3 T. With the strontium titante microthermometers, we were able to conduct measurements up to 10 T and at temperatures down to 40 K. A large thermal Hall coefficient is measured in this system, indicative of high mobility carriers. Additionally, the overall field dependence displays a 1/$H$ dropoff far below the quantum limit, which can be traced to the presence of both electrons and holes. The strontium titanate microthermometers allow us to continue to observe these properties in the intense magnetic field.
+
+Another important application of these thermometry techniques is towards making measurements of frustrated magnets. These are systems where the geometry of the lattice interferes with magnetic ordering, resulting in a variety of new magnetic phases such as spin ices and quantum spin liquids. These systems have generated quite a bit of theoretical interest in the past decade, but they are difficult to study experimentally since they often have itinerant excitations which do not carry charge. This makes thermal transport measurements such as the thermal Hall effect all the more important for studying them. In this work we discuss our measurements on strontium copper borate, in which pairs of spin-1/2 sites are paired up in dimers with a ground state made up of a lattice of singlets. The magnetic excitations of this system are the mobile triplet states, called triplons. It has been predicted that these triplet bands could have non-trivial topology, making strontium copper borate a bosonic topological insulator, and resulting in a specific thermal Hall effect signal. Experimental measurements in this system fail to find this signal, casting doubt on this theory. However, we observe magnetic field dependent longitudinal thermal conductivity at temperatures below 1 K, where the triplet excitations should be frozen out. There may be some relation to another phenomena found in this material in this temperature range: the formation of spin superlattices, states where spins form ordered arrangements larger than the base unit cell of the material.
+
+Of course, the work presented here 
+
+\appendix
+\chapter{Python Source Code for Finite Element Simulations of the Thermal Hall Effect} \label{app:fem_src}
+
+The following Python source code uses Fenics to do the finite element computations described in chapter 1. It will output the plots in the text as pdf files.
+
+\begin{singlespace}
+\begin{code}
+from fenics import *
+from mshr import *
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+
+# Mesh
+asp_ratio = 1.6
+domain = Rectangle(Point(0.0, 0.0), Point(asp_ratio, 1.0))
+mesh = generate_mesh(domain, 128)
+V = FunctionSpace(mesh, 'P', 1)
+
+# Dirichlet BC (Cold Finger)
+u_D = Constant(0.0)
+
+def boundary_D(x, on_boundary):
+    return on_boundary and ((x[0] <= asp_ratio*x[1]) 
+                       and (x[0] <= asp_ratio*(1-x[1])))
+
+bc = DirichletBC(V, u_D, boundary_D)
+
+# Neumann BC (Heater, Insulated Edges)
+g = Expression('x[0] >= x[1]*{0} && x[0] >= (1-x[1])*{0} ? -1 : 0'
+               .format(asp_ratio), degree=1)
+
+thetas = np.pi*np.array([-1/6, -1/12, 0, 1/12,
+                          1/6, 1/4, 1/3, 5/12])
+xs = np.linspace(0,1.6,161)
+ys = np.linspace(0,1.0,101)
+
+us = np.zeros((thetas.size, xs.size, ys.size))
+
+for ii, theta_hall in enumerate(thetas):
+
+    # Thermal Hall Conductivity
+    # C = as_matrix(((1, np.tan(theta_hall)),
+    #                (-np.tan(theta_hall), 1)))
+    C = as_matrix(((np.cos(theta_hall), np.sin(theta_hall)),
+                   (-np.sin(theta_hall), np.cos(theta_hall))))
+
+    # Weak Problem
+    u = TrialFunction(V)
+    v = TestFunction(V)
+
+    a = dot(C*grad(u), grad(v))*dx
+    L = -g*v*ds
+
+    # Compute solution
+    u = Function(V)
+    solve(a == L, u, bc)
+
+    us[ii] = np.array([[u(x, y) for x in xs] for y in ys]).T
+
+font = {'size'   : 16}
+matplotlib.rc('font', **font)
+
+f, axarr = plt.subplots(4,2, sharex='col', 
+                             sharey='row',
+                             figsize=(9,12),
+                             subplot_kw={'aspect':1})
+theta_names = ['-$\\pi$/6', '-$\\pi$/12', '0', '$\\pi$/12',
+               '$\\pi$/6', '$\\pi$/4','$\\pi$/3', '5$\\pi$/12']
+levels = np.linspace(0, np.max(us), 24)
+for theta, u, ax in zip(theta_names, us, axarr.flatten()):
+    ax.contour(xs, ys, u.T, cmap='plasma', levels=levels)
+    ax.set_title('$\\theta_H$ = {}'.format(theta))
+    
+f.savefig('thall_isotherm.pdf')
+
+font = {'size'   : 14}
+matplotlib.rc('font', **font)
+
+f, (ax1, ax2) = plt.subplots(2, 1, figsize=(9,12))
+
+for theta, u in zip(theta_names, us):
+    diff = u[:,-1] - u[:,0]
+    ax1.plot(xs, diff, label=theta)
+
+ax1.set_title('Temperature Difference Profile')
+ax1.set_xlabel('$x$, arb. units')
+ax1.set_ylabel('$\Delta T$, arb. units')
+ax1.grid()
+ax1.legend()
+
+ax2.plot(thetas_full, us_full[:,-1,-1] - us_full[:,-1,0])
+
+ax2.set_title('Transverse Temperature Difference')
+ax2.set_xlabel('Thermal Hall Angle $\\theta_H$, radians')
+ax2.set_ylabel('$\Delta T$, arb. units')
+ax2.grid()
+
+f.savefig('thall_profile.pdf')
+
+\end{code}
+\end{singlespace}
+
+\chapter{Operation of the Denton Evaporator}
 
 \bibliography{./refs.bib}
 \bibliographystyle{unsrt}

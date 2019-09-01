@@ -626,12 +626,18 @@ where $\epsilon_0$ is the permittivity of free space and $\chi_e$ is the electri
 \[ C = \frac{\epsilon A}{d} = \frac{\epsilon_0(1+\chi_e)A}{d}\]
 where $A$ is the area of the plates, $d$ is the distance between them, and $\epsilon = \epsilon_0 (1 + \chi_e)$ is the permittivity of the medium between the plates. However, it is worth discussing what the origin of this large electric susceptiblity in STO. The electric susceptibility is intimately connected with the optical phonons of a crystal, since it is these phonons which decribe displacements of the ions in the unit cell relative to each other and can thus produce a net electric dipole in an ionic crystal~\cite{AshcroftMermin}. It is not immediately obvious why these should depend so strongly on temperature, however.
 
-One significant hint comes from the fact that some crystals with the same perovskite structure as strontium titanate, such as barium titanate and lead titanate, are ferroelectrics, i. e. materials which maintain a spontaneous polarization density without the application of an electric field~\cite{Jona1962}. This is analogous to the spontaneous magnetic dipole moment present in ferromagnets such as iron. These materials are so called displacive ferroelectrics, where the net dipole moment is the result of a displacement in the lattice. This corresponds to having an optical phonon with zero frequency. Above the Curie temperature $T_c$, these materials are paraelectrics similar to strontium titanate, with dielectric susceptiblities that are proportional to $(T - T_c)^{-1}$. In qualitative terms, this results from a temperature dependent gap opening up in the optical phonon spectrum, from an optical phonon with zero frequency below $T_c$ to a ``soft'' optical phonon above $T_c$~\cite{RowleyThesis}. This would result in a material which has a strongly varying dielectric susceptibitily with temperature, but in any event strontium titanate does not have a spontaneous electric dipole moment. Additionally, as will be seen in measurements described below, the temperature dependence of strontium titanate does not go as $\chi_e \sim 1/T$, but $\chi_e \sim 1/T^2$!  
+One significant hint comes from the fact that some crystals with the same perovskite structure as strontium titanate, such as barium titanate and lead titanate, are ferroelectrics, i. e. materials which maintain a spontaneous polarization density without the application of an electric field~\cite{Jona1962}. This is analogous to the spontaneous magnetic dipole moment present in ferromagnets such as iron. These materials are so called displacive ferroelectrics, where the net dipole moment is the result of a displacement in the lattice. This corresponds to having an optical phonon with zero frequency. Above the Curie temperature $T_c$, these materials are paraelectrics similar to strontium titanate, with dielectric susceptiblities that are proportional to $(T - T_c)^{-1}$. In qualitative terms, this results from a temperature dependent gap opening up in the optical phonon spectrum, from an optical phonon with zero frequency below $T_c$ to a ``soft'' optical phonon above $T_c$~\cite{RowleyThesis}. This would result in a material which has a strongly varying dielectric susceptibitily with temperature, but in any event strontium titanate does not have a spontaneous electric dipole moment. Additionally, as will be seen in measurements described below, the temperature dependence of strontium titanate does not go as $\chi_e \sim 1/T$, but $\chi_e \sim 1/T^2$! This kind of rapid increase of a susceptibility is generally indicative of a phase transition, but none is observed in strontium titanate. 
+
+
 \begin{figure}
 	\centering
-	\caption[Quantum Critical Ferroelectric Phase Diagram]{Phase diagram of quantum critical ferroelectricity, reproduced from~\cite{Rowley2014}. On the x axis, the tuning parameter is derived from the Debye wavevector $\Lambda$ and parameters from the electric polarization equation of state $a$ and $c$. Note the position of Strontium Titanate outside the ferroelectric regime.}
-	\includegraphics[width=0.6\columnwidth]{figures/sto_phasedia_rowley.pdf}
+	\caption[Quantum Critical Ferroelectric Phase Diagram]{Phase diagram of quantum critical ferroelectricity, reproduced from~\cite{Rowley2014}. On the x axis, the tuning parameter is derived from the Debye wavevector $\Lambda$ and parameters from the electric polarization equation of state $a$ and $c$. On the y axis, the temperature is normalized by the Debye temperature $\theta$. Note the position of Strontium Titanate outside the ferroelectric regime.}
+	\label{fig:qc_rowley}
+	\includegraphics[width=0.8\columnwidth]{figures/sto_phasedia_rowley.pdf}
 \end{figure}
+Instead of a normal phase transition, the rapidly increasing electric susceptiblity is due to a quantum phase transition. Sometimes refered to as a ``phase transition at zero temperature'', a quantum phase transition occurs when the ground state of a system's Hamiltonian has a sharp kink or discontinuity at a function of some parameter~\cite{Coleman2005}, for example $g$. This can occur, for example, if there are two states of a given Hamiltonian, $|\psi_1\rangle$ and $|\psi_2\rangle$, one of which is ground state when $g$ is larger than some critical value $g_c$, the other of which is the ground state is smaller than $g_c$. Although the energy of each of these states should be a smooth function of $g$, the ground state energy will have a kink where their energies cross at $g_c$. Although this discontinuity occurs at zero temperature, and so can't be reached directly, it can have a large effect on the physics of the system at finite temperature. This is due to the fact that in addition to the diverging correlation length $\xi^x$ observed close to classical phase transitions, quantum phase transitions result in a diverging correlation time $\xi_t$ as well. Quantum critical scaling will be observed when the temperature is sufficently low, i. e. that $k_bT < \hbar \xi_t^{-1}$. In the case of strontium titanate, the quantum phase transition is between a ground state of the lattice with an optical phonon with zero frequency (and thus ferroelectricity) and one without. The critical fluctuations in time are responsible for the different scaling behavior of the susceptiblity between the quantum and classical phase transition. Figure \ref{fig:qc_rowley} shows the quantum critical phase diagram of the perovskite lattice, with stronium titanate labeled. The tuning parameter is listed as $a/c\Lambda^2$, where $\Lambda$ is the Debye wavevector, and $a$ and $c$ are parameters for the electric polarization density equation of state~\cite{Rowley2014}
+\[ \epsilon_0 E = a P + b P^3 - c \nabla^2 P \]
+Assuming that $b$ is positive and $E$ is zero, this equation will only have one solution $P=0$ when $a$ is positive (i. e. no spontaneous polarization), and two more solutions $P = \pm P_0$ when $a$ is negative (i. e. spontaneous polarization). Thus, when the tuning parameter is positive, we will have a paraelectric, and when it is negative, a ferroelectric state. The region where quantum critical effects are important is shaded green. We can see that strontium titanate is just above but very close to the quantum critical point. This explains it's diverging electric susceptibitly.
 
 \begin{figure}
 	\caption[Dielectric constant of Strontium Titanate]{Top: Dielectric constant of Strontium Titanate as a function
@@ -640,12 +646,16 @@ One significant hint comes from the fact that some crystals with the same perovs
 		showing that $\epsilon$ reaches a maximum at $T = 3.29$K. This
 		data was taken using the VTI probe in our Janis cryostat, but
 		reproduces the results of ~\cite{Rowley2014}.}
+		\label{fig:sto_eps_vs_T}
 		\includegraphics[width=0.9\columnwidth]{figures/STO_eps_vs_T.pdf}
 		\includegraphics[width=0.9\columnwidth]{figures/STO_eps_vs_T_low.pdf}
-		\label{sto_eps_vs_T} \end{figure}
+ \end{figure}
+
+ To explore the possiblity of using this property of strontium titanate for making thermometers, some STO waver was aquired and cut into a small peice, 3.86 mm long by 3.25 mm wide by 0.5 mm thick. Each side of this wafer was metallized with gold in our Denton evaporator. This sample was then placed in the variable temperature insert probe of our Janis wet cryostat. The capacitance was measured using our Andeen-Hagerling 2700A capactiance bridge while sweeping temperature at a constant rate from 50 K to 2 K. An excitation of 5 V was used to measure the capactiance. The dielectric susceptiblity can be computed from the capactiance and the geometric information about the device using the standard parallel plate capacitor formula from above. The results of this experiment are shown in figure \ref{fig:sto_eps_vs_T}, plotted as $1/\epsilon \approx 1/\epsilon_0 \chi_e$ versus $T^2$. This makes the divergence of the susceptibilty in the quantum critical regime clear as a linear trend. At the lowest temperatures, however, this increase stops, reaching a maximum at 3.29 K. Here, strontium titanate is in the ``quantum paraelectric'' regime, where the gap in the optical phonon disperion is relatively large but the temperature is small compared to the Debye temperature $\theta$~\cite{RowleyThesis}. In this regime the electric susceptiblity stops increasing, as the quantum critical point is no longer having a strong effect. Since the susceptiblity is no longer changing much with temperature, a thermometer made with strontium titanate would not be sensitive in this regime. To illustrate this point, the effective sensitivity of the device is plotted in figure \ref{fig:sto_sens_vs_t} as the quantiy $\frac{1}{C}\frac{dC}{dT}$, where $C$ is the capacitance of the device. This gives a measure of the sensitivity relative to the overall magnetude of the capacitance. The sensitivity peaks at around 24 K, becoming zero at 3.29 K as discussed above.
 
 \begin{figure}
 \caption[Sensitivity of STO test device]{Sensitivity of the Strontium Titanate device under test, plotted as the ``dimensionless'' quantity \(\frac{1}{C} \frac{dC}{dT}\).}
+	\label{fig:sto_sens_vs_t}
 	\includegraphics[width=\columnwidth]{figures/STO_dCdT_vs_T.pdf}
 \end{figure}
 
@@ -655,19 +665,20 @@ One significant hint comes from the fact that some crystals with the same perovs
 		when plotted as 1/$\epsilon$ vs $T^2$ is not as apparent as for
 		SrTiO$_3$, and the overall change is not nearly as large.
 		Bottom: Low temperature plot of $1/\epsilon$, as in figure
-		\ref{sto_eps_vs_T}. The dielectric susceptiblity reaches a
+		\ref{fig:sto_eps_vs_T}. The dielectric susceptiblity reaches a
 		maximum at $T = 4.31$K, higher than that in SrTiO$_3$. As
 		before, this data was taken using the VTI probe in our Janis
 		cryostat, but reproduces the results of ~\cite{Rowley2014}.}
-	
+		\label{fig:kto_eps_vs_T}
 	\includegraphics[width=0.85\columnwidth]{figures/KTO_eps_vs_T.pdf}
 	\includegraphics[width=0.85\columnwidth]{figures/KTO_eps_vs_T_low.pdf}
 \end{figure}
 
-\section{Electronics For Measuring Capacitance}
+As a point of comparison, figure \ref{fig:kto_eps_vs_T} shows a similar experiement with a capacitor made with a different material, Potassium Tantilate (KTaO$_3$). Looking at the phase diagram in figure \ref{fig:qc_rowley}, we can see it is farther away from the quantum critical point, into the quantum paraelectric regime. For this experiement, a 2.26 mm wide by 3.48 mm long by 0.5 mm thick peice of material was metallized into a capacitor. The data is plotted with the same $1/\epsilon$ vs $T^2$ axes as the STO data. By comparing the scale to that in figure \ref{fig:sto_eps_vs_T}, we can see that the the divergence of the dielectric susceptiblity is not nearly as strong, and the dependence not nearly as linear. The quantum paraelectric regime is entered at a much higher temperature, and the susceptiblity reaches it's maximum at a temperature of 4.31 K. Thus, we can see that we must have a material in the quantum critical regime in order to make a good thermometer. In the next chapter, the process of making thermometers out of these devices will be discussed. 
 
 \section{Strontium Titanate Thermometers}
 
+\begin{comment}
 Thermal transport measurements provide a versatile set of methods for probing
 the physical properties of matter. Among thermal transport properties, the
 thermal Hall effect shows promise for probing the ground state of many materials
@@ -703,6 +714,7 @@ correlated materials and other materials of interest, we have sought to devise a
 simple method for making these measurements. In particular, we wish to develop a
 method which can be used on a wide variety of materials and throughout a large
 temperature range, while being independent of the magnetic field.
+\end{comment}
 
 In order to accomplish this, we have developed thermometers which measure
 temperature by measuring the dielectric constant $\epsilon$ of strontium
@@ -826,6 +838,7 @@ for the two curves.} \centering\label{t_grad}
 
 \section{Measuring the Thermal Hall Effect in Bismuth}
 
+\begin{comment}
 As a test of these thermometers' suitability for thermal Hall measurements, we
 have measured the thermal Hall coefficient of Bismuth metal. Bismuth is one of
 the most studied condensed matter systems, being the material in which a host of
@@ -841,6 +854,8 @@ yttrium-iron-garnet through the inverse spin Hall effect and inverse
 Rashba-Edelstein effect. This interplay of electronic, magnetic and thermal
 phenomena make bismuth a promising candidate for observing the thermal Hall
 effect using our capacitive thermometry technique.
+
+\end{comment}
 
 The thermal Hall effect on crystalline bismuth has been carried out by W.
 Kobayashi \textit{et al.}\cite{Kobayashi2012} down to 75 K and magnetic fields up

@@ -925,21 +925,10 @@ Having established the viability of using strontium titanate microthermometers t
 \includegraphics[width=\columnwidth]{figures/annealing_system.pdf}
 \end{figure}
 
-In order to accomplish this, we have constructed a system for annealing chips of strontium titanate in an oxygen-18 environment. Figure \ref{fig:annealing_sys} shows a schematic of its construction. It is composed of a tube furnace connected to an oxygen 18 supply tank obtained from the Sigma-Aldrich corporation~\cite{Sigma18O}. Since oxygen-18 is a stable isotope, it can be saved and reused long term. Thus, a cold trap is also connected to reuse the expensive isotopically pure gas.
-
-\begin{figure} \caption[Annealed STO thermometer reproducability tests]{Top: Reproducibility tests for several annealed STO
-	capacitor devices, measured in a liquid helium dewar using a dipstick
-	probe. The Oxygen-18 enrichment percentage is listed in table \ref{tab:annealed_sto}. Note the
-offset between the cool down and warm up traces for each device. Bottom:
-Sensitivities for the same four devices. Although the capacitance varies
-between devices and cool down/warm up, the sensitivity is roughly the same for
-each.} \includegraphics[width=0.9\columnwidth]{figures/annealed_sto_c_vs_t.pdf}
-\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_sens_vs_t.pdf}
-\end{figure}
+In order to accomplish this, we have constructed a system for annealing chips of strontium titanate in an oxygen-18 environment. Figure \ref{fig:annealing_sys} shows a schematic of its construction. It is composed of a tube furnace connected to an oxygen 18 supply tank obtained from the Sigma-Aldrich corporation~\cite{Sigma18O}. Since oxygen-18 is a stable isotope, it can be saved and reused long term. Thus, a cold trap is also connected to reuse the expensive isotopically pure gas. The system also has a pumping port for annealing the chips in vacuum, if desired. Thus, we can control the gas environment in order to experiment with the annealing conditions. Table~\ref{tab:annealed_sto} shows the annealing conditions for six samples of strontium titanate chips, cut from 0.5 mm thick wafers. The percentage of oxygen-18 incorporated into the samples is calculated by measuring the change in their mass. Using the standard atomic weights for strontium, titanium, and oxygen, the atomic mass of standard strontium titanate is 183.484 amu. If all the oxygen has been totally replaced with oxygen-18, the atomic mass should be 189.484 amu, an increase of 3.27\%. By normalizing the observed increase in mass to this percentage, we can determine the approximate oxygen-18 enrichment.
 
 \begin{table}
-	\label{tab:annealed_sto}
-	\begin{tabular}{l|c|c|c|p{0.35\columnwidth}}
+	\begin{tabular}{|l|c|c|c|p{0.3\columnwidth}|}
 		\hline
 		Sample \# & Initial Mass & Final Mass & $^{18}$O Enrichment & Annealing Conditions \\
 		\hline
@@ -952,26 +941,51 @@ each.} \includegraphics[width=0.9\columnwidth]{figures/annealed_sto_c_vs_t.pdf}
 		\hline
 	\end{tabular}
 	\caption[Annealed STO Thermometers]{Annealing conditions for the various STO thermometers chips, along with the $^{18}$O enrichment measured from the mass change.}
+	\label{tab:annealed_sto}
 \end{table}
 
-\begin{figure} \caption[Annealed STO Heat Capacity]{Heat capacity measurement of a strontium titanate wafer
+Looking at table \ref{tab:annealed_sto}, however, it appears that the enrichment percentage is not very consistent. Samples annealed under the same conditions appear to have differing enrichment percentages. One sample, number 2, appears to have even lost mass. This is especially concerning, as oxygen-deficient strontium titanate has been observed to become metallic~\cite{Pallecchi2001}. There are several reasons the samples may have different observed masses. One is that we are simply not measuring the mass accurately. For a 15 mg sample, a 3.27\% mass increase corresponds to a change in the mass of 450 $\mu$g. This is on the edge of what is possible to measure with an analytical balance, and such measurements can be affected by difference in electrostatic conditions. Since the measurements must be taken several days apart by necessity, it is difficult to control these conditions precisely. Secondly, even for the samples which are observed to gain mass, it is difficult to determine if the oxygen-18 has been uniformly distributed within the bulk of the sample. All of the samples are relatively thin, each being approximately 5 mm by 5 mm by 0.5 mm. This should facilitate an even distribution of oxygen-18. It is difficult to determine for sure if this is the case, however. One potential method to get a more even distribution is to anneal the samples in vacuum after they have been annealed in the oxygen-18. This runs the risk of creating oxygen-deficient samples, which as metals would make poor thermometers. Determining the optimal annealing conditions is an ongoing project. Each annealing run can last a week or more, so getting it correct will take more time. However, we can discuss the results on the devices we have tried.
+
+\begin{figure} \caption[Annealed STO thermometer reproducability tests]{Top: Reproducibility tests for several annealed STO
+	capacitor devices, measured in a liquid helium dewar using a dipstick
+	probe. The Oxygen-18 enrichment percentage is listed in table \ref{tab:annealed_sto}. Note the
+offset between the cool down and warm up traces for each device. Bottom:
+Sensitivities for the same four devices. Although the capacitance varies
+between devices and cool down/warm up, the sensitivity is roughly the same for
+each.} 
+\label{fig:annealed_sto_repro}
+\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_c_vs_t.pdf}
+\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_sens_vs_t.pdf}
+\end{figure}
+
+Thermometers we made out of the STO chips in the same manner as the unannealed devices described above. The capacitance of these were measured using the AH2700A digital capacitance bridge on the dipstick probe in a helium dewar. This probe allows us to make quick measurements down to liquid helium temperatures, which is important for testing many devices quickly. The results for this experiment are shown in figure~\ref{fig:annealed_sto_repro}. Chips from sample 3 through 6 were used for these experiments. Curves for the cool down from room temperature to 4 K as well as the warm up back to room temperature are plotted on top of one another. As shown in the figure, these curves to not line up with one another for any of the four devices tested. There appears to be some hysteresis, where the cool down curve is slightly larger than the warm up curve between 10 K and 120 K. This plot also shows the sensitivity of the devices, plotted in the same $\frac{1}{C}\frac{dC}{dT}$ units as for the unannealed thermometers. In general, it appears that rather than having one minimum as for the unannealed devices, there are two, at approximately 80 K and 120 K. This may be an indication that part of the sample is more enriched that others. The only one which does does not display this behavior is sample 3, which was annealed for a time in vacuum (see table~\ref{tab:annealed_sto}). This one has a flatter minimum, possibly indicating a more uniform distribution of oxygen-18 in the lattice. Otherwise, at low temperature, the curves appear to collapse onto one another below 50 K. It does not appear that they are getting significantly more sensitive at low temperature, which could also indicate that most of the bulk is not significantly enriched.
+
+\begin{figure} \caption[Annealed STO Heat Capacity]{Top: Dissipation of the STO thermometer devices, plotted as the tangent of the impedance angle $\tan \delta$. Low dissipation indicated capacitive impedance. None of the samples appear to be metallic. Bottom: Heat capacity measurement of a strontium titanate wafer
 (blue dots), measured using the Quantum Design PPMS. The measurement does not
 show any power law behavior indicative of a phase transition, and so it has not
 been doped into the ferroelectric regime. The cubic fit (orange line) is
 indicative of simple insulating behavior.}
-%\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_diss_vs_t.pdf}
+\label{fig:annealed_sto_repro_2}
+\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_diss_vs_t.pdf}
 \includegraphics[width=0.9\columnwidth]{figures/annealed_sto_heatcap_vs_t.pdf}
 \end{figure}
 
-
+Figure~\ref{fig:annealed_sto_repro_2} shows some additional data on the dissipation of the thermometer devices. This is a plot of $\tan \delta$, where $\delta$ is the deviation of the impedance phase angle from from $-\pi/2$, as would be expected for a pure capacitor. If we model the device as a capacitor with capacitance $C_p$ in parallel with a resistor with large resistance $R_p$, the dissipation is given by~\cite{AHManual}
+\[\tan \delta = \frac{1}{\omega C_p R_p}\] 
+where $\omega$ is the excitation frequency. Thus, this gives a measurement of how well the device can be modeled as a pure capacitor that is independent of the actual capacitance. As we can see, the dissipation does not increase for any of the devices tested. This serves as a good indication that we are not depleting a significant amount of oxygen and turning the chips metallic.
 
 \begin{figure} \caption[Field response of an annealed STO thermometer]{Relative change in capacitance of an annealed STO
 	thermometer in an applied magnetic field, measured up to 14 Tesla in
-the Quantum Design PPMS. The improved sample mounting in the PPMS eliminates
-the background from the flexing of the wires.}
+the Quantum Design PPMS at 1.5 K. The initial capacitance is about 35 pF. The improved sample mounting in the PPMS eliminates
+the background from the flexing of the wires, and the trace is mostly independent of the applied field.}
+\label{fig:annealed_sto_field}
 \includegraphics[width=\columnwidth]{figures/annealed_sto_dc_vs_b.pdf}
 \end{figure}
-	
+
+There are two additional tests we have run on some of these thermometers. First of all, we wish to preclude the possibility that the devices have been pushed into the classical ferroelectric regime. Although the dielectric susceptibility will still diverge below the Curie temperature $T_c$, this would still present a hard limit on the temperature range in which the devices are useable. Furthermore, once the strontium titanate has been pushed past the quantum critical point, $T_c$ is predicted to increase as the square root of the quantum tuning parameter $a/c\Lambda^2$, very rapidly increasing the Curie temperature~\cite{RowleyThesis} (see figure \ref{fig:qc_rowley}). The bottom panel of figure~\ref{fig:annealed_sto_repro_2} shows a measurement of the heat capacity of sample 6, with the highest apparent enrichment. These were carried out using the Dynacool PPMS heat capacity option. If there is indeed a phase transition to a ferroelectric state, this should be visible as an anomaly. However, the behavior is consistent with a simple insulating behavior predicted by the Debye model. This casts further doubt that the enrichment is as high as we have determined from the mass. Finally, figure~\ref{fig:annealed_sto_field} shows the field dependence of the measured capacitance for sample 3. This was also measured using the Dynacool PPMS He-3 probe, which has been modified to add a pair of coaxial cables suitable for making capacitance measurements. This probe eliminates much of the issue we had with wire flexing when making a similar measurement in the VTI with the Janis cryostat, and we can see that there is very little field dependence. This at least indicates that there are no multiferroic effects introduced by the oxygen-18 annealing, which would make the thermometers unsuitable for their intended purpose replacing resistive thermometers at low temperature.
+
+There is much we are still trying to understand about the process for making these thermometer devices. As mentioned above, the pace of iteration on what we have learned is slowed significantly by the long annealing time required. Much more precision in how we are able to control the oxygen-18 enrichment of strontium titanate is clearly required. However, the tools are in place for this research to continue. The most interesting states of matter can be found at the lowest temperatures. In the next chapter, we will motivate this research into low-temperature thermometry by describing thermal measurements conducted at on a frustrated magnet system.  
+
 \chapter{Thermal Measurements of Strontium Copper Borate}
 
 \section{The Shastry-Sutherland Model}

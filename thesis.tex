@@ -1284,6 +1284,85 @@ f.savefig('thall_profile.pdf')
 
 \chapter{Operation of the Denton Evaporator}
 
+The Denton evaporator is stored in the small lab (Randall Lab SB482). It has had some previous owners who have modified it over the years, so it's operation is not exactly as described in the manual. In this appendix, I will describe where the differences occur.
+
+\section{Preparing the Chamber}
+\label{evap:prep}
+\begin{enumerate}
+	\item The bell jar should have a rough vacuum when it is not in use. Make sure all the valves are closed, and then pull the lever labeled ``Chamber Vent'' to open the bell jar to air.
+	\item Once the chamber has vented, carefully lift the bell jar off the platform and place it on the nearby lab bench.
+	\item Check the underside of the plate to see if the aluminum foil has gold peeling off of it. If so, it will not be possible to mount the samples firmly to the plate. Unscrew the plate from the three brackets with a flathead screwdriver and replace the aluminium foil.
+	\item Mount your sample on the plate above the filament electrodes. Typically when making gold films for capacitive cantilevers, we stick them to a strip from a post-it note which has been fixed to a glass slide with PTFE tape. This slide can be attached to the plate with double-sided tape. Mount it directly over the gold filament (in the front of the chamber).
+	\item Get a tungsten filament out of the top drawer of the file cabinet next to the evaporator. Using a pair of needle-nose pliers, grip one end of the filament and twist it to separate the three wires. With a side cutter, cut two of the wires completely off from the base of the corkscrew portion. Be careful, the cut ends of the wires will be extremely sharp. Do the same for the other end of the filament. Then, trim the remaining wire to length so that it will fit in the electrode.
+	\item Cut a piece of the gold wire which is $\sim$ 5 mm longer than the corkscrew section of the filament. Insert the wire into the corkscrew, and then use a pair of needle-nose pliers to bend each end of the gold wire such that it will not fall out. 
+	\item Insert the loaded tungsten filament into the electrodes. Use a hex wrench to adjust the gap between the jaws of the electrode to get good mechanical contact.
+	\item Take a multimeter and check that the two electrodes are shorted together. Move the filament selector to the ``Chromium'' setting so that they are not connected through the power supply. Move the selector back once you have finished checking the electrode.
+	\item Check that the electrodes are not shorted to the filament shield. If they are, it is likely the short is near the ceramic spacer which connects the shield to the electrode. Kapton take can be used to interrupt any shorts in this area. If the spacer is cracked, replace it with a new one stored in the top drawer of the filing cabinet.
+	\item Check that the electrodes are not shorted to the top plate. The position of top plate can be adjusted by loosening the screws around on the brackets holding it up and repositioning it.
+	\item Clean the rim of the bell jar as well as its mating surface with isopropyl alcohol. Replace the bell jar.
+\end{enumerate}
+
+\section{Pumping the Chamber to Low Vacuum}
+\label{evap:pump}
+\begin{enumerate}
+	\item Flip the ``Main Power'' switch.
+	\item Flip the ``Mech. Pump'' switch to turn on the rough pump.
+	\item Turn the knob under the thermocouple gauge to the ``Back'' setting, and flip the switch next to it to turn on the gauge. The reading will be very noisy at first but will get cleaner once the foreline pumps out. It should reach 50 millitorr in about 30 seconds.
+	\item Open the backing valve underneath the control console. This will rough out the diffusion pump.
+	\item Open the cooling water valves to the left of the evaporator. There are four valves to open in total: One each above and below the split between the evaporator and the resistive magnet on both the input and return lines. Open all four. Then, twist the knob labeled ``Diff. Water'' less than half a turn, so that the arrow is pointing upwards. You will not see any appreciable flow on the flow gauge.
+	\item Once the foreline pressure reads below 100 millitorr, turn on the diffusion pump by flipping the ``Diff. Pump'' switch. Wait about 30 minutes for the diffusion pump to come up to temperature. The manual recommends you adjust the flow of the cooling water so that the exit temperature is about 100$^\circ$ F, in practice it seems difficult to get above 80$^\circ$.
+	\item Add liquid nitrogen to the cold trap. This is optional, but it greatly enhances the vacuum one can achieve with this system. The input funnel is on the left side of the evaporator. Once the cold trap is full, liquid nitrogen will start to bubble out of the opening visible when looking through the slit for the main valve lever. Once nitrogen has been added, be sure to add more every two to three hours if you continue running that long.
+	\item Make sure the bell jar is on the base plate.
+	\item Close the backing valve underneath the control console, and open the roughing valve. Only one of these valves should be open at any time!
+	\item Move the thermocouple gauge selector to the ``B. Jar'' position. Once the reading is below 100 to 150 millitorr, close the roughing valve and open backing valve.
+	\item Open the main valve by lifting the lever on the left side of the control console.
+	\item Move the thermocouple gauge selector back to the ``Back'' position. It should be at the bottom end of its range.
+	\item Move the discharge gauge range selector from the ``Off'' position to the ``Zero'' position. Let it warm up for a few minutes, and then adjust the zero knob until the needle reads zero.
+	\item Turn the nob to the ``$10^{-4}$'' range and push the ``Vacuum Read'' button. If the needle reads below one, switch to the next lowest range.
+\end{enumerate}
+
+\section{Evaporating}
+\begin{enumerate}
+	\item Turn on the thickness monitor, if you are using it. 
+	\item Move the filament selector to the ``Gold'' position.
+	\item Make sure the pressure is in the ``$10^{-6}$'' range or lower on the discharge gauge readout.
+	\item Make sure the ``Filament/Glow Selector'' switch is in the ``Filament'' position.
+	\item Move the ``Filament Adjust'' knob in the center of the control console is at zero (all the way to the counter-clockwise).
+	\item Flip the ``Filament Power'' switch.
+	\item Slowly increase the power using the ``Filament Adjust'' knob. Usually for gold I start with 20 amps on the ``Filament Current'' meter until the filament starts to glow red, after which I slowly increase to 35 amps. For thick gold coatings I simply wait until there is visible gold on the inside of the bell jar. If you want a particular thickness, adjust the current to get your desired deposition rate. Monitor the pressure on the discharge gauge, making sure it stays below $1 \times 10^{-5}$ torr. The pressure may increase initially as the filament outgasses, but should decrease after about 30 seconds. For gold, the process should take only a few minutes in total.
+	\item Once the desired thickness has been reached, turn the ``Filament Adjust'' knob all the way counter-clockwise and turn the ``Filament Power'' switch off.
+\end{enumerate}
+
+\section{Venting and Resetting the Chamber}
+\label{evap:reset}
+\begin{enumerate}
+	\item Turn off the discharge gauge by moving the knob to the ``Off'' position.
+	\item Close the main valve by moving the lever down.
+	\item Open the chamber vent valve. Monitor the foreline pressure (``Back'' setting below the thermocouple gauge reading) to make sure it is not increasing.
+	\item Remove the bell jar.
+	\item At this point, the chamber can be reset as described in part~\ref{evap:prep}, if you are going to do additional evaporation.
+	\item Once the chamber is prepared and the bell jar replaced, check that the vent levers are closed.
+	\item Close the backing valve and open the roughing valve.
+	\item Wait for the pressure on the ``B. Jar'' thermocouple to reach less than 100 to 150 millitorr.
+	\item Close the roughing valve, and open the backing valve.
+	\item If you will evaporate again, open the main valve again and turn on the discharge gauge again as described in part~\ref{evap:pump}.
+\end{enumerate}
+
+\section{Shutting the System Down}
+\begin{enumerate}
+	\item The bell jar should be roughed out at this point. If not, rough pump it as described in part~\ref{evap:reset}.
+	\item Close the main valve, if it is open.
+	\item Turn off the diffusion pump. Allow 20 minutes for it to cool down.
+	\item Close the backing valve.
+	\item Turn off the mechanical pump. Open the ``M. P. Vent'' lever to vent the foreline.
+	\item Turn off the main power.
+	\item Close all the valves for the diffusion pump cooling water (four on the wall, one on the center of the control console).
+	\item Ensure all the vacuum valves (main, backing, and roughing) are closed.
+\end{enumerate}
+
+\chapter{Operation of the Oxygen-18 Annealing System}
+
+
 \bibliography{./refs.bib}
 \bibliographystyle{unsrt}
 

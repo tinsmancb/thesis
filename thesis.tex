@@ -1284,8 +1284,6 @@ f.savefig('thall_profile.pdf')
 
 \chapter{Operation of the Denton Evaporator}
 
-The Denton evaporator is stored in the small lab (Randall Lab SB482). It has had some previous owners who have modified it over the years, so it's operation is not exactly as described in the manual. In this appendix, I will describe where the differences occur.
-
 \section{Preparing the Chamber}
 \label{evap:prep}
 \begin{enumerate}
@@ -1361,6 +1359,89 @@ The Denton evaporator is stored in the small lab (Randall Lab SB482). It has had
 \end{enumerate}
 
 \chapter{Operation of the Oxygen-18 Annealing System}
+
+
+\section{Opening and Loading the Tube}
+\begin{enumerate}
+	\item If the tube is in vacuum, open V1 and then slowly open V3 while monitoring the pressure on P1. If air is let in too fast, the alumina spacers will be blown to the end of the tube. Afterwards, close V1 and V3.
+	\item If the tube still has oxygen-18 gas inside, collect the gas in the cold trap using the instructions in section~\ref{anneal:collect}. The open the tube as described above.
+	\item Using a hex wrench, remove the flange on the right side of the tube. This side has a flexible tube to allow the flange to be moved away.
+	\item Use the metal hook to extract the alumina spacers and sample boats.
+	\item Place the new samples to be annealed in the sample boats.
+	\item Replace the alumina spacers and sample boats, using the metal hook. Place two spacers flush with the left edge of the furnace, then the samples, then two spacers flush with the right edge of the furnace.
+	\item Replace the flange on the right side of the tube. Tighten each bolt a little bit before moving to the next one in sequence, rather than tightening each one all the way down at once, to ensure a uniform seal. 
+	\item Connect the pump station to the pumping port with a KF-25 clamp. Turn on the rough pump only. Open V1.
+	\item Very slowly open V3. Monitor P1 to see when the pressure starts to drop. If the valve is opened too fast, the alumina spacers will be pulled across the tube, and the tube will need to be opened again to be reset.
+	\item Once V3 is completely open and P1 is at its lowest reading, turn on the turbo pump to finish evacuating the tube.
+	\item Once you are satisfied with the pressure reading on the pump station, close V1 and V3, shut down the pump station, and disconnect it from the pumping port.
+\end{enumerate}
+
+\begin{figure} \includegraphics[width=\columnwidth]{figures/annealing_system.pdf} \end{figure}
+
+\section{Introducing the Oxygen-18 Gas from the Cylinder}
+\label{anneal:cyl}
+\begin{enumerate}
+	\item Using the Gay-Lussac Law \[ \frac{P_1}{T_1} = \frac{P_2}{T_2} \] estimate the pressure needed in the tube at room temperature to get the desired pressure at the annealing temperature. This will underestimate the pressure at the annealing temperature since the ends of the tube will not be heated.
+	\item Open the valve on the oxygen-18 cylinder. The pressure in a new cylinder is relatively low, slightly above atmospheric pressure.
+	\item Open V2 to introduce oxygen-18 into the gas lines, then close V2.
+	\item Slowly open V3 to introduce oxygen-18 into the tube. As discussed above, the valve needs to be opened very carefully in order to avoid blowing away the alumina spacers. Monitor the pressure on P1.
+	\item If more pressure is needed, close V3, then repeat from step 3 until the desired pressure is reached.
+	\item Close V2, V3, and the valve on the oxygen-18 cylinder.
+\end{enumerate}
+
+\section{Introducing the Oxygen-18 Gas from the Cold Trap}
+\begin{enumerate}
+	\item Make sure the cold trap is warm. If it has recently had liquid nitrogen in it, wait for it to warm up.
+	\item As in section~\ref{anneal:cyl}, calculate how much gas you require in the tube.
+	\item Introduce oxygen-18 gas into the lines by opening V5, then closing it.
+	\item Slowly open V3 to introduce oxygen-18 into the tube. As discussed above, the valve needs to be opened very carefully in order to avoid blowing away the alumina spacer. Monitor the pressure on P1.
+	\item If more pressure is needed, close V3, the repeat from step 3 until the desired pressure is reached.
+	\item Close V3 and V5.
+\end{enumerate}
+
+\section{Programming the Tube Furnace}
+\begin{enumerate}
+	\item Turn on the furnace using the power switch, if it is not already powered on.
+	\item The programs consist of series of temperature setpoints C01 to CN in $^\circ$C and time periods t01 to tN in minutes. The program starts at C01, and immediately starts ramping to C02 over the period of time t01. Then, it will start ramping to C03 over the period t02, and so on. Map out your desired temperature profile over time.
+	\item Push the ``$\leftarrow$'' key to display C01. Set it to room temperature (about 20$^\circ$C) using the arrow keys. Then push the ``Set'' key.
+	\item Set the desired value for t01 using the arrow keys. Then push ``Set'' again.
+	\item Set the value for C02, and continue for the remaining setpoints and periods.
+	\item After the final setpoint, set the next time period to -121. This will end the program, and allow the furnace to cool down to room temperature. Push ``Set'' one last time. ``End'' should display in the SV window.
+	\item Push ``$\leftarrow$'', then cycle through your program with ``Set'' to check that it has been entered correctly. Continue until ``End'' is shown again.
+	\item Start the program by holding ``$\downarrow$'' until ``run'' is displayed after about 2 seconds.
+\end{enumerate}
+
+For example, to ramp up to 1000$^\circ$C over the course of 4 hours, hold that temperature for 3 days, and then cool down to room temperature without temperature control, 
+\begin{enumerate}
+	\item Set C01 to 20
+	\item Set t01 to 240
+	\item Set C02 to 1000
+	\item Set t02 to 4320
+	\item Set C03 to 1000
+	\item Set t03 to -121
+\end{enumerate}
+
+The maximum any time period can be is 9999 minutes, or slightly less than 7 days. To anneal for a longer time period, split the time up into multiple periods. For example, to anneal at 1000$^\circ$C for 10 days,
+\begin{enumerate}
+	\item Set C01 to 20
+	\item Set t01 to 240
+	\item Set C02 to 1000
+	\item Set t02 to 7200
+	\item Set C03 to 1000
+	\item Set t03 to 7200
+	\item Set C04 to 1000
+	\item set t04 to -121
+\end{enumerate}
+
+\section{Collecting the Oxygen-18 Gas}
+\label{anneal:collect}
+\begin{enumerate}
+	\item Optionally, set the tube furnace to 200$^\circ$C in order to collect the gas more efficiently.
+	\item Using a funnel, load liquid nitrogen into the cold trap through the port in the top. Pour the nitrogen slowly, leaving time for the funnel to cool down. Be very careful not to splash any on the quartz tube, especially if it is hot.
+	\item Open V6. Check that the pressure on P2 is lower than P1.
+	\item Very slowly open V7, once again being careful not to disturb the alumina spacers. Wait until the pressure at P1 and P2 has equalized.
+	\item Close V6 and V7.
+\end{enumerate}
 
 
 \bibliography{./refs.bib}

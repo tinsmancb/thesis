@@ -15,10 +15,14 @@ Dr. Zhaohui Zhong
 \title{Thermal Hall Effect Measurements using Strontium Titanate Microthermometers}
 \year=2019
 
-\acknowledgments[2]{I would like to thank Ctirad Uher for providing the bismuth crystals, as well as Sara Haravifard for providing the strontium copper borate samples.}
+\dedication[1]{For Matthew}
+
+\acknowledgments[2]{First, I would like I would like to thank Ctirad Uher for providing the bismuth crystals, as well as Sara Haravifard for providing the strontium copper borate samples.}
+
+\showlistofappendices
 
 \abstract{\singlespacing Thermal measurements are an important tool for studying new materials and identifying novel physics in condensed matter systems. In a sense, they are the most general experimental methods available: any excitation in a solid will carry energy, and thus heat. This makes them particularly applicable to studying systems with excitations that do not carry charge. Such measurements require accurate and precise temperature readings at multiple points on a crystal, which are often only a few millimeters in any direction. This is especially important when making thermal Hall effect measurements, the thermal analogue of the Hall effect. It requires making precise measurements in magnetic fields of a few Tesla or more. These fields can interfere with standard methods of thermometry relying on resistive thermometers. To circumvent this issue, we have exploited the strongly temperature dependent dielectric permittivty of strontium titanate. This material sits close to a quantum phase transition to a ferroelectric state. This causes its permittivity to increase rapidly until reaching a maximum a few Kelvin above absolute zero. By making small capacitors using this material, we can measure temperature with precision in a way that is not systematically affected by a magnetic field. This opens up new possibilities for making thermal measurements, but since the permittivity saturates below a few Kelvin, the sensitivity of these devices rapidly degrades in this range. However, annealing strontium titanate in an oxygen-18 atmosphere can tune the properties of this material close to this quantum critical point. By moving strontium titanate closer to this quantum phase transition, the permittivity can potentially keep increasing down to temperatures below 1 Kelvin. To test these thermometers, thermal Hall effect measurements were carried out on crystalline bismuth. Bismuth is one of the best known semimetals, a material which hosts both electrons and holes, as well as high mobility. This property makes it an important system for benchmarking experimental techniques. With the strontium titante microthermometers, we were able to conduct measurements up to 10 T and at temperatures down to 40 K. A large thermal Hall coefficient is measured in this system, indicative of high mobility carriers. Another application of these techniques is thermal measurements of frustrated magnets. These are systems where the geometry of the lattice interferes with magnetic ordering, resulting in a variety of new magnetic phases. These systems often have itinerant excitations which do not carry charge, making thermal measurements all the more important. We discuss our measurements on strontium copper borate, in which pairs of spin-1/2 sites are paired up in strongly coupled dimers. The magnetic excitations of this system are mobile triplet states, called triplons. It has been predicted that these triplet bands could have non-trivial topology, making strontium copper borate a bosonic topological insulator, and resulting in a specific thermal Hall effect signal. Experimental measurements in this system fail to find this signal, casting doubt on this theory. However, we observe magnetic field dependent thermal conductivity at temperatures below 1 K, where the triplet excitations should be frozen out. This may be related to another phenomena found in this material in this temperature range: the formation of spin superlattices, states where spins form ordered arrangements larger than the base unit cell of the material.}
-\hideabstractpagenumber
+%\hideabstractpagenumber
 
 \begin{document}
 
@@ -651,11 +655,12 @@ Assuming that $b$ is positive and $E$ is zero, this equation will only have one 
 		data was taken using the VTI probe in our Janis cryostat, but
 		reproduces the results of ~\cite{Rowley2014}.}
 		\label{fig:sto_eps_vs_T}
-		\includegraphics[width=0.9\columnwidth]{figures/STO_eps_vs_T.pdf}
-		\includegraphics[width=0.9\columnwidth]{figures/STO_eps_vs_T_low.pdf}
+		\centering
+		\includegraphics[width=0.85\columnwidth]{figures/STO_eps_vs_T.pdf}
+		\includegraphics[width=0.85\columnwidth]{figures/STO_eps_vs_T_low.pdf}
  \end{figure}
 
- To explore the possibility of using this property of strontium titanate for making thermometers, some STO wafer was acquired and cut into a small piece, 3.86 mm long by 3.25 mm wide by 0.1 mm thick. Each side of this wafer was metallized with gold in our Denton evaporator. This sample was then placed in the variable temperature insert probe of our Janis wet cryostat. The capacitance was measured using our Andeen-Hagerling 2700A capacitance bridge while sweeping temperature at a constant rate from 50 K to 2 K. An excitation of 5 V was used to measure the capacitance. The dielectric susceptibility can be computed from the capacitance and the geometric information about the device using the standard parallel plate capacitor formula from above. The results of this experiment are shown in figure \ref{fig:sto_eps_vs_T}, plotted as $1/\epsilon \approx 1/\epsilon_0 \chi_e$ versus $T^2$. This makes the divergence of the susceptibility in the quantum critical regime clear as a linear trend. At the lowest temperatures, however, this increase stops, reaching a maximum at 3.29 K. Here, strontium titanate is in the ``quantum paraelectric'' regime, where the gap in the optical phonon dispersion is relatively large but the temperature is small compared to the Debye temperature $\theta$~\cite{RowleyThesis}. In this regime the electric susceptibility stops increasing, as the quantum critical point is no longer having a strong effect. Since the susceptibility is no longer changing much with temperature, a thermometer made with strontium titanate would not be sensitive in this regime. To illustrate this point, the effective sensitivity of the device is plotted in figure \ref{fig:sto_sens_vs_t} as the quantity $\frac{1}{C}\frac{dC}{dT}$, where $C$ is the capacitance of the device. This gives a measure of the sensitivity relative to the overall magnitude of the capacitance. The sensitivity peaks at around 24 K, becoming zero at 3.29 K as discussed above.
+ To explore the possibility of using this property of strontium titanate for making thermometers, some STO wafer was acquired and cut into a small piece, 3.86 mm long by 3.25 mm wide by 0.1 mm thick. Each side of this wafer was metallized with gold in our Denton evaporator. This sample was then placed in the variable temperature insert probe of our Janis wet cryostat. The capacitance was measured using our Andeen-Hagerling 2700A capacitance bridge while sweeping temperature at a constant rate from 50 K to 2 K. An excitation of 5 V was used to measure the capacitance. The dielectric susceptibility can be computed from the capacitance and the geometric information about the device using the standard parallel plate capacitor formula from above. The results of this experiment are shown in figure \ref{fig:sto_eps_vs_T}, plotted as $1/\epsilon \approx 1/\epsilon_0 \chi_e$ versus $T^2$. This makes the divergence of the susceptibility in the quantum critical regime clear as a linear trend. At the lowest temperatures, however, this increase stops, reaching a maximum at 3.29 K. Here, strontium titanate is in the ``quantum paraelectric'' regime, where the gap in the optical phonon dispersion is relatively large but the temperature is small compared to the Debye temperature $\theta$~\cite{RowleyThesis}. In this regime the electric susceptibility stops increasing, as the quantum critical point is no longer having a strong effect. Since the susceptibility is no longer changing much with temperature, a thermometer made with strontium titanate would not be sensitive in this regime. To illustrate this point, the effective sensitivity of the device is plotted in figure \ref{fig:sto_sens_vs_t} as the quantity $\frac{1}{C}\frac{dC}{dT}$, where $C$ is the capacitance of the device. This gives a measure of the sensitivity relative to the overall magnitude of the capacitance. The magnitude of the dimensionless sensitivity peaks at a value of 0.057 around 24 K, becoming zero at 3.29 K as discussed above. As a point of comparison, commercial resistive thermometers have a dimensionless sensitivity ($\frac{1}{R}\frac{dR}{dT}$ in this case) of order unity~\cite{LakeshoreCorp}, meaning that the capacitive thermometers are less sensitive by an order of magnitude and a half. However, the temperature controllers use to read these thermometers can measure resistance to one part in 100,000, whereas the capacitance bridge can measure capacitance to one part in 10,000,000. Thus, in real terms, they have comparable sensitivities. 
 
 \begin{figure}
 \caption[Sensitivity of STO test device]{Sensitivity of the Strontium Titanate device under test, plotted as the ``dimensionless'' quantity \(\frac{1}{C} \frac{dC}{dT}\).}
@@ -674,8 +679,9 @@ Assuming that $b$ is positive and $E$ is zero, this equation will only have one 
 		before, this data was taken using the VTI probe in our Janis
 		cryostat, but reproduces the results of ~\cite{Rowley2014}.}
 		\label{fig:kto_eps_vs_T}
-	\includegraphics[width=0.85\columnwidth]{figures/KTO_eps_vs_T.pdf}
-	\includegraphics[width=0.85\columnwidth]{figures/KTO_eps_vs_T_low.pdf}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{figures/KTO_eps_vs_T.pdf}
+	\includegraphics[width=0.8\columnwidth]{figures/KTO_eps_vs_T_low.pdf}
 \end{figure}
 
 As a point of comparison, figure \ref{fig:kto_eps_vs_T} shows a similar experiment with a capacitor made with a different material, Potassium Tantalate (KTaO$_3$). Looking at the phase diagram in figure \ref{fig:qc_rowley}, we can see it is farther away from the quantum critical point, into the quantum paraelectric regime. For this experiment, a 2.26 mm wide by 3.48 mm long by 0.1 mm thick piece of material was metallized into a capacitor. The data is plotted with the same $1/\epsilon$ vs $T^2$ axes as the STO data. By comparing the scale to that in figure \ref{fig:sto_eps_vs_T}, we can see that the divergence of the dielectric susceptibility is not nearly as strong, and the dependence not nearly as linear. The quantum paraelectric regime is entered at a much higher temperature, and the susceptibility reaches it's maximum at a temperature of 4.31 K. Thus, we can see that we must have a material in the quantum critical regime in order to make a good thermometer. In the next chapter, the process of making thermometers out of these devices will be discussed. 
@@ -878,7 +884,8 @@ coefficient.
   and symmetric (dashed) parts of the transverse temperature difference. The
 antisymmetric part is the thermal Hall signal. Notice the difference in scales
 for the two curves.} \label{fig:t_grad}
-\includegraphics[width=0.9\columnwidth]{figures/rawCurve_apl.eps} \end{figure}
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/rawCurve_apl.eps} \end{figure}
 
 \begin{figure} \centering \caption[Comparison between thermocouples and STO thermometers]{Transverse temperature differences across a bismuth crystal measured with both STO thermometers (orange) and thermocouples (blue), up to 10T and antisymmetrized to isolate the thermal Hall signal. Top: Temperature difference at 110K. At this temperature, the signal is large enough that the thermocouples have no trouble detecting it. The STO thermometers are not so sensitive in this range, and so they have more noise. Bottom: Temperature difference at 30 K. While the thermocouples are not able to detect anything, the STO thermometers are still able to detect a temperature difference of about 0.5 mK.}
 	\label{fig:grad_comp}
@@ -892,7 +899,8 @@ for the two curves.} \label{fig:t_grad}
     -10 T to 10 T. Curves for a few temperatures between 90K and 175K (Panel a)
     and between 40K and 80K (Panel 6). The signal appears to get smaller at
 lower temperature, disappearing at 60K.} \label{fig:kappaxy}
-\includegraphics[width=\columnwidth]{figures/kappaxy_apl.eps} \end{figure}
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/kappaxy_apl.eps} \end{figure}
 
 Similar to what was measured before\cite{Kobayashi2012}, the thermal Hall
 conductivity is strongly nonlinear, reaching a maximum below 2 Tesla and
@@ -960,8 +968,9 @@ Sensitivities for the same four devices. Although the capacitance varies
 between devices and cool down/warm up, the sensitivity is roughly the same for
 each.} 
 \label{fig:annealed_sto_repro}
-\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_c_vs_t.pdf}
-\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_sens_vs_t.pdf}
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/annealed_sto_c_vs_t.pdf}
+\includegraphics[width=0.85\columnwidth]{figures/annealed_sto_sens_vs_t.pdf}
 \end{figure}
 
 Thermometers we made out of the STO chips in the same manner as the unannealed devices described above. The capacitance of these were measured using the AH2700A digital capacitance bridge on the dipstick probe in a helium dewar. This probe allows us to make quick measurements down to liquid helium temperatures, which is important for testing many devices quickly. The results for this experiment are shown in figure~\ref{fig:annealed_sto_repro}. Chips from sample 3 through 6 were used for these experiments. Curves for the cool down from room temperature to 4 K as well as the warm up back to room temperature are plotted on top of one another. As shown in the figure, these curves to not line up with one another for any of the four devices tested. There appears to be some hysteresis, where the cool down curve is slightly larger than the warm up curve between 10 K and 120 K. This plot also shows the sensitivity of the devices, plotted in the same $\frac{1}{C}\frac{dC}{dT}$ units as for the unannealed thermometers. In general, it appears that rather than having one minimum as for the unannealed devices, there are two, at approximately 80 K and 120 K. This may be an indication that part of the sample is more enriched that others. The only one which does does not display this behavior is sample 3, which was annealed for a time in vacuum (see table~\ref{tab:annealed_sto}). This one has a flatter minimum, possibly indicating a more uniform distribution of oxygen-18 in the lattice. Otherwise, at low temperature, the curves appear to collapse onto one another below 50 K. It does not appear that they are getting significantly more sensitive at low temperature, which could also indicate that most of the bulk is not significantly enriched.
@@ -972,8 +981,9 @@ show any power law behavior indicative of a phase transition, and so it has not
 been doped into the ferroelectric regime. The cubic fit (orange line) is
 indicative of simple insulating behavior.}
 \label{fig:annealed_sto_repro_2}
-\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_diss_vs_t.pdf}
-\includegraphics[width=0.9\columnwidth]{figures/annealed_sto_heatcap_vs_t.pdf}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/annealed_sto_diss_vs_t.pdf}
+\includegraphics[width=0.8\columnwidth]{figures/annealed_sto_heatcap_vs_t.pdf}
 \end{figure}
 
 Figure~\ref{fig:annealed_sto_repro_2} shows some additional data on the dissipation of the thermometer devices. This is a plot of $\tan \delta$, where $\delta$ is the deviation of the impedance phase angle from from $-\pi/2$, as would be expected for a pure capacitor. If we model the device as a capacitor with capacitance $C_p$ in parallel with a resistor with large resistance $R_p$, the dissipation is given by~\cite{AHManual}
@@ -1068,7 +1078,8 @@ The signature of the DM interaction in SCBO can be observed without doing neutro
 	\centering
 	\caption[Low Temperature Heat Capacity of SCBO]{Top: Field-dependent low temperature heat capacity measurement of Strontium Copper Borate, measured in our Dynacool PPMS system, plotted as $C/T$ to make the presence of two anomalies more clear. Bottom: Heat Capacity plotted as C/T versus temperature, taken from~\cite{Jorge2005}. The symbols are actual data, and the lines are data computed using a fit for the DM interaction. The dashed line in the lower panel is a calculation where the DM term is ignored.}
 	\label{fig:scbo_hc}
-	\includegraphics[width=\columnwidth]{figures/SCBO_total_HC_over_T.pdf}
+	\centering
+	\includegraphics[width=0.85\columnwidth]{figures/SCBO_total_HC_over_T.pdf}
 	\includegraphics[width=0.5\columnwidth]{figures/SCBO_HC_Jorge_2005.pdf}
 \end{figure}
 
@@ -1112,8 +1123,9 @@ Earlier thermal conductivity measurements attempted to use STO capacitive thermo
 	\centering
 	\caption[Low Temperature Thermal Conductivity of SCBO]{Low Temperature thermal conductivity of Strontium Copper Borate. Each curve is taken at a constant temperature. Top: Data taken in the Dynacool PPMS, from 6 K to 2 K. The applied field enhances the thermal conductivity. Bottom: Data taken in the Oxford dilution refrigerator, from 1 K down to 100 mK. Field suppresses the thermal conductivity down to about 450 mK, at which point the dependence flips around again.}
 	\label{fig:SCBO_kappa_xx}
-	\includegraphics[width=0.9\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_tcond_high.pdf}
-	\includegraphics[width=0.9\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_kappa_xx_vs_B_1.pdf}
+	\centering
+	\includegraphics[width=0.85\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_tcond_high.pdf}
+	\includegraphics[width=0.85\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_kappa_xx_vs_B_1.pdf}
 \end{figure}
 
 The thermal conductivity data found in these experiments is summarized in figure \ref{fig:SCBO_kappa_xx}. The top panel shows the data taken in the PPMS. In this data, the application of the magnetic field appears to enhance the thermal conductivity, with the effect weakening as we cool down to 2 K. The bottom panel shows the data taken in the dilution fridge. Here, it appears that the magnetic field suppresses the thermal conductivity at 1K, but when the temperature is lowered to around 450 mK, the dependence begins to flip around. At lower temperatures, the thermal conductivity is instead enhanced by magnetic field. The same dataset is plotted in figure \ref{fig:SCBO_kappa_xx_vs_T}, this time with cuts taken at constant magnetic field as a function of temperature. Separate data runs where the temperature was ramped at a constant magnetic field were taken which reproduce the general trends of this data, however they suffer from a great deal of noise due to the massively different excitations required at each temperature. Figure \ref{fig:SCBO_kappa_xx_vs_T} makes the ``crossover'' between magnetic field suppression and enhancement of the thermal conductivity at around 450 mK more clear. This crossover is not sharp in the sense that the conductivity traces do not converge to a point. This would correspond to the thermal conductivity being independent of magnetic field at some temperature, instead we see that some traces show enhancement and suppression at different values of the applied field. Not included in this plot is the data taken in the PPMS. In that dataset, we can see that the value of the thermal conductivity taken at 2K is lower than that taken at 1K in the dilution fridge. It is unclear if this is a true effect or if it is an error introduced by uncertainty in the sample geometry. Previous measurements of the thermal conductivity at higher temperatures have shown that the temperature dependence at higher temperatures is indeed not monotonic~\cite{Hofmann2001}, but it is difficult to do an experiment in our systems which would show this conclusively. The PPMS cannot stabilized temperature lower than 2 K due to the custom puck required to do the measurement, and the dilution fridge cannot control temperature in the range between 1 K and 2 K due to competition between the dilution unit and the pulse tube stage. Thus, for the remainder of this section we will focus on the dilution fridge data, which shows a clear inversion of the field dependence.
@@ -1144,8 +1156,9 @@ where $\kappa$ is the total thermal conductivity, $\kappa_{\mathrm{ph}}$ is the 
 	\centering
 	\caption[SCBO Fitting Parameters vs. Temperature]{Top: Extracted field scale vs. temperature. The red lines are the error bars from the fit. Note that the field scale is more or less constant where the fit is valid. Where it is not valid, the error bars extend beyond the scale of the plot. I have kept them here to demarcate the crossover region. Bottom: Zero field (blue) and infinite field (green) thermal conductivities extracted from the fits. Once again the error bars are red.}
 	\label{fig:SCBO_fit_params}
-	\includegraphics[width=0.9\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_field_scale.pdf}
-	\includegraphics[width=0.9\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_tcond_params.pdf}
+	\centering
+	\includegraphics[width=0.85\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_field_scale.pdf}
+	\includegraphics[width=0.85\columnwidth,trim={1cm 1cm 1cm 1cm},clip]{figures/SCBO_tcond_params.pdf}
 \end{figure}
 
 One other curious feature is the appearance of a very small thermal Hall conductivity at around 500 mK, shown in figure \ref{fig:SCBO_small_thall}. This only occurs at this specific temperature, and it is barely visible with the sensitivity of the Cernox thermometers. At the field with the strongest $\kappa_{xy}$, the thermal Hall angle is about $\tan \theta_H = 0.013$, which is relatively large compared to the other spin systems listed in table \ref{tab:hall_angles}. This is just above the temperature where the field dependence of the thermal conductivity flips over. Clearly, it is not like the thermal Hall signal predicted to arise as a result of the Chern bands, as it does not get stronger with higher temperature. It is hard to imagine this thermal Hall conductivity coming from the triplons directly, since they should be frozen out at this temperature. Instead, it appears to be specific to the crossover. 
@@ -1163,7 +1176,8 @@ One potentially interesting question to consider is how this thermal conductivit
 	\centering
 	\caption[Spin Superlattices in SCBO]{Spin Superlattices in SCBO. Top: Schematic of the 1/8 superlattice observed in SCBO at ambient pressure, reproduced from~\cite{Rice2002}. The lattice has one eighth of the total possible magnetization, with an arrangement which enlarges the unit cell of the layer, hence the term ``superlattice''. Bottom: experimental signature of the formation of superlattices in SCBO from magnetic susceptibility measurements, reproduced from~\cite{Haravifard2016}. A background has been subtracted to highlight the superlattice feature. Panel a shows measurements taken at ambient pressure. The 1/8 superlattice is formed at around 22 T. Panel b shows measurements taken at 2.2 GPa. In this case, a new superlattice forms above 5 T. In both cases, the superlattices only become clearly defined below 1 K.}
 	\label{fig:SCBO_superlattice}
-	\includegraphics[width=0.6\columnwidth]{figures/SCBO_superlattice.pdf}
+	\centering
+	\includegraphics[width=0.5\columnwidth]{figures/SCBO_superlattice.pdf}
 	\includegraphics[width=0.9\columnwidth]{figures/SCBO_plateaus.pdf}
 \end{figure}
 
@@ -1208,8 +1222,9 @@ def boundary_D(x, on_boundary):
 bc = DirichletBC(V, u_D, boundary_D)
 
 # Neumann BC (Heater, Insulated Edges)
-g = Expression('x[0] >= x[1]*{0} && x[0] >= (1-x[1])*{0} ? -1 : 0'
-               .format(asp_ratio), degree=1)
+g = Expression(
+        'x[0] >= x[1]*{0} && x[0] >= (1-x[1])*{0} ? -1 : 0'
+        .format(asp_ratio), degree=1)
 
 thetas = np.pi*np.array([-1/6, -1/12, 0, 1/12,
                           1/6, 1/4, 1/3, 5/12])
@@ -1223,8 +1238,9 @@ for ii, theta_hall in enumerate(thetas):
     # Thermal Hall Conductivity
     # C = as_matrix(((1, np.tan(theta_hall)),
     #                (-np.tan(theta_hall), 1)))
-    C = as_matrix(((np.cos(theta_hall), np.sin(theta_hall)),
-                   (-np.sin(theta_hall), np.cos(theta_hall))))
+    C = as_matrix(
+        ((np.cos(theta_hall), np.sin(theta_hall)),
+         (-np.sin(theta_hall), np.cos(theta_hall))))
 
     # Weak Problem
     u = TrialFunction(V)
@@ -1246,8 +1262,9 @@ f, axarr = plt.subplots(4,2, sharex='col',
                              sharey='row',
                              figsize=(9,12),
                              subplot_kw={'aspect':1})
-theta_names = ['-$\\pi$/6', '-$\\pi$/12', '0', '$\\pi$/12',
-               '$\\pi$/6', '$\\pi$/4','$\\pi$/3', '5$\\pi$/12']
+theta_names = ['-$\\pi$/6', '-$\\pi$/12', '0',
+	       '$\\pi$/12', '$\\pi$/6', '$\\pi$/4',
+               '$\\pi$/3', '5$\\pi$/12']
 levels = np.linspace(0, np.max(us), 24)
 for theta, u, ax in zip(theta_names, us, axarr.flatten()):
     ax.contour(xs, ys, u.T, cmap='plasma', levels=levels)

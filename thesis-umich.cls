@@ -1071,7 +1071,7 @@
  % Add a pdf anchor.
  \phantomsection %
  % Add the page to the table of contents.
- \addcontentsline{toc}{chapter}{Appendices}
+ \addcontentsline{toc}{chapter}{APPENDICES}
  % Stop adding sections to the table of contents.
  \addtocontents{toc}{\setcounter{tocdepth}{1}} %
  % Header for appendices.
@@ -1328,7 +1328,7 @@
  % Create a pdf anchor.
  \phantomsection %
  % Add to table of contents.
- \addcontentsline{toc}{chapter}{Bibliography} %
+ \addcontentsline{toc}{chapter}{BIBLIOGRAPHY} %
  % Load the bibliography.
  \@tex@bibliography{#1} %
 }
@@ -1482,7 +1482,7 @@
  \renewcommand{\thepage}{\arabic{page}} %
  % Add the word 'Chapter' to the table of contents.
  \addtocontents{toc}{\vspace{1.3ex}\noindent %
- {\bf Chapter}\vspace{1.3ex}} %
+ {\bf CHAPTER}\vspace{1.3ex}} %
  % Use the correct formatting.
  \if@umich@thesis %
   % Use 1.5 spacing

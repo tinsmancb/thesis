@@ -300,7 +300,7 @@
  % Use single-spaced lines for the title page.
  \begin{singlespace} %
   % Move down the page slightly.
-  \hbox{\vspace{0.3in}} %
+  \hbox{\vspace{1.34in}} %
   % Center the title page as well.
   \begin{center} %
    % Put the title itself in 1.5-spaced format.
@@ -390,12 +390,20 @@
  \begin{center} %
   % Vertical rubber space
   \ \vfill %
+  Colin Tinsman \\
+  \vspace{\baselineskip}
+  tinsmanc@umich.edu \\
+  \vspace{\baselineskip}
+  ORCID iD: 0000-0002-1439-7999 \\
+  \vspace{\baselineskip}
+  \vspace{\baselineskip}
+  \copyright Colin Tinsman 2019
   % Insert the frontispiece.
-  \copyright \insertcopyrightholder \\[1ex] %
+  %\copyright \insertcopyrightholder \\[1ex] %
   % Horizontal line
-  \rule[0.5ex]{5in}{1pt} \\[1ex] %
+  %\rule[0.5ex]{5in}{1pt} \\[1ex] %
   % The year of publication
-  \number\year %
+  %\number\year %
   % Vertical rubber space
   \vfill %
  \end{center} %
@@ -552,6 +560,27 @@
   % Vertical rubber space
   \vspace*{\stretch{2}} %
  }{ %
+ \ifthenelse{\equal{#2}{7}}{ %
+  % Style 7: Rackham bullshi
+  % Vertical rubber space
+  \vspace*{\stretch{1}} %
+  % Center on the page.
+  \begin{center} %
+   % Make a minipage.
+   \begin{minipage}{#4\textwidth} %
+    % Required to use 1.5-spacing for dissertation.
+    \if@umich@thesis %
+     \onehalfspacing %
+    \fi %
+    % Heading
+    \begin{center} \textbf{\uppercase{#3}} \end{center} %
+    % Insert the text.
+    \sloppy #1 %
+   \end{minipage} %
+  \end{center} %
+  % Vertical rubber space
+  \vspace*{\stretch{2}} %
+ }{ %
   % Default style: centered
   % Vertical rubber space
   \vspace*{\stretch{1}} %
@@ -565,7 +594,7 @@
  \end{center} %
   % Vertical rubber space
   \vspace*{\stretch{1}} %
- }}}}}} %
+ }}}}}}} %
 }
 
 %% ---- COMMANDS TO HIDE/SHOW FRONT PAGES ------------------------------
@@ -617,7 +646,7 @@
  % Set the page formatting.
  \frntpg %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{Dedication}
+ \phantomsection\addcontentsline{toc}{chapter}{DEDICATION}
  % Insert the text and formatting.
  \insertfront{\@dedication %
   }{\@dedicationstyle}{Dedication}{\@dedication@width}
@@ -656,7 +685,7 @@
  % Set the page formatting.
  \frntpg %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{Acknowledgments}
+ \phantomsection\addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
  % Insert the text and formatting.
  \insertfront{\@acknowledgments %
   }{\@acknowledgmentsstyle}{Acknowledgments}{\@acknowledgments@width}
@@ -860,7 +889,7 @@
  % Move to new page.
  \newpage %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{List of Figures} %
+ \phantomsection\addcontentsline{toc}{chapter}{LIST OF FIGURES} %
  % Use front page styling.
  \frntpg %
  % Larger upper margin for first page of table (thesis only)
@@ -887,7 +916,7 @@
  % Move to new page.
  \newpage %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{List of Tables} %
+ \phantomsection\addcontentsline{toc}{chapter}{LIST OF TABLES} %
  % Use front page styling.
  \frntpg %
  % Larger upper margin for first page of table (thesis only)
@@ -1012,7 +1041,7 @@
  % Move to new page.
  \newpage %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{List of Appendices} %
+ \phantomsection\addcontentsline{toc}{chapter}{LIST OF APPENDICES} %
  % Anchor for pdf
  \phantomsection %
  % Use front page styling.
@@ -1235,7 +1264,7 @@
   \thispagestyle{empty} %
  \fi %
  % Add this page to the table of contents.
- \phantomsection\addcontentsline{toc}{chapter}{Abstract} %
+ \phantomsection\addcontentsline{toc}{chapter}{ABSTRACT} %
  % Extra vertical space
  \begin{minipage}{0.8\textwidth} \vspace{1in} \end{minipage} \\ %
  % Center the title area.
@@ -1243,35 +1272,35 @@
   % Formatting
   \large \bfseries
   % Add the heading.
-  ABSTRACT \\[5ex] %
+  ABSTRACT \\%[5ex] %
   % Add the title of the dissertation.
   \normalsize %
-  \inserttitle \\[2ex] %
+  %\inserttitle \\[2ex] %
   % Add the word 'by'
-  by \\[2ex]
+  %by \\[2ex]
   % Add the author.
-  \insertauthor
+  %\insertauthor
  \end{center} %
  % Vertical rubber space
- \vspace*{\stretch{2}} %
+ %\vspace*{\stretch{2}} %
  % Insert the chair info
- \ifthenelse{\equal{\@cochair}{}}{
+ %\ifthenelse{\equal{\@cochair}{}}{
   % No co-chairs; insert the chair.
-  {\bf Chair: \insertchair} %
- }{ %
+%  {\bf Chair: \insertchair} %
+% }{ %
   % Use co-chairs.
-  {\bf Co-Chairs: \insertcochairs}} %
+%  {\bf Co-Chairs: \insertcochairs}} %
  % Vertical rubber space
- \vspace*{\stretch{2}} %
+% \vspace*{\stretch{2}} %
  % Insert the text in a centered minipage.
- \begin{center} %
-  \begin{minipage}{0.9\textwidth} %
+ %\begin{center} %
+  %\begin{minipage}{0.9\textwidth} %
    % Double-spaced lines required by Rackham
    \doublespacing %
    % Insert the text.
    \insertabstract %
-  \end{minipage} %
- \end{center} %
+  %\end{minipage} %
+ %\end{center} %
  % Vertical rubber space
  \vspace*{\stretch{1}} %
 }
